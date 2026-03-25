@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Common Ground | Ballarat North</title>
-  <meta name="description" content="Great coffee, quality food, and genuine community vibes every visit">
+  <meta name="description" content="Quality coffee, fresh food, and genuine connection every visit">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,10 +74,13 @@
     /* ── Typography ────────────────────────────────────────────────────── */
     h1, h2, h3, h4 {
       font-family: var(--font-display);
-      line-height: 1.15;
-      font-weight: 700;
-      letter-spacing: 0em;
+      line-height: var(--heading-lh, 1.15);
+      font-weight: var(--heading-weight, 700);
+      letter-spacing: var(--heading-tracking, 0em);
+      font-style: var(--heading-style, normal);
     }
+    h1 { line-height: var(--display-lh, 1.05); }
+    h2 { line-height: var(--heading-lh, 1.2); }
 
     .eyebrow {
       display: inline-flex;
@@ -324,8 +327,7 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%);
-      background-size: 300% 300%;
+      background: var(--hero-bg, linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%));
       overflow: hidden;
     }
 
@@ -1508,20 +1510,29 @@
     /* ── Persona overrides (injected per category) ─────────────────────── */
     
 /* ─ EDITORIAL PERSONA ──────────────────────────────── */
-:root { --font-display: 'Cormorant Garamond', Georgia, serif; }
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  /* Heading style tokens — applied via base h1/h2/h3/h4 rule */
+  --heading-style:   italic;
+  --heading-weight:  600;
+  --heading-tracking: 0.02em;
+  --display-lh:      1.0;
+  --heading-lh:      1.2;
+  /* Hero background: warm dark editorial overlay on coffee shop image */
+  --hero-bg:
+    linear-gradient(160deg, rgba(10,6,3,0.82) 0%, rgba(40,15,5,0.70) 100%),
+    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat;
+}
 body { font-family: 'DM Sans', system-ui, sans-serif; }
-.section-title { font-style: italic; font-weight: 600; letter-spacing: -0.02em; }
+.section-heading { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 600; }
+.section-title { font-style: italic; font-weight: 600; letter-spacing: 0.02em; }
 .section-title::after {
   content: ''; display: block; width: 40px; height: 1.5px;
   background: var(--primary); margin: 14px auto 0; opacity: 0.5;
 }
-.hero {
-  background:
-    linear-gradient(160deg, rgba(10,6,3,0.78) 0%, rgba(60,20,5,0.65) 100%),
-    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat !important;
-  animation: none !important;
-}
-.hero-headline { font-style: italic; font-weight: 600; }
+.hero { animation: none !important; }
+.hero-headline { line-height: 1.0; }
+.hero-tagline, .hero p { color: rgba(255,255,255,0.88) !important; }
 .service-card { border-top: 2px solid var(--primary); border-radius: 4px 4px 16px 16px !important; }
 .service-card::before { border-radius: 4px 4px 16px 16px !important; }
 .nav-brand {
@@ -1549,14 +1560,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Common Ground | Ballarat North">
-  <meta property="og:description" content="Great coffee, quality food, and genuine community vibes every visit">
+  <meta property="og:description" content="Quality coffee, fresh food, and genuine connection every visit">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://biz-common-ground-4tfopc6hq-presencly-3833s-projects.vercel.app">
+  <meta property="og:url" content="https://biz-common-ground-aipioygcq-presencly-3833s-projects.vercel.app">
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Common Ground | Ballarat North">
-  <meta name="twitter:description" content="Great coffee, quality food, and genuine community vibes every visit">
+  <meta name="twitter:description" content="Quality coffee, fresh food, and genuine connection every visit">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1635,8 +1646,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <i class="fa-solid fa-location-dot"></i>
               Ballarat North &mdash; Trusted Local Experts
             </span>
-            <h1 class="hero-headline">Ballarat North's Favourite Local Café</h1>
-            <p class="hero-tagline">Great coffee, quality food, and genuine community vibes every visit</p>
+            <h1 class="hero-headline">Ballarat North's Favourite Community Café</h1>
+            <p class="hero-tagline">Quality coffee, fresh food, and genuine connection every visit</p>
 
             <div class="hero-actions hero-btns">
               <a href="tel:+61353002206" class="btn-hero-primary">
@@ -1654,17 +1665,17 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               
             <div class="stat-item">
               <span class="stat-value">4.6★</span>
-              <span class="stat-label">Google Rating</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-              <span class="stat-value">254</span>
-              <span class="stat-label">Customer Reviews</span>
+              <span class="stat-label">Google Rating (254 reviews)</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-value">10+</span>
-              <span class="stat-label">Years Local</span>
+              <span class="stat-label">Years in Ballarat North</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-value">100%</span>
+              <span class="stat-label">Community-Focused</span>
             </div>
             
             </div>
@@ -1744,28 +1755,28 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
                 <i class="fa-solid fa-mug-hot"></i>
               </div>
               <h3 class="service-title">Specialty Coffee</h3>
-              <p class="service-desc">We source premium single-origin beans and train our baristas to pull the perfect shot every time. From flat whites to cold brew, every cup is made with care and attention.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-utensils"></i>
-              </div>
-              <h3 class="service-title">Fresh Food & Brunch</h3>
-              <p class="service-desc">Our menu changes seasonally and features locally sourced ingredients whenever possible. Whether it's smashed avo on sourdough or a hearty salad, everything is prepared fresh to order.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-bag-shopping"></i>
-              </div>
-              <h3 class="service-title">Takeaway Service</h3>
-              <p class="service-desc">Grab your coffee and pastry on the way to work or pick up lunch for later. We pack everything carefully so it travels well and tastes just as good when you enjoy it at home.</p>
+              <p class="service-desc">We source premium beans and train our baristas to perfection, delivering smooth espressos, creamy lattes, and bold flat whites every time. Whether you take it black or milk-based, our coffee is crafted to order with care.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-leaf"></i>
               </div>
-              <h3 class="service-title">Plant-Based Options</h3>
-              <p class="service-desc">We cater to vegan and plant-based diets with dedicated menu items and alternative milks. Every dietary preference is treated with the same care and quality as our standard offerings.</p>
+              <h3 class="service-title">Fresh Food & Brunch</h3>
+              <p class="service-desc">Our menu features locally-sourced ingredients prepared fresh daily, from toasted sourdough to seasonal salads and indulgent pastries. Every dish is designed to fuel your day or brighten your morning.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-handshake"></i>
+              </div>
+              <h3 class="service-title">Community Space</h3>
+              <p class="service-desc">More than just a café, Common Ground is where locals gather, work, and connect over quality beverages and genuine conversation. We foster a warm, inclusive environment for everyone.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <h3 class="service-title">Customer Focused Service</h3>
+              <p class="service-desc">Your experience matters to us — we listen, remember regulars, and go the extra mile to make every visit memorable. Our team takes pride in genuine hospitality and attention to detail.</p>
             </div>
       </div>
     </div>
@@ -1778,15 +1789,15 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
             <div class="strip-item">
               <div class="strip-value">4.6★</div>
-              <div class="strip-label">Google Rating</div>
-            </div>
-            <div class="strip-item">
-              <div class="strip-value">254</div>
-              <div class="strip-label">Customer Reviews</div>
+              <div class="strip-label">Google Rating (254 reviews)</div>
             </div>
             <div class="strip-item">
               <div class="strip-value">10+</div>
-              <div class="strip-label">Years Local</div>
+              <div class="strip-label">Years in Ballarat North</div>
+            </div>
+            <div class="strip-item">
+              <div class="strip-value">100%</div>
+              <div class="strip-label">Community-Focused</div>
             </div>
       </div>
     </div>
@@ -1800,7 +1811,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Story</span>
           <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.8vw,2.8rem);font-weight:800;color:var(--dark);margin-bottom:20px;letter-spacing:-0.02em;">About Common Ground</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Common Ground is a welcoming neighbourhood café in Ballarat North, serving expertly crafted coffee, fresh seasonal meals, and homemade treats since opening its doors. With a 4.6★ rating from over 254 reviews, we've become a trusted gathering spot for locals who value quality, flavour, and genuine hospitality.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Common Ground is a beloved local café in Ballarat North, known for expertly crafted coffee and a welcoming atmosphere that keeps customers coming back. With a 4.6★ rating across 254 Google reviews, we're committed to serving our community with quality, warmth, and attention to detail.</p>
 
           <div class="about-features">
             <div class="af-item">
@@ -1854,26 +1865,26 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Smashed Avocado on Sourdough</span>
-                  <span class="cat-menu-desc">Fresh avo, lime, chilli, dukkah, and poached egg on house-baked sourdough.</span>
+                  <span class="cat-menu-name">Signature Flat White</span>
+                  <span class="cat-menu-desc">Silky microfoam and perfectly pulled espresso.</span>
+                </div>
+                <span class="cat-menu-price">$5.00</span>
+              </div>
+              <div class="cat-menu-item">
+                <div class="cat-menu-info">
+                  <span class="cat-menu-name">Sourdough Smashed Avo</span>
+                  <span class="cat-menu-desc">House-toasted bread with creamy avocado and dukkah.</span>
                 </div>
                 <span class="cat-menu-price">$16.50</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Seasonal Salad Bowl</span>
-                  <span class="cat-menu-desc">Locally sourced greens, roasted vegetables, grains, and house-made dressing.</span>
+                  <span class="cat-menu-name">Seasonal Berry Tart</span>
+                  <span class="cat-menu-desc">Fresh local berries in buttery pastry.</span>
                 </div>
-                <span class="cat-menu-price">$15.00</span>
+                <span class="cat-menu-price">$7.50</span>
               </div>
-              <div class="cat-menu-item">
-                <div class="cat-menu-info">
-                  <span class="cat-menu-name">Espresso-Based Coffee</span>
-                  <span class="cat-menu-desc">Single-origin beans, expertly pulled and steamed to your preference.</span>
-                </div>
-                <span class="cat-menu-price">$4.50–$5.50</span>
-              </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No booking needed—walk in anytime and grab a spot. We seat groups on availability.</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed — come in anytime, seating available on a first-come basis</p>
         </div>
         
             <div class="cat-hours-box">
@@ -1915,28 +1926,28 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           Do you offer takeaway coffee and food?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we're fully set up for takeaway and can have your order ready quickly. We use eco-friendly packaging to keep everything fresh and reduce waste.</div>
+        <div class="faq-a">Yes — all our coffee, food, and beverages are available for takeaway, perfectly packaged for on-the-go enjoyment.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
           Are you open on weekends?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We're open Saturday and Sunday from 8am–3pm, perfect for a weekend brunch or catch-up with friends.</div>
+        <div class="faq-a">We're open Saturday and Sunday from 8am–3pm, perfect for your weekend coffee run or brunch with friends.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Can you accommodate dietary requirements?
+          Do you cater to dietary requirements?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely—we have vegan, gluten-free, and dairy-free options available. Just let us know your needs when you order and we'll take care of you.</div>
+        <div class="faq-a">Absolutely. We accommodate vegetarian, vegan, gluten-free, and other dietary needs — just ask our friendly staff.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Do you have seating for groups?
+          Can I work or study here?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We have comfortable seating inside and can accommodate groups, though we recommend arriving outside peak times (11am–1pm) for larger parties.</div>
+        <div class="faq-a">Yes, we welcome customers to settle in with their laptops or books. Free WiFi is available, and we appreciate regular visitors.</div>
       </div>
       </div>
     </div>
@@ -1949,8 +1960,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Visit us in Ballarat North</h2>
-          <p class="contact-cta-line">Join the Common Ground community—stop by today and experience the difference that real hospitality makes.</p>
+          <h2 class="contact-title">Come visit us today</h2>
+          <p class="contact-cta-line">Stop by Common Ground today and discover why Ballarat North locals make us part of their routine. We'd love to make you your next perfect coffee.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -2034,7 +2045,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             <span class="footer-brand-dot"></span>
             Common Ground
           </div>
-          <p class="footer-tagline">Great coffee, quality food, and genuine community vibes every visit</p>
+          <p class="footer-tagline">Quality coffee, fresh food, and genuine connection every visit</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
