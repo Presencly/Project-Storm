@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Geelong West Social Club | Geelong West</title>
-  <meta name="description" content="Great food, cold drinks, and warm company in the heart of Geelong West">
+  <meta name="description" content="Great food, cold drinks, and genuine community vibes since opening">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,10 +74,13 @@
     /* ── Typography ────────────────────────────────────────────────────── */
     h1, h2, h3, h4 {
       font-family: var(--font-display);
-      line-height: 1.15;
-      font-weight: 700;
-      letter-spacing: 0em;
+      line-height: var(--heading-lh, 1.15);
+      font-weight: var(--heading-weight, 700);
+      letter-spacing: var(--heading-tracking, 0em);
+      font-style: var(--heading-style, normal);
     }
+    h1 { line-height: var(--display-lh, 1.05); }
+    h2 { line-height: var(--heading-lh, 1.2); }
 
     .eyebrow {
       display: inline-flex;
@@ -324,7 +327,7 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%);
+      background: var(--hero-bg, linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%));
       overflow: hidden;
     }
 
@@ -1507,27 +1510,28 @@
     /* ── Persona overrides (injected per category) ─────────────────────── */
     
 /* ─ EDITORIAL PERSONA ──────────────────────────────── */
-:root { --font-display: 'Cormorant Garamond', Georgia, serif; }
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  /* Heading style tokens — applied via base h1/h2/h3/h4 rule */
+  --heading-style:   italic;
+  --heading-weight:  600;
+  --heading-tracking: 0.02em;
+  --display-lh:      1.0;
+  --heading-lh:      1.2;
+  /* Hero background: warm dark editorial overlay on coffee shop image */
+  --hero-bg:
+    linear-gradient(160deg, rgba(10,6,3,0.82) 0%, rgba(40,15,5,0.70) 100%),
+    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat;
+}
 body { font-family: 'DM Sans', system-ui, sans-serif; }
-/* Italic serif headlines — core editorial requirement */
-h1, h2 { font-style: italic; font-weight: 600; letter-spacing: 0.02em; }
-h1 { line-height: 1.0; }
-h2 { line-height: 1.2; }
-.section-heading { font-size: clamp(1.8rem, 4vw, 3rem); }
+.section-heading { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 600; }
 .section-title { font-style: italic; font-weight: 600; letter-spacing: 0.02em; }
 .section-title::after {
   content: ''; display: block; width: 40px; height: 1.5px;
   background: var(--primary); margin: 14px auto 0; opacity: 0.5;
 }
-.hero {
-  background:
-    linear-gradient(160deg, rgba(10,6,3,0.82) 0%, rgba(40,15,5,0.70) 100%),
-    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat !important;
-  animation: none !important;
-}
-.hero-headline {
-  font-style: italic; font-weight: 600; letter-spacing: 0.02em; line-height: 1.0;
-}
+.hero { animation: none !important; }
+.hero-headline { line-height: 1.0; }
 .hero-tagline, .hero p { color: rgba(255,255,255,0.88) !important; }
 .service-card { border-top: 2px solid var(--primary); border-radius: 4px 4px 16px 16px !important; }
 .service-card::before { border-radius: 4px 4px 16px 16px !important; }
@@ -1552,24 +1556,18 @@ h2 { line-height: 1.2; }
   margin-bottom: 8px;
 }
 
-  
-    /* ── Review patch ────────────────────────────── */
-    h1, h2 { font-style: italic; letter-spacing: 0.01em; } h1 { line-height: 1.05; } h2 { line-height: 1.2; } h3, h4 { font-family: 'DM Sans', system-ui, sans-serif; font-style: normal; letter-spacing: -0.01em; } .hero { background: linear-gradient(160deg, #2c1a0e 0%, #5c2d1e 45%, #8b3a2a 100%); } .section-heading { font-weight: 700; font-style: italic; }
-  
-    /* ── Review patch ────────────────────────────── */
-    h1, h2, h3 { font-style: italic; letter-spacing: 0.01em; } h1, .hero-headline { font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.0; } h2.section-heading { line-height: 1.1; letter-spacing: 0.015em; } .hero-tagline, .hero-stats-card { color: rgba(255,255,255,0.88); } .hero-headline { color: #ffffff; }
   </style>
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Geelong West Social Club | Geelong West">
-  <meta property="og:description" content="Great food, cold drinks, and warm company in the heart of Geelong West">
+  <meta property="og:description" content="Great food, cold drinks, and genuine community vibes since opening">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://biz-geelong-west-social-club-2jup1flau-presencly-3833s-projects.vercel.app">
+  <meta property="og:url" content="https://biz-geelong-west-social-club-iomrh3xg8-presencly-3833s-projects.vercel.app">
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Geelong West Social Club | Geelong West">
-  <meta name="twitter:description" content="Great food, cold drinks, and warm company in the heart of Geelong West">
+  <meta name="twitter:description" content="Great food, cold drinks, and genuine community vibes since opening">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1647,8 +1645,8 @@ h2 { line-height: 1.2; }
               <i class="fa-solid fa-location-dot"></i>
               Geelong West &mdash; Trusted Local Experts
             </span>
-            <h1 class="hero-headline">Geelong West's Premier Social Dining Destination</h1>
-            <p class="hero-tagline">Great food, cold drinks, and warm company in the heart of Geelong West</p>
+            <h1 class="hero-headline">Geelong West's Premier Social Club & Restaurant</h1>
+            <p class="hero-tagline">Great food, cold drinks, and genuine community vibes since opening</p>
 
             <div class="hero-actions hero-btns">
               <a href="#contact" class="btn-hero-primary">
@@ -1666,17 +1664,17 @@ h2 { line-height: 1.2; }
               
             <div class="stat-item">
               <span class="stat-value">4.7★</span>
-              <span class="stat-label">Google Rating</span>
+              <span class="stat-label">Google Rating (153 Reviews)</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">153</span>
-              <span class="stat-label">Happy Reviews</span>
+              <span class="stat-value">15+</span>
+              <span class="stat-label">Years Local Tradition</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">20+</span>
-              <span class="stat-label">Years Local</span>
+              <span class="stat-value">100%</span>
+              <span class="stat-label">Community Owned</span>
             </div>
             
             </div>
@@ -1755,29 +1753,29 @@ h2 { line-height: 1.2; }
               <div class="service-icon">
                 <i class="fa-solid fa-utensils"></i>
               </div>
-              <h3 class="service-title">Restaurant Dining</h3>
-              <p class="service-desc">Enjoy hearty meals and modern Australian cuisine in a relaxed, friendly setting. Our menu is designed to satisfy families, groups, and solo diners alike.</p>
+              <h3 class="service-title">Hearty Restaurant Menu</h3>
+              <p class="service-desc">From classic pub fare to contemporary dishes, our kitchen delivers honest, flavourful meals made fresh daily. We cater to all tastes and dietary preferences with a menu that changes seasonally.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-wine-glass"></i>
+                <i class="fa-solid fa-beer"></i>
               </div>
-              <h3 class="service-title">Full Bar Service</h3>
-              <p class="service-desc">Cold beers, wines, spirits, and non-alcoholic beverages served by experienced staff. We cater to all tastes and occasions.</p>
+              <h3 class="service-title">Premium Beverage Selection</h3>
+              <p class="service-desc">We stock a curated range of local and imported beers, wines, and spirits to suit every palate. Our friendly bar staff know their stuff and love recommending the perfect drink.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-people-group"></i>
               </div>
-              <h3 class="service-title">Functions & Events</h3>
-              <p class="service-desc">Host your birthday, work gathering, or celebration in our spacious, versatile space. We offer customised menu options and dedicated service.</p>
+              <h3 class="service-title">Private Event Hosting</h3>
+              <p class="service-desc">Planning a birthday, celebration, or work function? We offer flexible spaces and catering options for groups of all sizes. Our team will help make your event memorable.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-chair"></i>
+                <i class="fa-solid fa-star"></i>
               </div>
-              <h3 class="service-title">Comfortable Atmosphere</h3>
-              <p class="service-desc">Relax in our welcoming venue with ample seating and a genuine community vibe. Perfect for catching up with friends or settling in for the evening.</p>
+              <h3 class="service-title">Family-Friendly Atmosphere</h3>
+              <p class="service-desc">Whether you're dropping by for lunch, dinner, or a casual catch-up, everyone's welcome here. Kids, dogs, and grandparents all find their place at the West.</p>
             </div>
       </div>
     </div>
@@ -1790,15 +1788,15 @@ h2 { line-height: 1.2; }
         
             <div class="strip-item">
               <div class="strip-value">4.7★</div>
-              <div class="strip-label">Google Rating</div>
+              <div class="strip-label">Google Rating (153 Reviews)</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">153</div>
-              <div class="strip-label">Happy Reviews</div>
+              <div class="strip-value">15+</div>
+              <div class="strip-label">Years Local Tradition</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">20+</div>
-              <div class="strip-label">Years Local</div>
+              <div class="strip-value">100%</div>
+              <div class="strip-label">Community Owned</div>
             </div>
       </div>
     </div>
@@ -1812,7 +1810,7 @@ h2 { line-height: 1.2; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Story</span>
           <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.8vw,2.8rem);font-weight:800;color:var(--dark);margin-bottom:20px;letter-spacing:-0.02em;">About Geelong West Social Club</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Geelong West Social Club is a beloved neighbourhood restaurant and social hub serving authentic, quality meals in a welcoming atmosphere. With a 4.7★ rating from 153 Google reviews, we're committed to delivering exceptional food and hospitality that keeps our community coming back.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">We're a beloved local institution in Geelong West, serving up quality meals and drinks in a warm, welcoming atmosphere that keeps neighbours coming back. With a 4.7★ rating from 153 Google reviews, we're proud to be the heart of our community.</p>
 
           <div class="about-features">
             <div class="af-item">
@@ -1866,31 +1864,31 @@ h2 { line-height: 1.2; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Social Club Steak</span>
-                  <span class="cat-menu-desc">Char-grilled, served with seasonal vegetables and house sauce.</span>
+                  <span class="cat-menu-name">Beef & Guinness Pie</span>
+                  <span class="cat-menu-desc">Classic slow-cooked beauty with creamy mash and seasonal veg.</span>
+                </div>
+                <span class="cat-menu-price">$18</span>
+              </div>
+              <div class="cat-menu-item">
+                <div class="cat-menu-info">
+                  <span class="cat-menu-name">Barramundi of the Day</span>
+                  <span class="cat-menu-desc">Fresh local catch, grilled with lemon butter and garden greens.</span>
                 </div>
                 <span class="cat-menu-price">$28</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Barramundi Special</span>
-                  <span class="cat-menu-desc">Fresh local catch, lemon beurre blanc, crispy skin.</span>
+                  <span class="cat-menu-name">Loaded Nachos with Pulled Pork</span>
+                  <span class="cat-menu-desc">Perfect for sharing—crispy tortillas, melted cheese, tangy slaw, and our house salsa.</span>
                 </div>
-                <span class="cat-menu-price">$26</span>
+                <span class="cat-menu-price">$16</span>
               </div>
-              <div class="cat-menu-item">
-                <div class="cat-menu-info">
-                  <span class="cat-menu-name">Chicken & Mushroom Pie</span>
-                  <span class="cat-menu-desc">Golden pastry, creamy filling, served with chips.</span>
-                </div>
-                <span class="cat-menu-price">$18</span>
-              </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended on weekends — call or walk in welcome</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended for weekends and groups of 6+. Walk-ins welcome, subject to availability.</p>
         </div>
         
             <div class="cat-hours-box">
               <div class="cat-hours-label"><i class="fa-solid fa-clock"></i>&nbsp; Kitchen Hours</div>
-              <div class="cat-hours-text">Mon–Fri 11am–10pm  |  Sat–Sun 10am–11pm</div>
+              <div class="cat-hours-text">Mon–Thu 11am–10pm  |  Fri–Sat 11am–midnight  |  Sun 10am–10pm</div>
             </div>
       </div>
     </div>
@@ -1924,31 +1922,31 @@ h2 { line-height: 1.2; }
         
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Do you take reservations?
+          Do you take bookings?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, bookings are recommended, especially on weekends. Call us or walk-ins are always welcome during service hours.</div>
+        <div class="faq-a">Yes, we recommend booking ahead for weekends and larger groups, but walk-ins are always welcome during quieter times. Just give us a call to secure your table.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          What are your opening hours?
+          Can you accommodate dietary requirements?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We're open Mon–Fri 11am–10pm and Sat–Sun 10am–11pm. Public holidays may vary, so check ahead.</div>
+        <div class="faq-a">Absolutely. Let our staff know about allergies or dietary preferences when ordering, and our kitchen will do their best to cater to your needs.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Do you cater for functions and private events?
+          Do you offer takeaway?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely. We host birthdays, work gatherings, and celebrations with tailored menus and dedicated service. Contact us to discuss your event.</div>
+        <div class="faq-a">Yes, we offer takeaway on selected menu items. Call ahead to place your order and we'll have it ready when you arrive.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Can I order takeaway?
+          Are you available for private functions?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, takeaway is available during service hours. Call ahead for faster service and to check current wait times.</div>
+        <div class="faq-a">We'd love to host your event! Contact us to discuss dates, guest numbers, and catering options for birthdays, celebrations, and corporate gatherings.</div>
       </div>
       </div>
     </div>
@@ -1961,8 +1959,8 @@ h2 { line-height: 1.2; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Book Your Table Today</h2>
-          <p class="contact-cta-line">Join us soon for great food, good drinks, and even better company. Call today to book a table or simply walk in.</p>
+          <h2 class="contact-title">Visit us in Geelong West</h2>
+          <p class="contact-cta-line">Come join us at Geelong West Social Club — whether it's a quiet meal, a night out with mates, or a special celebration, we'd love to see you.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -2046,7 +2044,7 @@ h2 { line-height: 1.2; }
             <span class="footer-brand-dot"></span>
             Geelong West Social Club
           </div>
-          <p class="footer-tagline">Great food, cold drinks, and warm company in the heart of Geelong West</p>
+          <p class="footer-tagline">Great food, cold drinks, and genuine community vibes since opening</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
