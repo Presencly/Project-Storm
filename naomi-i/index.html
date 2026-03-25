@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Naomi & i | Soldiers Hill</title>
-  <meta name="description" content="Specialty coffee, fresh pastries, and genuine hospitality in the heart of Soldiers Hill">
+  <meta name="description" content="Expertly crafted coffee, fresh food, and genuine hospitality since 2018">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,10 +74,13 @@
     /* ── Typography ────────────────────────────────────────────────────── */
     h1, h2, h3, h4 {
       font-family: var(--font-display);
-      line-height: 1.15;
-      font-weight: 700;
-      letter-spacing: 0em;
+      line-height: var(--heading-lh, 1.15);
+      font-weight: var(--heading-weight, 700);
+      letter-spacing: var(--heading-tracking, 0em);
+      font-style: var(--heading-style, normal);
     }
+    h1 { line-height: var(--display-lh, 1.05); }
+    h2 { line-height: var(--heading-lh, 1.2); }
 
     .eyebrow {
       display: inline-flex;
@@ -324,8 +327,7 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%);
-      background-size: 300% 300%;
+      background: var(--hero-bg, linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%));
       overflow: hidden;
     }
 
@@ -1508,20 +1510,29 @@
     /* ── Persona overrides (injected per category) ─────────────────────── */
     
 /* ─ EDITORIAL PERSONA ──────────────────────────────── */
-:root { --font-display: 'Cormorant Garamond', Georgia, serif; }
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  /* Heading style tokens — applied via base h1/h2/h3/h4 rule */
+  --heading-style:   italic;
+  --heading-weight:  600;
+  --heading-tracking: 0.02em;
+  --display-lh:      1.0;
+  --heading-lh:      1.2;
+  /* Hero background: warm dark editorial overlay on coffee shop image */
+  --hero-bg:
+    linear-gradient(160deg, rgba(10,6,3,0.82) 0%, rgba(40,15,5,0.70) 100%),
+    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat;
+}
 body { font-family: 'DM Sans', system-ui, sans-serif; }
-.section-title { font-style: italic; font-weight: 600; letter-spacing: -0.02em; }
+.section-heading { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 600; }
+.section-title { font-style: italic; font-weight: 600; letter-spacing: 0.02em; }
 .section-title::after {
   content: ''; display: block; width: 40px; height: 1.5px;
   background: var(--primary); margin: 14px auto 0; opacity: 0.5;
 }
-.hero {
-  background:
-    linear-gradient(160deg, rgba(10,6,3,0.78) 0%, rgba(60,20,5,0.65) 100%),
-    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat !important;
-  animation: none !important;
-}
-.hero-headline { font-style: italic; font-weight: 600; }
+.hero { animation: none !important; }
+.hero-headline { line-height: 1.0; }
+.hero-tagline, .hero p { color: rgba(255,255,255,0.88) !important; }
 .service-card { border-top: 2px solid var(--primary); border-radius: 4px 4px 16px 16px !important; }
 .service-card::before { border-radius: 4px 4px 16px 16px !important; }
 .nav-brand {
@@ -1549,14 +1560,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Naomi & i | Soldiers Hill">
-  <meta property="og:description" content="Specialty coffee, fresh pastries, and genuine hospitality in the heart of Soldiers Hill">
+  <meta property="og:description" content="Expertly crafted coffee, fresh food, and genuine hospitality since 2018">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://biz-naomi-91buwrhif-presencly-3833s-projects.vercel.app">
+  <meta property="og:url" content="https://biz-naomi-9yj5qznxd-presencly-3833s-projects.vercel.app">
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Naomi & i | Soldiers Hill">
-  <meta name="twitter:description" content="Specialty coffee, fresh pastries, and genuine hospitality in the heart of Soldiers Hill">
+  <meta name="twitter:description" content="Expertly crafted coffee, fresh food, and genuine hospitality since 2018">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1634,8 +1645,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <i class="fa-solid fa-location-dot"></i>
               Soldiers Hill &mdash; Trusted Local Experts
             </span>
-            <h1 class="hero-headline">Soldiers Hill's Beloved Neighbourhood Café</h1>
-            <p class="hero-tagline">Specialty coffee, fresh pastries, and genuine hospitality in the heart of Soldiers Hill</p>
+            <h1 class="hero-headline">Soldiers Hill's Favourite Neighbourhood Cafe</h1>
+            <p class="hero-tagline">Expertly crafted coffee, fresh food, and genuine hospitality since 2018</p>
 
             <div class="hero-actions hero-btns">
               <a href="#contact" class="btn-hero-primary">
@@ -1657,13 +1668,13 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">Since 2019</span>
-              <span class="stat-label">Trusted Local Favourite</span>
+              <span class="stat-value">2018</span>
+              <span class="stat-label">Locally owned since</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-value">100%</span>
-              <span class="stat-label">Freshly Made Daily</span>
+              <span class="stat-label">Ethically sourced coffee</span>
             </div>
             
             </div>
@@ -1743,28 +1754,28 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
                 <i class="fa-solid fa-mug-hot"></i>
               </div>
               <h3 class="service-title">Specialty Coffee</h3>
-              <p class="service-desc">We serve single-origin espresso blends, flat whites, cortados, and seasonal cold brews prepared by our trained baristas. Every cup is crafted with care and precision to bring out the best flavours.</p>
+              <p class="service-desc">We source and roast premium, single-origin beans to create perfectly pulled espresso and smooth pour-overs. Whether you prefer a flat white, cortado, or cold brew, our baristas craft every cup with care.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-croissant"></i>
+                <i class="fa-solid fa-utensils"></i>
               </div>
-              <h3 class="service-title">Fresh Pastries & Baking</h3>
-              <p class="service-desc">Our daily pastries, croissants, sourdough, and muffins are baked fresh in-house using quality ingredients. Perfect with your morning coffee or as a sweet treat any time of day.</p>
+              <h3 class="service-title">Fresh Brunch & Lunch</h3>
+              <p class="service-desc">Our seasonal menu celebrates local produce with dishes like smashed avo on sourdough, shakshuka, and salads made fresh daily. We cater to all dietary preferences, including vegan and gluten-free options.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-leaf"></i>
               </div>
-              <h3 class="service-title">Lunch & Light Meals</h3>
-              <p class="service-desc">From seasonal salads to house-made soups and toasted sandwiches, we focus on fresh, locally-sourced ingredients. Our menu changes regularly to reflect what's in season and what inspires our team.</p>
+              <h3 class="service-title">Locally Sourced Ingredients</h3>
+              <p class="service-desc">We partner with local farmers and suppliers to bring you the freshest, most sustainable food possible. Every meal supports our Soldiers Hill community.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-people-group"></i>
+                <i class="fa-solid fa-heart"></i>
               </div>
-              <h3 class="service-title">Community Space</h3>
-              <p class="service-desc">More than a café, Naomi & i is a gathering place where locals connect, work, and belong. We welcome everyone—whether you're here for five minutes or five hours.</p>
+              <h3 class="service-title">Community Gathering Space</h3>
+              <p class="service-desc">Our cosy interior and outdoor seating make Naomi & i the perfect spot to meet friends, work, or simply unwind. We're more than a cafe—we're part of the neighbourhood.</p>
             </div>
       </div>
     </div>
@@ -1780,12 +1791,12 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <div class="strip-label">Google Rating (186 reviews)</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">Since 2019</div>
-              <div class="strip-label">Trusted Local Favourite</div>
+              <div class="strip-value">2018</div>
+              <div class="strip-label">Locally owned since</div>
             </div>
             <div class="strip-item">
               <div class="strip-value">100%</div>
-              <div class="strip-label">Freshly Made Daily</div>
+              <div class="strip-label">Ethically sourced coffee</div>
             </div>
       </div>
     </div>
@@ -1799,7 +1810,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Story</span>
           <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.8vw,2.8rem);font-weight:800;color:var(--dark);margin-bottom:20px;letter-spacing:-0.02em;">About Naomi & i</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Naomi & i is a warm, welcoming café nestled in Soldiers Hill, serving expertly crafted coffee, freshly baked goods, and locally-sourced lunch options since 2019. With a 4.8★ rating from 186 Google reviews, we're known for our genuine hospitality and commitment to quality ingredients that keep locals coming back every morning.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Naomi & i is a beloved independent cafe in Soldiers Hill, known for our single-origin espresso, seasonal brunch menu, and warm community atmosphere. With a 4.8-star rating from 186 locals, we're proud to be the neighbourhood's go-to spot for quality coffee and conversation.</p>
 
           <div class="about-features">
             <div class="af-item">
@@ -1853,26 +1864,26 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Single-Origin Flat White</span>
-                  <span class="cat-menu-desc">Silky espresso with perfectly steamed milk.</span>
+                  <span class="cat-menu-name">Single-Origin Espresso</span>
+                  <span class="cat-menu-desc">Smooth, complex, and beautifully balanced.</span>
                 </div>
-                <span class="cat-menu-price">$5.20</span>
+                <span class="cat-menu-price">$4.50</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">House-Made Sourdough Sandwich</span>
-                  <span class="cat-menu-desc">Seasonal fillings with local produce and spreads.</span>
+                  <span class="cat-menu-name">Smashed Avo & Dukkah on Sourdough</span>
+                  <span class="cat-menu-desc">Toasted sourdough with local avocado, Egyptian spice blend, and poached eggs.</span>
                 </div>
-                <span class="cat-menu-price">$14.50</span>
+                <span class="cat-menu-price">$16.50</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Berry & Almond Croissant</span>
-                  <span class="cat-menu-desc">Buttery, flaky, and baked fresh daily.</span>
+                  <span class="cat-menu-name">House-Made Granola Bowl</span>
+                  <span class="cat-menu-desc">Yoghurt, seasonal fruit, and our honey-roasted granola.</span>
                 </div>
-                <span class="cat-menu-price">$6.80</span>
+                <span class="cat-menu-price">$14.00</span>
               </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed — just walk in and join us anytime</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed—walk in anytime and we'll find you a seat</p>
         </div>
         
             <div class="cat-hours-box">
@@ -1911,31 +1922,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Do you offer takeaway coffee and food?
+          Do you offer takeaway coffee?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely! We're set up for takeaway and can have your order ready quickly. Just ask at the counter and we'll get you sorted.</div>
+        <div class="faq-a">Absolutely! We're set up for quick takeaway service, and our cups are recyclable or compostable. Just let us know your order and we'll have it ready in minutes.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Are you open weekends?
+          Are you open on weekends?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we're open Saturday and Sunday from 8am–3pm. Perfect for a weekend brunch or afternoon catch-up with friends.</div>
+        <div class="faq-a">Yes, we're open Saturday and Sunday from 8am–3pm, perfect for a weekend brunch or catch-up with friends.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Do you cater for dietary requirements?
+          Do you have WiFi and suitable seating for working?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We're happy to accommodate gluten-free, vegan, and other dietary needs. Just let us know what you're after and we'll do our best to help.</div>
+        <div class="faq-a">We do have free WiFi, and our seating is perfect for laptop work or casual meetings. Just grab a table and enjoy—we don't have a strict time limit.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Can I book a table or host a small group?
+          Can you accommodate dietary requirements?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We welcome groups without bookings, but if you're planning something larger, just give us a call and we'll chat through the details.</div>
+        <div class="faq-a">We happily cater to vegan, gluten-free, dairy-free, and other dietary needs. Check our menu or ask your barista—we'll work with you.</div>
       </div>
       </div>
     </div>
@@ -1948,8 +1959,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Visit us today</h2>
-          <p class="contact-cta-line">Stop by Naomi & i today and discover why Soldiers Hill can't get enough of us. We'd love to make your next coffee unforgettable.</p>
+          <h2 class="contact-title">Visit us at Naomi & i today</h2>
+          <p class="contact-cta-line">Come join us for your next coffee break—we'd love to see you at Naomi & i.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -2033,7 +2044,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             <span class="footer-brand-dot"></span>
             Naomi & i
           </div>
-          <p class="footer-tagline">Specialty coffee, fresh pastries, and genuine hospitality in the heart of Soldiers Hill</p>
+          <p class="footer-tagline">Expertly crafted coffee, fresh food, and genuine hospitality since 2018</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
