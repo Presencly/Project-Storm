@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Baltic | Geelong</title>
-  <meta name="description" content="Exceptional coffee, fresh pastries, and warm hospitality in the heart of the city">
+  <meta name="description" content="Expertly crafted coffee, fresh pastries, and warm hospitality in the heart of the city">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,10 +74,13 @@
     /* ── Typography ────────────────────────────────────────────────────── */
     h1, h2, h3, h4 {
       font-family: var(--font-display);
-      line-height: 1.15;
-      font-weight: 700;
-      letter-spacing: 0em;
+      line-height: var(--heading-lh, 1.15);
+      font-weight: var(--heading-weight, 700);
+      letter-spacing: var(--heading-tracking, 0em);
+      font-style: var(--heading-style, normal);
     }
+    h1 { line-height: var(--display-lh, 1.05); }
+    h2 { line-height: var(--heading-lh, 1.2); }
 
     .eyebrow {
       display: inline-flex;
@@ -324,8 +327,7 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%);
-      background-size: 300% 300%;
+      background: var(--hero-bg, linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%));
       overflow: hidden;
     }
 
@@ -1508,20 +1510,29 @@
     /* ── Persona overrides (injected per category) ─────────────────────── */
     
 /* ─ EDITORIAL PERSONA ──────────────────────────────── */
-:root { --font-display: 'Cormorant Garamond', Georgia, serif; }
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  /* Heading style tokens — applied via base h1/h2/h3/h4 rule */
+  --heading-style:   italic;
+  --heading-weight:  600;
+  --heading-tracking: 0.02em;
+  --display-lh:      1.0;
+  --heading-lh:      1.2;
+  /* Hero background: warm dark editorial overlay on coffee shop image */
+  --hero-bg:
+    linear-gradient(160deg, rgba(10,6,3,0.82) 0%, rgba(40,15,5,0.70) 100%),
+    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat;
+}
 body { font-family: 'DM Sans', system-ui, sans-serif; }
-.section-title { font-style: italic; font-weight: 600; letter-spacing: -0.02em; }
+.section-heading { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 600; }
+.section-title { font-style: italic; font-weight: 600; letter-spacing: 0.02em; }
 .section-title::after {
   content: ''; display: block; width: 40px; height: 1.5px;
   background: var(--primary); margin: 14px auto 0; opacity: 0.5;
 }
-.hero {
-  background:
-    linear-gradient(160deg, rgba(10,6,3,0.78) 0%, rgba(60,20,5,0.65) 100%),
-    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat !important;
-  animation: none !important;
-}
-.hero-headline { font-style: italic; font-weight: 600; }
+.hero { animation: none !important; }
+.hero-headline { line-height: 1.0; }
+.hero-tagline, .hero p { color: rgba(255,255,255,0.88) !important; }
 .service-card { border-top: 2px solid var(--primary); border-radius: 4px 4px 16px 16px !important; }
 .service-card::before { border-radius: 4px 4px 16px 16px !important; }
 .nav-brand {
@@ -1549,14 +1560,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="The Baltic | Geelong">
-  <meta property="og:description" content="Exceptional coffee, fresh pastries, and warm hospitality in the heart of the city">
+  <meta property="og:description" content="Expertly crafted coffee, fresh pastries, and warm hospitality in the heart of the city">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://biz-the-baltic-bme85jukv-presencly-3833s-projects.vercel.app">
+  <meta property="og:url" content="https://biz-the-baltic-r8x8y1tpy-presencly-3833s-projects.vercel.app">
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="The Baltic | Geelong">
-  <meta name="twitter:description" content="Exceptional coffee, fresh pastries, and warm hospitality in the heart of the city">
+  <meta name="twitter:description" content="Expertly crafted coffee, fresh pastries, and warm hospitality in the heart of the city">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1636,7 +1647,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               Geelong &mdash; Trusted Local Experts
             </span>
             <h1 class="hero-headline">Geelong's Favourite Neighbourhood Café</h1>
-            <p class="hero-tagline">Exceptional coffee, fresh pastries, and warm hospitality in the heart of the city</p>
+            <p class="hero-tagline">Expertly crafted coffee, fresh pastries, and warm hospitality in the heart of the city</p>
 
             <div class="hero-actions hero-btns">
               <a href="tel:+61493783226" class="btn-hero-primary">
@@ -1654,17 +1665,17 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               
             <div class="stat-item">
               <span class="stat-value">4.7★</span>
-              <span class="stat-label">Google Rating (53 reviews)</span>
+              <span class="stat-label">Google Rating</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">Since 2019</span>
-              <span class="stat-label">Proudly Local</span>
+              <span class="stat-value">53</span>
+              <span class="stat-label">Local Reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">100%</span>
-              <span class="stat-label">Locally Sourced Pastries</span>
+              <span class="stat-value">10+</span>
+              <span class="stat-label">Years in Geelong</span>
             </div>
             
             </div>
@@ -1744,28 +1755,28 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
                 <i class="fa-solid fa-mug-hot"></i>
               </div>
               <h3 class="service-title">Specialty Coffee</h3>
-              <p class="service-desc">We work with award-winning local roasters to deliver perfectly extracted espresso and filter coffee every time. From flat whites to cortados, our baristas craft each cup with precision and care.</p>
+              <p class="service-desc">We serve expertly pulled espresso and beautifully crafted coffee drinks made with premium, single-origin beans. Whether you prefer a smooth flat white or bold long black, every cup is made with care.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-croissant"></i>
               </div>
-              <h3 class="service-title">Fresh Pastries & Baking</h3>
-              <p class="service-desc">Our range of croissants, sourdough sandwiches, and seasonal sweet treats are baked fresh daily by local suppliers. Pair them with your favourite brew for the ultimate morning experience.</p>
+              <h3 class="service-title">Fresh Pastries & Baked Goods</h3>
+              <p class="service-desc">Our pastries and savoury items are freshly baked daily, sourced from local artisan suppliers. From buttery croissants to savoury sourdough, taste the difference quality ingredients make.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-leaf"></i>
               </div>
-              <h3 class="service-title">Healthy Options</h3>
-              <p class="service-desc">We offer gluten-free, dairy-free, and vegan-friendly choices including smoothies, salads, and protein bowls. Eat well without compromising on flavour.</p>
+              <h3 class="service-title">Seasonal Menu</h3>
+              <p class="service-desc">We celebrate local produce with a menu that changes with the seasons, featuring fresh salads, grain bowls, and creative lunch options. Every dish is designed to complement your coffee experience.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-people-group"></i>
+                <i class="fa-solid fa-heart"></i>
               </div>
-              <h3 class="service-title">Community Space</h3>
-              <p class="service-desc">The Baltic is more than coffee—it's a gathering place where locals meet, work, and connect. We welcome regulars and first-time visitors with genuine warmth.</p>
+              <h3 class="service-title">Community Hub</h3>
+              <p class="service-desc">The Baltic is more than just a café—it's a gathering place for Geelong locals and visitors alike. We foster a warm, welcoming space where everyone feels at home.</p>
             </div>
       </div>
     </div>
@@ -1778,15 +1789,15 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
             <div class="strip-item">
               <div class="strip-value">4.7★</div>
-              <div class="strip-label">Google Rating (53 reviews)</div>
+              <div class="strip-label">Google Rating</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">Since 2019</div>
-              <div class="strip-label">Proudly Local</div>
+              <div class="strip-value">53</div>
+              <div class="strip-label">Local Reviews</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">100%</div>
-              <div class="strip-label">Locally Sourced Pastries</div>
+              <div class="strip-value">10+</div>
+              <div class="strip-label">Years in Geelong</div>
             </div>
       </div>
     </div>
@@ -1800,7 +1811,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Story</span>
           <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.8vw,2.8rem);font-weight:800;color:var(--dark);margin-bottom:20px;letter-spacing:-0.02em;">About The Baltic</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">The Baltic is a beloved local café in Geelong serving expertly crafted coffee and locally-sourced breakfast and lunch options since 2019. With a 4.7★ rating from over 50 Google reviews, we're known for our friendly service, quality ingredients, and welcoming atmosphere that keeps customers coming back.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">The Baltic is a beloved local café in Geelong, renowned for our meticulously sourced espresso, house-made pastries, and welcoming atmosphere. With a 4.7★ rating from 53 happy customers, we're committed to serving exceptional coffee and seasonal fare every single day.</p>
 
           <div class="about-features">
             <div class="af-item">
@@ -1854,26 +1865,26 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Smashed Avo on Sourdough</span>
-                  <span class="cat-menu-desc">House-made sourdough with creamy avocado and farm eggs.</span>
+                  <span class="cat-menu-name">Single-Origin Espresso</span>
+                  <span class="cat-menu-desc">Smooth, complex, and perfectly extracted every time.</span>
                 </div>
-                <span class="cat-menu-price">$16</span>
+                <span class="cat-menu-price">$4.50</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">The Baltic Flat White</span>
-                  <span class="cat-menu-desc">Locally roasted espresso with velvety microfoam milk.</span>
+                  <span class="cat-menu-name">Almond Croissant</span>
+                  <span class="cat-menu-desc">Buttery layers with toasted almonds and a hint of honey.</span>
                 </div>
-                <span class="cat-menu-price">$5</span>
+                <span class="cat-menu-price">$6.50</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Mixed Berry Granola Bowl</span>
-                  <span class="cat-menu-desc">Greek yoghurt, house granola, seasonal berries, and honey.</span>
+                  <span class="cat-menu-name">Seasonal Grain Bowl</span>
+                  <span class="cat-menu-desc">Fresh greens, roasted veg, legumes, and house-made dressing.</span>
                 </div>
-                <span class="cat-menu-price">$14</span>
+                <span class="cat-menu-price">$14.00</span>
               </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed—walk in anytime. For groups, call +61 493 783 226 to check availability.</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed—walk in anytime. Groups of 6+ welcome with a quick call ahead.</p>
         </div>
         
             <div class="cat-hours-box">
@@ -1912,31 +1923,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Do you offer takeaway coffee and food?
+          Do you offer takeaway coffee?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely! We're set up for quick takeaway service, and our cups are recyclable. Grab your coffee and pastry to go anytime.</div>
+        <div class="faq-a">Absolutely! We're happy to prepare your coffee to go in a reusable cup or our takeaway cup. Just let us know your preference when you order.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
           Are you open on weekends?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we're open Saturday and Sunday from 8am–3pm. Perfect for a weekend breakfast or brunch catch-up.</div>
+        <div class="faq-a">Yes, we're open Saturday and Sunday from 8am–3pm. Perfect for a weekend brunch or catch-up with friends.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
           Do you cater for dietary requirements?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We offer dairy-free, gluten-free, vegan, and other dietary options. Just let our team know and we'll find the perfect option for you.</div>
+        <div class="faq-a">We offer plant-based milk alternatives and can accommodate most dietary needs. Ask our friendly staff about gluten-free or vegan options available.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
           Can I book a table for a group?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We welcome groups on a first-come, first-served basis. For larger parties, give us a call on +61 493 783 226 and we'll do our best to accommodate you.</div>
+        <div class="faq-a">We welcome walk-ins anytime, and we're happy to accommodate groups where possible. For larger parties, please call ahead to let us know you're coming.</div>
       </div>
       </div>
     </div>
@@ -1949,8 +1960,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Come visit us today</h2>
-          <p class="contact-cta-line">Pop in and experience the warmth of The Baltic—we'd love to see you soon and make your day a little bit brighter.</p>
+          <h2 class="contact-title">Visit us for your daily dose</h2>
+          <p class="contact-cta-line">Come by The Baltic and discover why Geelong locals can't get enough of our coffee and pastries. We'd love to see you soon.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -2034,7 +2045,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             <span class="footer-brand-dot"></span>
             The Baltic
           </div>
-          <p class="footer-tagline">Exceptional coffee, fresh pastries, and warm hospitality in the heart of the city</p>
+          <p class="footer-tagline">Expertly crafted coffee, fresh pastries, and warm hospitality in the heart of the city</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
