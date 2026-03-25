@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Betty’s Geelong | Geelong</title>
-  <meta name="description" content="Exceptional coffee, fresh food, and warm hospitality in the heart of Geelong">
+  <meta name="description" content="Award-winning coffee, fresh pastries, and genuine hospitality in the heart of Geelong">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,10 +74,13 @@
     /* ── Typography ────────────────────────────────────────────────────── */
     h1, h2, h3, h4 {
       font-family: var(--font-display);
-      line-height: 1.15;
-      font-weight: 700;
-      letter-spacing: 0em;
+      line-height: var(--heading-lh, 1.15);
+      font-weight: var(--heading-weight, 700);
+      letter-spacing: var(--heading-tracking, 0em);
+      font-style: var(--heading-style, normal);
     }
+    h1 { line-height: var(--display-lh, 1.05); }
+    h2 { line-height: var(--heading-lh, 1.2); }
 
     .eyebrow {
       display: inline-flex;
@@ -324,8 +327,7 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%);
-      background-size: 300% 300%;
+      background: var(--hero-bg, linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%));
       overflow: hidden;
     }
 
@@ -1508,20 +1510,29 @@
     /* ── Persona overrides (injected per category) ─────────────────────── */
     
 /* ─ EDITORIAL PERSONA ──────────────────────────────── */
-:root { --font-display: 'Cormorant Garamond', Georgia, serif; }
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  /* Heading style tokens — applied via base h1/h2/h3/h4 rule */
+  --heading-style:   italic;
+  --heading-weight:  600;
+  --heading-tracking: 0.02em;
+  --display-lh:      1.0;
+  --heading-lh:      1.2;
+  /* Hero background: warm dark editorial overlay on coffee shop image */
+  --hero-bg:
+    linear-gradient(160deg, rgba(10,6,3,0.82) 0%, rgba(40,15,5,0.70) 100%),
+    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat;
+}
 body { font-family: 'DM Sans', system-ui, sans-serif; }
-.section-title { font-style: italic; font-weight: 600; letter-spacing: -0.02em; }
+.section-heading { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 600; }
+.section-title { font-style: italic; font-weight: 600; letter-spacing: 0.02em; }
 .section-title::after {
   content: ''; display: block; width: 40px; height: 1.5px;
   background: var(--primary); margin: 14px auto 0; opacity: 0.5;
 }
-.hero {
-  background:
-    linear-gradient(160deg, rgba(10,6,3,0.78) 0%, rgba(60,20,5,0.65) 100%),
-    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat !important;
-  animation: none !important;
-}
-.hero-headline { font-style: italic; font-weight: 600; }
+.hero { animation: none !important; }
+.hero-headline { line-height: 1.0; }
+.hero-tagline, .hero p { color: rgba(255,255,255,0.88) !important; }
 .service-card { border-top: 2px solid var(--primary); border-radius: 4px 4px 16px 16px !important; }
 .service-card::before { border-radius: 4px 4px 16px 16px !important; }
 .nav-brand {
@@ -1549,14 +1560,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Betty’s Geelong | Geelong">
-  <meta property="og:description" content="Exceptional coffee, fresh food, and warm hospitality in the heart of Geelong">
+  <meta property="og:description" content="Award-winning coffee, fresh pastries, and genuine hospitality in the heart of Geelong">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://biz-bettys-geelong-mx5axdi81-presencly-3833s-projects.vercel.app">
+  <meta property="og:url" content="https://biz-bettys-geelong-mr16guogi-presencly-3833s-projects.vercel.app">
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Betty’s Geelong | Geelong">
-  <meta name="twitter:description" content="Exceptional coffee, fresh food, and warm hospitality in the heart of Geelong">
+  <meta name="twitter:description" content="Award-winning coffee, fresh pastries, and genuine hospitality in the heart of Geelong">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1635,8 +1646,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <i class="fa-solid fa-location-dot"></i>
               Geelong &mdash; Trusted Local Experts
             </span>
-            <h1 class="hero-headline">Geelong's Beloved Neighbourhood Café</h1>
-            <p class="hero-tagline">Exceptional coffee, fresh food, and warm hospitality in the heart of Geelong</p>
+            <h1 class="hero-headline">Geelong's Beloved Local Café</h1>
+            <p class="hero-tagline">Award-winning coffee, fresh pastries, and genuine hospitality in the heart of Geelong</p>
 
             <div class="hero-actions hero-btns">
               <a href="tel:+61447631966" class="btn-hero-primary">
@@ -1658,13 +1669,13 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">17+</span>
+              <span class="stat-value">17</span>
               <span class="stat-label">Customer Reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">10+</span>
-              <span class="stat-label">Years Local</span>
+              <span class="stat-value">2013</span>
+              <span class="stat-label">Since Opening</span>
             </div>
             
             </div>
@@ -1744,28 +1755,28 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
                 <i class="fa-solid fa-mug-hot"></i>
               </div>
               <h3 class="service-title">Specialty Coffee</h3>
-              <p class="service-desc">We source premium, ethically-sourced beans and craft each espresso-based drink with precision and care. Our skilled baristas are passionate about delivering the perfect cup every single time.</p>
+              <p class="service-desc">We source premium single-origin beans and prepare each cup with care and skill. From classic espresso to creative filter brews, our baristas craft coffee that tastes as good as it looks.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-utensils"></i>
+                <i class="fa-solid fa-croissant"></i>
               </div>
-              <h3 class="service-title">Fresh Café Food</h3>
-              <p class="service-desc">Our menu features seasonal, locally-sourced ingredients prepared fresh daily in-house. From wholesome breakfast bowls to hearty salads and sandwiches, there's something to satisfy every appetite.</p>
+              <h3 class="service-title">Fresh Pastries & Baked Goods</h3>
+              <p class="service-desc">Our pastries are baked fresh daily using quality ingredients and traditional techniques. Whether it's croissants, sourdough, or seasonal specials, every bite delivers genuine flavour.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-leaf"></i>
               </div>
-              <h3 class="service-title">Dietary Accommodations</h3>
-              <p class="service-desc">We happily cater to vegan, vegetarian, gluten-free, and other dietary requirements. Just let our friendly team know your needs and we'll create something delicious for you.</p>
+              <h3 class="service-title">Healthy Options</h3>
+              <p class="service-desc">We offer a range of nutritious salads, grain bowls, and plant-based options alongside our café classics. Every meal is designed to nourish and satisfy.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-handshake"></i>
+                <i class="fa-solid fa-heart"></i>
               </div>
               <h3 class="service-title">Community Space</h3>
-              <p class="service-desc">Betty's is more than just a café—it's a welcoming community hub where locals connect over great coffee and conversation. We love being part of the Geelong neighbourhood.</p>
+              <p class="service-desc">Betty's is more than a café—it's a gathering place for our Geelong community. We host regulars, professionals, and families who all share our love of good food and good company.</p>
             </div>
       </div>
     </div>
@@ -1781,12 +1792,12 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <div class="strip-label">Google Rating</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">17+</div>
+              <div class="strip-value">17</div>
               <div class="strip-label">Customer Reviews</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">10+</div>
-              <div class="strip-label">Years Local</div>
+              <div class="strip-value">2013</div>
+              <div class="strip-label">Since Opening</div>
             </div>
       </div>
     </div>
@@ -1800,7 +1811,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Story</span>
           <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.8vw,2.8rem);font-weight:800;color:var(--dark);margin-bottom:20px;letter-spacing:-0.02em;">About Betty's Geelong</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Betty's Geelong is a locally-owned café dedicated to serving exceptional specialty coffee and fresh, made-to-order meals in a welcoming atmosphere. With a 4.8-star rating from our community, we're proud to be a trusted gathering place for breakfast, lunch, and everything in between.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Betty's Geelong is a community café dedicated to serving exceptional specialty coffee and freshly baked goods to locals and visitors alike. With a 4.8-star rating from our loyal customers, we pride ourselves on creating a warm, welcoming space where everyone feels at home.</p>
 
           <div class="about-features">
             <div class="af-item">
@@ -1854,26 +1865,26 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">House Espresso</span>
-                  <span class="cat-menu-desc">Rich, balanced single-origin blend.</span>
+                  <span class="cat-menu-name">Single-Origin Espresso</span>
+                  <span class="cat-menu-desc">Rotating seasonal beans from ethical roasters.</span>
                 </div>
                 <span class="cat-menu-price">$4.50</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Smashed Avo & Ricotta Toast</span>
-                  <span class="cat-menu-desc">Sourdough with fresh ricotta, roasted tomatoes, herbs.</span>
+                  <span class="cat-menu-name">Butter Croissant</span>
+                  <span class="cat-menu-desc">Flaky, golden, and baked fresh daily.</span>
                 </div>
-                <span class="cat-menu-price">$15.50</span>
+                <span class="cat-menu-price">$5.50</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Seasonal Soup of the Day</span>
-                  <span class="cat-menu-desc">Made fresh daily with local produce.</span>
+                  <span class="cat-menu-name">Smashed Avocado & Sourdough</span>
+                  <span class="cat-menu-desc">Local sourdough topped with ripe avo and poached eggs.</span>
                 </div>
-                <span class="cat-menu-price">$8.50</span>
+                <span class="cat-menu-price">$16</span>
               </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed — walk in and join us anytime</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed—just drop in anytime. We'll always make room for you.</p>
         </div>
         
             <div class="cat-hours-box">
@@ -1912,31 +1923,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Do you offer takeaway coffee?
+          Do you offer takeaway coffee and food?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely! We're happy to prepare your coffee for takeaway in our reusable cups or your own. Just let us know when you order.</div>
+        <div class="faq-a">Yes, we're fully set up for takeaway orders—just ask at the counter. Most items are available to take away, including our popular coffee cups and pastries.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
           Are you open on weekends?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we're open Saturday and Sunday from 8am–3pm. It's a great time to visit without the weekday rush.</div>
+        <div class="faq-a">Absolutely! We're open Saturday and Sunday from 8am to 3pm, making us the perfect weekend breakfast or brunch spot in Geelong.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Can you accommodate larger groups or events?
+          Do you cater for dietary requirements?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We welcome groups and can accommodate special requests when possible. Please call us on +61 447 631 966 to discuss your needs.</div>
+        <div class="faq-a">We have plenty of vegetarian, vegan, and gluten-free options available. Just chat with our staff about your requirements—we're happy to help.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Do you have free Wi-Fi?
+          Can I bring my laptop and work here?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, free Wi-Fi is available for all our customers. Feel free to work or study with us over a coffee.</div>
+        <div class="faq-a">Of course! We love supporting remote workers and freelancers. Free WiFi is available, and our seating is comfortable for a few hours of work.</div>
       </div>
       </div>
     </div>
@@ -1949,8 +1960,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Visit us today</h2>
-          <p class="contact-cta-line">Come join us for an exceptional café experience. Your next favourite coffee is waiting at Betty's Geelong.</p>
+          <h2 class="contact-title">Come visit us today</h2>
+          <p class="contact-cta-line">Come in and discover why Geelong locals choose Betty's for their daily caffeine fix and a friendly face.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -2034,7 +2045,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             <span class="footer-brand-dot"></span>
             Betty’s Geelong
           </div>
-          <p class="footer-tagline">Exceptional coffee, fresh food, and warm hospitality in the heart of Geelong</p>
+          <p class="footer-tagline">Award-winning coffee, fresh pastries, and genuine hospitality in the heart of Geelong</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
