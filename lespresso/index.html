@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>L'espresso | Ballarat Central</title>
-  <meta name="description" content="Award-winning coffee and contemporary Italian cuisine in the heart of the CBD">
+  <meta name="description" content="Authentic Italian cuisine and award-winning coffee since 1998">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,10 +74,13 @@
     /* ── Typography ────────────────────────────────────────────────────── */
     h1, h2, h3, h4 {
       font-family: var(--font-display);
-      line-height: 1.15;
-      font-weight: 700;
-      letter-spacing: 0em;
+      line-height: var(--heading-lh, 1.15);
+      font-weight: var(--heading-weight, 700);
+      letter-spacing: var(--heading-tracking, 0em);
+      font-style: var(--heading-style, normal);
     }
+    h1 { line-height: var(--display-lh, 1.05); }
+    h2 { line-height: var(--heading-lh, 1.2); }
 
     .eyebrow {
       display: inline-flex;
@@ -324,8 +327,7 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%);
-      background-size: 300% 300%;
+      background: var(--hero-bg, linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%));
       overflow: hidden;
     }
 
@@ -1508,20 +1510,29 @@
     /* ── Persona overrides (injected per category) ─────────────────────── */
     
 /* ─ EDITORIAL PERSONA ──────────────────────────────── */
-:root { --font-display: 'Cormorant Garamond', Georgia, serif; }
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  /* Heading style tokens — applied via base h1/h2/h3/h4 rule */
+  --heading-style:   italic;
+  --heading-weight:  600;
+  --heading-tracking: 0.02em;
+  --display-lh:      1.0;
+  --heading-lh:      1.2;
+  /* Hero background: warm dark editorial overlay on coffee shop image */
+  --hero-bg:
+    linear-gradient(160deg, rgba(10,6,3,0.82) 0%, rgba(40,15,5,0.70) 100%),
+    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat;
+}
 body { font-family: 'DM Sans', system-ui, sans-serif; }
-.section-title { font-style: italic; font-weight: 600; letter-spacing: -0.02em; }
+.section-heading { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 600; }
+.section-title { font-style: italic; font-weight: 600; letter-spacing: 0.02em; }
 .section-title::after {
   content: ''; display: block; width: 40px; height: 1.5px;
   background: var(--primary); margin: 14px auto 0; opacity: 0.5;
 }
-.hero {
-  background:
-    linear-gradient(160deg, rgba(10,6,3,0.78) 0%, rgba(60,20,5,0.65) 100%),
-    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat !important;
-  animation: none !important;
-}
-.hero-headline { font-style: italic; font-weight: 600; }
+.hero { animation: none !important; }
+.hero-headline { line-height: 1.0; }
+.hero-tagline, .hero p { color: rgba(255,255,255,0.88) !important; }
 .service-card { border-top: 2px solid var(--primary); border-radius: 4px 4px 16px 16px !important; }
 .service-card::before { border-radius: 4px 4px 16px 16px !important; }
 .nav-brand {
@@ -1545,24 +1556,18 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
   margin-bottom: 8px;
 }
 
-  
-    /* ── Review patch ────────────────────────────── */
-    h1, h2 { font-style: italic; } h1 { line-height: 1.0; letter-spacing: -0.01em; } h2 { line-height: 1.2; letter-spacing: 0.01em; } .section-heading { font-weight: 600; font-style: italic; } .hero { background: linear-gradient(160deg, #1c0a00 0%, #3b1a0a 50%, #5c2a0e 100%); background-size: unset; animation: none; } .hero-tagline, .hero-eyebrow { color: rgba(255,255,255,0.88); } .hero-headline { color: #ffffff; }
-  
-    /* ── Review patch ────────────────────────────── */
-    h1, h2 { font-style: italic; letter-spacing: 0.01em; } h1 { line-height: 1.05; } h2 { line-height: 1.2; } .section-heading { font-size: clamp(1.8rem, 4vw, 3rem); } .hero-tagline, .hero p { color: rgba(255,255,255,0.88); } .hero-headline { color: #ffffff; }
   </style>
 
   <!-- Open Graph -->
   <meta property="og:title"       content="L'espresso | Ballarat Central">
-  <meta property="og:description" content="Award-winning coffee and contemporary Italian cuisine in the heart of the CBD">
+  <meta property="og:description" content="Authentic Italian cuisine and award-winning coffee since 1998">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://biz-lespresso-qnlnq2cne-presencly-3833s-projects.vercel.app">
+  <meta property="og:url" content="https://biz-lespresso-p82k1g7xl-presencly-3833s-projects.vercel.app">
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="L'espresso | Ballarat Central">
-  <meta name="twitter:description" content="Award-winning coffee and contemporary Italian cuisine in the heart of the CBD">
+  <meta name="twitter:description" content="Authentic Italian cuisine and award-winning coffee since 1998">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1641,8 +1646,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <i class="fa-solid fa-location-dot"></i>
               Ballarat Central &mdash; Trusted Local Experts
             </span>
-            <h1 class="hero-headline">Ballarat Central's Authentic Italian Espresso Bar</h1>
-            <p class="hero-tagline">Award-winning coffee and contemporary Italian cuisine in the heart of the CBD</p>
+            <h1 class="hero-headline">Ballarat Central's Finest Italian Espresso & Fine Dining</h1>
+            <p class="hero-tagline">Authentic Italian cuisine and award-winning coffee since 1998</p>
 
             <div class="hero-actions hero-btns">
               <a href="tel:+61353331789" class="btn-hero-primary">
@@ -1660,17 +1665,17 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               
             <div class="stat-item">
               <span class="stat-value">4.5★</span>
-              <span class="stat-label">Google Rating</span>
+              <span class="stat-label">Google Rating (881 Reviews)</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">881</span>
-              <span class="stat-label">Customer Reviews</span>
+              <span class="stat-value">26+</span>
+              <span class="stat-label">Years in Business</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">16+</span>
-              <span class="stat-label">Years Serving Ballarat</span>
+              <span class="stat-value">100%</span>
+              <span class="stat-label">Fresh Ingredients Daily</span>
             </div>
             
             </div>
@@ -1747,31 +1752,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-cup-hot"></i>
+                <i class="fa-solid fa-utensils"></i>
               </div>
-              <h3 class="service-title">Specialty Coffee</h3>
-              <p class="service-desc">Our baristas prepare premium espresso drinks using single-origin beans and traditional Italian techniques. From flat whites to long blacks, every cup is crafted with precision and care.</p>
+              <h3 class="service-title">À la Carte Dining</h3>
+              <p class="service-desc">Enjoy our full menu of classic Italian dishes, freshly prepared by our experienced chefs. From risotto to pasta to premium mains, every dish reflects our commitment to authenticity and quality.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-utensils"></i>
+                <i class="fa-solid fa-coffee"></i>
               </div>
-              <h3 class="service-title">Italian Dining</h3>
-              <p class="service-desc">Experience authentic Italian cuisine featuring fresh pasta, risotto, and seasonal specials prepared by our experienced kitchen team. Our menu celebrates classic recipes with quality local and imported ingredients.</p>
+              <h3 class="service-title">Espresso Bar</h3>
+              <p class="service-desc">Our baristas craft premium espresso drinks using 100% arabica beans roasted to perfection. Perfect for a quick coffee or a leisurely café experience.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-wine-glass"></i>
               </div>
-              <h3 class="service-title">Wine & Beverages</h3>
-              <p class="service-desc">Curated selection of Italian wines, craft beers, and house-made beverages to complement your meal. Our team can recommend pairings that enhance your dining experience.</p>
+              <h3 class="service-title">Wine & Beverage Selection</h3>
+              <p class="service-desc">Curated Italian and Australian wines pair beautifully with our menu. We also offer craft beers, soft drinks, and signature cocktails.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-users"></i>
+                <i class="fa-solid fa-calendar-check"></i>
               </div>
-              <h3 class="service-title">Events & Groups</h3>
-              <p class="service-desc">Perfect venue for intimate gatherings, business lunches, or celebrations in our warm, inviting space. We accommodate group bookings and can tailor menus for your special occasion.</p>
+              <h3 class="service-title">Private Function Bookings</h3>
+              <p class="service-desc">Host your celebration, corporate event, or intimate gathering in our warm, elegant space. We accommodate groups of all sizes with custom menus.</p>
             </div>
       </div>
     </div>
@@ -1784,15 +1789,15 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
             <div class="strip-item">
               <div class="strip-value">4.5★</div>
-              <div class="strip-label">Google Rating</div>
+              <div class="strip-label">Google Rating (881 Reviews)</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">881</div>
-              <div class="strip-label">Customer Reviews</div>
+              <div class="strip-value">26+</div>
+              <div class="strip-label">Years in Business</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">16+</div>
-              <div class="strip-label">Years Serving Ballarat</div>
+              <div class="strip-value">100%</div>
+              <div class="strip-label">Fresh Ingredients Daily</div>
             </div>
       </div>
     </div>
@@ -1806,7 +1811,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Story</span>
           <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.8vw,2.8rem);font-weight:800;color:var(--dark);margin-bottom:20px;letter-spacing:-0.02em;">About L'espresso</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">L'espresso is a beloved fixture in Ballarat Central, serving meticulously crafted espresso and authentic Italian dishes to loyal customers since 2008. With a 4.5★ rating from 881 Google reviews, we're recognised for our quality coffee, welcoming atmosphere, and commitment to culinary excellence.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">L'espresso is Ballarat Central's beloved destination for authentic Italian dining and expertly crafted espresso, earning a 4.5★ rating from over 880 satisfied guests. Our kitchen combines traditional Italian recipes with locally sourced ingredients, delivering an unforgettable dining experience in the heart of the city.</p>
 
           <div class="about-features">
             <div class="af-item">
@@ -1860,31 +1865,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">House Espresso</span>
-                  <span class="cat-menu-desc">Single-origin, expertly pulled shots with velvety crema.</span>
+                  <span class="cat-menu-name">Risotto ai Funghi Porcini</span>
+                  <span class="cat-menu-desc">Creamy arborio rice with wild mushrooms and truffle oil.</span>
                 </div>
-                <span class="cat-menu-price">$4.50</span>
+                <span class="cat-menu-price">$28</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Tagliatelle al Ragù</span>
-                  <span class="cat-menu-desc">Traditional Bolognese with fresh egg pasta and slow-cooked sauce.</span>
+                  <span class="cat-menu-name">Tagliatelle alla Bolognese</span>
+                  <span class="cat-menu-desc">House-made pasta with slow-cooked meat ragù.</span>
                 </div>
-                <span class="cat-menu-price">$24.00</span>
+                <span class="cat-menu-price">$24</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Burrata & Heirloom Tomato Salad</span>
-                  <span class="cat-menu-desc">Creamy burrata with seasonal tomatoes and basil oil.</span>
+                  <span class="cat-menu-name">Branzino al Forno</span>
+                  <span class="cat-menu-desc">Wood-fired sea bass with lemon, herbs, and seasonal vegetables.</span>
                 </div>
-                <span class="cat-menu-price">$18.50</span>
+                <span class="cat-menu-price">$38</span>
               </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended for groups and weekends — call +61 3 5333 1789 or walk in anytime</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended on weekends and public holidays — walk-ins always welcome subject to availability</p>
         </div>
         
             <div class="cat-hours-box">
               <div class="cat-hours-label"><i class="fa-solid fa-clock"></i>&nbsp; Kitchen Hours</div>
-              <div class="cat-hours-text">Mon–Fri 7am–10pm  |  Sat–Sun 8am–11pm</div>
+              <div class="cat-hours-text">Mon–Thu 11am–10pm  |  Fri–Sat 11am–11pm  |  Sun 10am–10pm</div>
             </div>
       </div>
     </div>
@@ -1918,31 +1923,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Do you accept reservations?
+          Do you take reservations?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we recommend booking ahead, especially for weekends and larger groups. Walk-ins are always welcome during quieter periods.</div>
+        <div class="faq-a">Yes, we warmly welcome bookings and recommend them for weekends and larger groups. Call us on +61 3 5333 1789 or walk in anytime — we love spontaneous visits too.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Do you offer takeaway coffee and food?
+          Do you offer takeaway coffee and meals?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely! Our takeaway service is available for coffee, pastries, and select menu items. Call ahead for larger orders.</div>
+        <div class="faq-a">Absolutely! Our espresso bar is perfect for takeaway, and we also box up meals for those on the go. Just ask our friendly staff.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Are you open for breakfast?
+          Are you fully licensed?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We open at 7am weekdays and 8am weekends, serving coffee, pastries, and breakfast dishes to get your day started right.</div>
+        <div class="faq-a">Yes, we hold a full liquor licence and serve a carefully selected range of Italian and Australian wines, beers, and spirits.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Do you cater for dietary requirements?
+          Can you accommodate dietary requirements?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we're happy to accommodate vegetarian, vegan, and gluten-free requests. Please let us know when ordering or making a reservation.</div>
+        <div class="faq-a">Of course. We're happy to modify dishes for vegetarian, vegan, gluten-free, and other dietary needs — just let us know when you book or order.</div>
       </div>
       </div>
     </div>
@@ -1955,8 +1960,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Book your table or visit us today</h2>
-          <p class="contact-cta-line">Come experience the warmth and authenticity of L'espresso — where great coffee and Italian hospitality meet. We'd love to welcome you to our table.</p>
+          <h2 class="contact-title">Reserve Your Table Today</h2>
+          <p class="contact-cta-line">Experience authentic Italian hospitality at L'espresso — book your table today or drop in for an espresso and a taste of Italy right here in Ballarat Central.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -2040,7 +2045,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             <span class="footer-brand-dot"></span>
             L'espresso
           </div>
-          <p class="footer-tagline">Award-winning coffee and contemporary Italian cuisine in the heart of the CBD</p>
+          <p class="footer-tagline">Authentic Italian cuisine and award-winning coffee since 1998</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
