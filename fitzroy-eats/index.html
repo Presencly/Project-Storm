@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fitzroy Eats | Melbourne VIC</title>
-  <meta name="description" content="Contemporary cuisine in the heart of Melbourne's creative precinct">
+  <meta name="description" content="Modern Australian cuisine in the heart of Fitzroy">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -103,7 +103,8 @@
       margin-bottom: 16px;
     }
 
-    .section-heading {
+    .section-heading,
+    .section-title {
       font-family: var(--font-display);
       font-size: clamp(1.8rem, 4vw, 3rem);
       font-weight: var(--heading-weight, 700);
@@ -751,6 +752,17 @@
       letter-spacing: 0.04em;
     }
 
+    /* About heading — replaces inline style for persona-override friendliness */
+    .about-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.8vw, 2.8rem);
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
     /* ══════════════════════════════════════════════════════════════════════
        ABOUT
     ══════════════════════════════════════════════════════════════════════ */
@@ -834,6 +846,31 @@
       filter: brightness(1.08);
       transform: translateY(-2px);
       box-shadow: 0 8px 24px color-mix(in srgb, var(--primary) 38%, transparent);
+    }
+
+    .about-hours-card {
+      background: var(--surface-2);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-top: 16px;
+    }
+    .about-hours-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .about-hours-title i { color: var(--primary); }
+    .about-hours-text {
+      font-size: 0.93rem;
+      color: var(--dark);
+      line-height: 1.7;
     }
 
     .about-right {
@@ -940,6 +977,13 @@
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.08em;
+    }
+
+    .review-author {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 2px;
     }
 
     .review-meta {
@@ -1441,6 +1485,11 @@
       padding: var(--section-pad) 0;
     }
 
+    /* ── Scroll offset for fixed nav ──────────────────────────────── */
+    #home, #services, #about, #testimonials, #faq, #contact, #menu, #emergency, #gallery, #schedule {
+      scroll-margin-top: calc(var(--nav-height) + 12px);
+    }
+
     .section-title {
       font-family: var(--font-display);
       font-size: clamp(1.8rem, 4vw, 3rem);
@@ -1503,7 +1552,7 @@
       padding: 0;
     }
     .faq-item.open .faq-a {
-      max-height: 300px;
+      max-height: 500px;
       padding-bottom: 20px;
     }
 
@@ -1546,6 +1595,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 .hero-stats-card { justify-content: flex-start; }
 .section-title { text-align: left; }
 .section-label { text-align: left; }
+.section-sub { margin: 0 0 56px; }
 .section-title::before {
   content: '"';
   display: block;
@@ -1560,14 +1610,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Fitzroy Eats | Melbourne VIC">
-  <meta property="og:description" content="Contemporary cuisine in the heart of Melbourne's creative precinct">
+  <meta property="og:description" content="Modern Australian cuisine in the heart of Fitzroy">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://biz-fitzroy-eats-btke6xtuc-presencly-3833s-projects.vercel.app">
+  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/fitzroy-eats/">
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Fitzroy Eats | Melbourne VIC">
-  <meta name="twitter:description" content="Contemporary cuisine in the heart of Melbourne's creative precinct">
+  <meta name="twitter:description" content="Modern Australian cuisine in the heart of Fitzroy">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1605,14 +1655,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         </a>
 
         <div class="nav-links">
-          <a href="#services">Services</a>
+          <a href="#services">Menu</a>
           <a href="#about">About</a>
-          <a href="#testimonials">Reviews</a>
+          
           <a href="#faq">FAQ</a>
-          <a href="#contact" class="nav-cta">Get a Quote</a>
+          <a href="#contact" class="nav-cta">Book a Table</a>
         </div>
 
-        <div class="nav-hamburger" id="nav-hamburger" aria-label="Menu" role="button" tabindex="0">
+        <div class="nav-hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false" role="button" tabindex="0">
           <span></span>
           <span></span>
           <span></span>
@@ -1624,9 +1674,9 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
   <!-- Mobile nav drawer -->
   <div class="mobile-nav" id="mobile-nav">
     <div class="mobile-nav-links">
-      <a href="#services">Services</a>
+      <a href="#services">Menu</a>
       <a href="#about">About</a>
-      <a href="#testimonials">Reviews</a>
+      
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
       <a href="tel:0395550303" style="color:var(--primary);font-weight:700;">(03) 9555 0303</a>
@@ -1643,20 +1693,20 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           <div class="hero-left">
             <span class="hero-eyebrow">
               <i class="fa-solid fa-location-dot"></i>
-              Melbourne VIC &mdash; Trusted Local Experts
+              Melbourne VIC &mdash; Your Local Favourite
             </span>
-            <h1 class="hero-headline">Fitzroy's favourite neighbourhood restaurant</h1>
-            <p class="hero-tagline">Contemporary cuisine in the heart of Melbourne's creative precinct</p>
+            <h1 class="hero-headline">Fitzroy's Best Kept Dining Secret</h1>
+            <p class="hero-tagline">Modern Australian cuisine in the heart of Fitzroy</p>
 
             <div class="hero-actions hero-btns">
-              <a href="tel:0395550303" class="btn-hero-primary">
-                <i class="fa-solid fa-phone"></i>
-                Call Now
+              <a href="https://www.google.com/maps/search/101+Brunswick+St%2C+Fitzroy+VIC+3065" class="btn-hero-primary">
+                <i class="fa-solid fa-location-dot"></i>
+                Find Us
                 <i class="fa-solid fa-arrow-right btn-arrow"></i>
               </a>
-              <a href="#contact" class="btn-hero-secondary">
+              <a href="#menu" class="btn-hero-secondary">
                 <i class="fa-solid fa-envelope"></i>
-                Free Quote
+                Make a Reservation
               </a>
             </div>
 
@@ -1673,8 +1723,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">Est. Local</span>
-              <span class="stat-label">Fitzroy Favourite</span>
+              <span class="stat-value">15+</span>
+              <span class="stat-label">Years Fitzroy Favourite</span>
             </div>
             
             </div>
@@ -1695,13 +1745,13 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               </div>
               <div class="proof-divider"></div>
               <div class="proof-features">
-                <div class="proof-feat"><i class="fa-solid fa-circle-check"></i> Locally owned &amp; operated</div>
-                <div class="proof-feat"><i class="fa-solid fa-shield-halved"></i> Licensed &amp; fully insured</div>
-                <div class="proof-feat"><i class="fa-solid fa-clock"></i> Fast response time</div>
-                <div class="proof-feat"><i class="fa-solid fa-thumbs-up"></i> Satisfaction guaranteed</div>
+                <div class="proof-feat"><i class="fa-solid fa-leaf"></i> Fresh food made with care, daily</div>
+<div class="proof-feat"><i class="fa-solid fa-heart"></i> Beloved local institution</div>
+<div class="proof-feat"><i class="fa-solid fa-clock"></i> Open 7 days for the community</div>
+<div class="proof-feat"><i class="fa-solid fa-star"></i> Consistently top-rated on Google</div>
               </div>
               <div class="proof-cta-hint">
-                <i class="fa-solid fa-arrow-down"></i> Scroll to see our work
+                <i class="fa-solid fa-arrow-down"></i> Scroll to explore our menu
               </div>
             </div>
           </div>
@@ -1714,26 +1764,11 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     <div class="hero-features">
       <div class="container">
         <div class="hero-features-inner">
-          <div class="hero-feat">
-            <i class="fa-solid fa-shield-halved"></i>
-            Licensed &amp; Insured
-          </div>
-          <div class="hero-feat">
-            <i class="fa-solid fa-star"></i>
-            5-Star Rated
-          </div>
-          <div class="hero-feat">
-            <i class="fa-solid fa-house-chimney"></i>
-            Locally Owned
-          </div>
-          <div class="hero-feat">
-            <i class="fa-solid fa-bolt"></i>
-            Fast Response
-          </div>
-          <div class="hero-feat">
-            <i class="fa-solid fa-circle-check"></i>
-            Satisfaction Guaranteed
-          </div>
+          <div class="hero-feat"><i class="fa-solid fa-leaf"></i> Fresh Daily</div>
+<div class="hero-feat"><i class="fa-solid fa-star"></i> 5-Star Rated</div>
+<div class="hero-feat"><i class="fa-solid fa-house-chimney"></i> Locally Owned</div>
+<div class="hero-feat"><i class="fa-solid fa-mug-hot"></i> Specialty Coffee</div>
+<div class="hero-feat"><i class="fa-solid fa-circle-check"></i> Open 7 Days</div>
         </div>
       </div>
     </div>
@@ -1746,36 +1781,36 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <span class="eyebrow"><i class="fa-solid fa-list-check"></i> What We Do</span>
       </div>
       <h2 class="section-heading fade-in">Our Services</h2>
-      <p class="section-sub fade-in">Everything you need, delivered with care and expertise by your trusted local team.</p>
+      <p class="section-sub fade-in">Crafted with care, made for you — discover what we have on offer.</p>
       <div class="services-grid">
         
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-utensils"></i>
               </div>
-              <h3 class="service-title">Dine-In Dining</h3>
-              <p class="service-desc">Experience our carefully curated menu in a welcoming atmosphere designed for locals and visitors alike. Our intimate space creates the perfect setting for casual meals, date nights, and group celebrations.</p>
+              <h3 class="service-title">Dine In</h3>
+              <p class="service-desc">Experience our carefully curated restaurant atmosphere with attentive service and an extensive wine list. Perfect for casual meals, special occasions, or intimate gatherings with friends and family.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-bag-shopping"></i>
               </div>
-              <h3 class="service-title">Takeaway Service</h3>
-              <p class="service-desc">Enjoy Fitzroy Eats at home with our convenient takeaway options available daily. Fresh, quality meals packaged for easy transport without compromising on taste or presentation.</p>
+              <h3 class="service-title">Takeaway</h3>
+              <p class="service-desc">Enjoy Fitzroy Eats quality without leaving home—our takeaway menu is designed to travel beautifully. Call ahead to place your order and collect at your convenience.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-calendar-check"></i>
+                <i class="fa-solid fa-champagne-glasses"></i>
               </div>
-              <h3 class="service-title">Private Events & Bookings</h3>
-              <p class="service-desc">Host your special occasion at Fitzroy Eats with tailored catering and private function options. Our team works with you to create memorable dining experiences for birthdays, corporate events, and celebrations.</p>
+              <h3 class="service-title">Private Events</h3>
+              <p class="service-desc">Host your celebration, corporate function, or milestone moment in our flexible event space. Our team will work with you to create an unforgettable culinary experience tailored to your vision.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-wine-glass"></i>
               </div>
               <h3 class="service-title">Beverage Selection</h3>
-              <p class="service-desc">Complement your meal with our curated wine list and craft beverage offerings sourced from local and international producers. From natural wines to craft beer, we pair perfectly with our seasonal menu.</p>
+              <p class="service-desc">Discover carefully selected local and imported wines, craft beers, and signature cocktails. Our knowledgeable staff can recommend perfect pairings for any dish on our menu.</p>
             </div>
       </div>
     </div>
@@ -1786,75 +1821,12 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     <div class="container">
       <div class="trust-strip-inner">
         
-            <div class="strip-item">
-              <div class="strip-value">4.6★</div>
-              <div class="strip-label">Google Rating</div>
-            </div>
-            <div class="strip-item">
-              <div class="strip-value">211</div>
-              <div class="strip-label">Customer Reviews</div>
-            </div>
-            <div class="strip-item">
-              <div class="strip-value">Est. Local</div>
-              <div class="strip-label">Fitzroy Favourite</div>
-            </div>
       </div>
     </div>
   </div>
 
-  <!-- ══ ABOUT ══════════════════════════════════════════════════════════════ -->
-  <section class="section-about" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <!-- Left -->
-        <div class="fade-in">
-          <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Story</span>
-          <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.8vw,2.8rem);font-weight:800;color:var(--dark);margin-bottom:20px;letter-spacing:-0.02em;">About Fitzroy Eats</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Fitzroy Eats has established itself as a beloved dining destination in Melbourne's vibrant inner north, serving modern Australian cuisine with locally-sourced ingredients. With a 4.6-star rating from over 211 Google reviews, the restaurant is celebrated for its warm atmosphere, skilled kitchen, and genuine hospitality.</p>
-
-          <div class="about-features">
-            <div class="af-item">
-              <span class="af-icon"><i class="fa-solid fa-map-pin"></i></span>
-              <span class="af-text">Locally owned and operated right here in Melbourne VIC</span>
-            </div>
-            <div class="af-item">
-              <span class="af-icon"><i class="fa-solid fa-shield-halved"></i></span>
-              <span class="af-text">Licensed, insured &amp; fully certified — your peace of mind matters</span>
-            </div>
-            <div class="af-item">
-              <span class="af-icon"><i class="fa-solid fa-gauge-high"></i></span>
-              <span class="af-text">Fast response times &amp; upfront pricing — no hidden surprises</span>
-            </div>
-            <div class="af-item">
-              <span class="af-icon"><i class="fa-solid fa-star"></i></span>
-              <span class="af-text">Hundreds of 5-star reviews from happy customers across the area</span>
-            </div>
-          </div>
-
-          <a href="https://www.google.com/maps/search/101+Brunswick+St%2C+Fitzroy+VIC+3065" target="_blank" rel="noopener" class="btn-maps">
-            <i class="fa-brands fa-google"></i>
-            Find Us on Google Maps
-          </a>
-        </div>
-
-        <!-- Right -->
-        <div class="about-right fade-in" style="transition-delay:0.12s;">
-          
-            <div class="rating-card">
-              <div class="rating-number">4.6</div>
-              <div class="rating-stars">★★★★½</div>
-              <div class="rating-label">on Google</div>
-              <div class="rating-count">211 Google reviews</div>
-            </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ TESTIMONIALS (injected) ════════════════════════════════════════════ -->
+  <!-- ══ CATEGORY SECTION (food categories — before about) ════════════════ -->
   
-
-  <!-- ══ CATEGORY SECTION (injected) ═══════════════════════════════════════ -->
   
   <!-- ═══ MENU / HOURS ══════════════════════════════════════════════════════ -->
   <section class="section-cat" id="menu" style="background:#1a1a1a;padding:90px 0;">
@@ -1864,31 +1836,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Seasonal Market Salad</span>
-                  <span class="cat-menu-desc">Fresh local greens with house-made dressing and artisan cheese.</span>
+                  <span class="cat-menu-name">Seared Barramundi</span>
+                  <span class="cat-menu-desc">Native finger limes and seasonal greens.</span>
                 </div>
-                <span class="cat-menu-price">$18</span>
+                <span class="cat-menu-price">$32</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Pan-Seared Ocean Fish</span>
-                  <span class="cat-menu-desc">Daily catch with roasted vegetables and citrus beurre blanc.</span>
-                </div>
-                <span class="cat-menu-price">$34</span>
-              </div>
-              <div class="cat-menu-item">
-                <div class="cat-menu-info">
-                  <span class="cat-menu-name">Grass-Fed Beef Ribeye</span>
-                  <span class="cat-menu-desc">Premium Australian beef with seasonal sides and jus.</span>
+                  <span class="cat-menu-name">Grass-Fed Beef Sirloin</span>
+                  <span class="cat-menu-desc">Roasted root vegetables and red wine jus.</span>
                 </div>
                 <span class="cat-menu-price">$38</span>
               </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended on weekends—call (03) 9555 0303 or walk-ins welcome during quieter times</p>
+              <div class="cat-menu-item">
+                <div class="cat-menu-info">
+                  <span class="cat-menu-name">Heirloom Vegetable Tart</span>
+                  <span class="cat-menu-desc">House-made pastry with local cheese and herbs.</span>
+                </div>
+                <span class="cat-menu-price">$24</span>
+              </div>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended on weekends — call (03) 9555 0303 or walk in welcome</p>
         </div>
         
             <div class="cat-hours-box">
               <div class="cat-hours-label"><i class="fa-solid fa-clock"></i>&nbsp; Kitchen Hours</div>
-              <div class="cat-hours-text">Mon–Fri 11am–10pm | Sat–Sun 10am–11pm</div>
+              <div class="cat-hours-text">Mon–Fri 11am–10pm  |  Sat–Sun 10am–11pm</div>
             </div>
       </div>
     </div>
@@ -1900,9 +1872,9 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
       padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.08);}
     .cat-menu-item:last-child{border-bottom:none;}
     .cat-menu-info{display:flex;flex-direction:column;gap:4px;}
-    .cat-menu-name{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.05rem;color:#c0392b;}
+    .cat-menu-name{font-family:var(--font-display);font-weight:700;font-size:1.05rem;color:#c0392b;}
     .cat-menu-desc{font-size:0.9rem;color:#666;}
-    .cat-menu-price{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.05rem;
+    .cat-menu-price{font-family:var(--font-display);font-weight:700;font-size:1.05rem;
       color:#f39c12;white-space:nowrap;}
     .cat-hours-box{background:#c0392b;color:#fff;border-radius:14px;padding:32px 28px;}
     .cat-hours-label{font-weight:700;font-size:0.9rem;letter-spacing:1px;text-transform:uppercase;
@@ -1910,6 +1882,50 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     .cat-hours-text{font-size:1.05rem;line-height:1.9;white-space:pre-line;}
     .cat-note{margin-top:20px;font-size:0.9rem;color:#777;}
   </style>
+  
+
+  <!-- ══ ABOUT ══════════════════════════════════════════════════════════════ -->
+  <section class="section-about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Left -->
+        <div class="fade-in">
+          <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Us</span>
+          <h2 class="about-heading">About Fitzroy Eats</h2>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Fitzroy Eats has earned a stellar 4.6★ rating across 211 Google reviews for its innovative approach to contemporary Australian dining. Located in Melbourne's vibrant Fitzroy precinct, we specialise in locally-sourced ingredients and creative seasonal menus that celebrate regional produce.</p>
+
+          <div class="about-features">
+            <div class="af-item"><span class="af-icon"><i class="fa-solid fa-leaf"></i></span><span class="af-text">Locally sourced ingredients, made fresh in-house every day</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-heart"></i></span><span class="af-text">A beloved local institution — family recipes, community warmth</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-clock"></i></span><span class="af-text">Open seven days — breakfast, lunch, and everything in between</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Consistently 5-star rated by our loyal regulars on Google</span></div>
+          </div>
+
+          
+          <a href="https://www.google.com/maps/search/101+Brunswick+St%2C+Fitzroy+VIC+3065" target="_blank" rel="noopener" class="btn-maps">
+            <i class="fa-brands fa-google"></i>
+            Find Us on Google Maps
+          </a>
+          
+        </div>
+
+        <!-- Right -->
+        <div class="about-right fade-in" style="transition-delay:0.12s;">
+          
+            <div class="rating-card">
+              <div class="rating-number">4.6</div>
+              <div class="rating-stars">★★★★½</div>
+              <div class="rating-label">on Google</div>
+              <div class="rating-count">211 Google reviews</div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS (injected) ════════════════════════════════════════════ -->
+  
+
+  <!-- ══ CATEGORY SECTION (injected — non-food categories only) ════════════ -->
+  
 
   <!-- ══ FAQ ══════════════════════════════════════════════════════════════ -->
   <section class="section-faq" id="faq">
@@ -1921,32 +1937,32 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
       <div class="faq-list fade-in">
         
       <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        <button class="faq-q">
           Do you take reservations?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we recommend booking ahead especially for weekends and group dining. You're also welcome to walk in during quieter periods—call (03) 9555 0303 to check availability.</div>
+        <div class="faq-a">Yes, we warmly recommend booking ahead, especially for weekends and groups. Walk-ins are always welcome subject to availability.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          What type of cuisine do you serve?
+        <button class="faq-q">
+          What are your opening hours?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We serve contemporary Australian cuisine featuring seasonal, locally-sourced ingredients prepared with modern techniques. Our menu changes regularly to reflect the best produce available.</div>
+        <div class="faq-a">We're open Mon–Fri 11am–10pm and Sat–Sun 10am–11pm. Public holidays may have adjusted hours, so please call ahead.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        <button class="faq-q">
           Do you cater for dietary requirements?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely—we accommodate vegetarian, vegan, gluten-free, and allergy requirements. Please mention your dietary needs when booking so our kitchen can prepare something special for you.</div>
+        <div class="faq-a">Absolutely. We happily accommodate vegetarian, vegan, gluten-free, and other dietary needs. Let us know when booking or arriving.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        <button class="faq-q">
           Is there parking available?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Street parking is available throughout Fitzroy, and several paid car parks are nearby. We're also easily accessible by tram and public transport.</div>
+        <div class="faq-a">Street parking is available nearby, and several paid car parks are within a short walk of our Fitzroy location.</div>
       </div>
       </div>
     </div>
@@ -1959,8 +1975,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Make your reservation now</h2>
-          <p class="contact-cta-line">Join us at Fitzroy Eats—where great food and genuine welcome come together. Call (03) 9555 0303 to book your table today.</p>
+          <h2 class="contact-title">Book Your Table at Fitzroy Eats</h2>
+          <p class="contact-cta-line">Ready to experience Fitzroy Eats? Call us today or visit in person to discover why locals love us.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -2047,7 +2063,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             <span class="footer-brand-dot"></span>
             Fitzroy Eats
           </div>
-          <p class="footer-tagline">Contemporary cuisine in the heart of Melbourne's creative precinct</p>
+          <p class="footer-tagline">Modern Australian cuisine in the heart of Fitzroy</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -2062,7 +2078,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             <a href="#home">Home</a>
             <a href="#services">Services</a>
             <a href="#about">About Us</a>
-            <a href="#testimonials">Reviews</a>
+            
             <a href="#contact">Contact</a>
           </div>
         </div>
@@ -2088,7 +2104,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
       </div>
 
       <div class="footer-bottom">
-        <span class="footer-copy">&copy; 2025 Fitzroy Eats. All rights reserved. Melbourne VIC, Australia.</span>
+        <span class="footer-copy">&copy; 2026 Fitzroy Eats. All rights reserved. Melbourne VIC, Australia.</span>
         <div class="footer-bottom-links">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Use</a>
@@ -2106,7 +2122,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
       </a>
       <a href="#contact" class="sticky-bar-contact">
         <i class="fa-solid fa-envelope"></i>
-        Free Quote
+        Book a Table
       </a>
     </div>
   </div>
@@ -2129,11 +2145,13 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
       function openMobileNav() {
         mobileNav.classList.add('open');
         hamburger.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
       }
 
       function closeMobileNav() {
         mobileNav.classList.remove('open');
         hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
       }
 
       hamburger.addEventListener('click', function () {
@@ -2215,6 +2233,18 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
       document.querySelectorAll('.hero-stats-card, .trust-strip-inner').forEach(function (el) {
         counterObserver.observe(el);
+      });
+
+      /* 8 — FAQ accordion with aria */
+      document.querySelectorAll('.faq-q').forEach(function (btn) {
+        btn.removeAttribute('onclick');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.addEventListener('click', function () {
+          var item = this.parentElement;
+          var isOpen = item.classList.contains('open');
+          item.classList.toggle('open');
+          this.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+        });
       });
 
       /* 7 — Smooth anchor scroll */
