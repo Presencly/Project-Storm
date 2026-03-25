@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cafe Lekker | Ballarat Central</title>
-  <meta name="description" content="Award-winning cafe and restaurant with 4.7★ rating from 870 locals">
+  <meta name="description" content="Award-winning coffee, fresh brunch & European-inspired lunch in the heart of Ballarat">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,10 +74,13 @@
     /* ── Typography ────────────────────────────────────────────────────── */
     h1, h2, h3, h4 {
       font-family: var(--font-display);
-      line-height: 1.15;
-      font-weight: 700;
-      letter-spacing: 0em;
+      line-height: var(--heading-lh, 1.15);
+      font-weight: var(--heading-weight, 700);
+      letter-spacing: var(--heading-tracking, 0em);
+      font-style: var(--heading-style, normal);
     }
+    h1 { line-height: var(--display-lh, 1.05); }
+    h2 { line-height: var(--heading-lh, 1.2); }
 
     .eyebrow {
       display: inline-flex;
@@ -324,7 +327,7 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%);
+      background: var(--hero-bg, linear-gradient(135deg, var(--primary) 0%, var(--secondary) 55%, var(--accent) 100%));
       overflow: hidden;
     }
 
@@ -1507,27 +1510,28 @@
     /* ── Persona overrides (injected per category) ─────────────────────── */
     
 /* ─ EDITORIAL PERSONA ──────────────────────────────── */
-:root { --font-display: 'Cormorant Garamond', Georgia, serif; }
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  /* Heading style tokens — applied via base h1/h2/h3/h4 rule */
+  --heading-style:   italic;
+  --heading-weight:  600;
+  --heading-tracking: 0.02em;
+  --display-lh:      1.0;
+  --heading-lh:      1.2;
+  /* Hero background: warm dark editorial overlay on coffee shop image */
+  --hero-bg:
+    linear-gradient(160deg, rgba(10,6,3,0.82) 0%, rgba(40,15,5,0.70) 100%),
+    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat;
+}
 body { font-family: 'DM Sans', system-ui, sans-serif; }
-/* Italic serif headlines — core editorial requirement */
-h1, h2 { font-style: italic; font-weight: 600; letter-spacing: 0.02em; }
-h1 { line-height: 1.0; }
-h2 { line-height: 1.2; }
-.section-heading { font-size: clamp(1.8rem, 4vw, 3rem); }
+.section-heading { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 600; }
 .section-title { font-style: italic; font-weight: 600; letter-spacing: 0.02em; }
 .section-title::after {
   content: ''; display: block; width: 40px; height: 1.5px;
   background: var(--primary); margin: 14px auto 0; opacity: 0.5;
 }
-.hero {
-  background:
-    linear-gradient(160deg, rgba(10,6,3,0.82) 0%, rgba(40,15,5,0.70) 100%),
-    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat !important;
-  animation: none !important;
-}
-.hero-headline {
-  font-style: italic; font-weight: 600; letter-spacing: 0.02em; line-height: 1.0;
-}
+.hero { animation: none !important; }
+.hero-headline { line-height: 1.0; }
 .hero-tagline, .hero p { color: rgba(255,255,255,0.88) !important; }
 .service-card { border-top: 2px solid var(--primary); border-radius: 4px 4px 16px 16px !important; }
 .service-card::before { border-radius: 4px 4px 16px 16px !important; }
@@ -1552,24 +1556,18 @@ h2 { line-height: 1.2; }
   margin-bottom: 8px;
 }
 
-  
-    /* ── Review patch ────────────────────────────── */
-    h1, h2 { font-style: italic; letter-spacing: 0.01em; } h3, h4 { letter-spacing: 0.02em; } h1 { line-height: 1.05; } h2 { line-height: 1.2; } .hero { background: linear-gradient(160deg, #2c1810 0%, #5c2d1a 50%, #8b4513 100%); } .hero-headline { line-height: 0.95; } .hero p, .hero-tagline, .hero .section-sub { color: rgba(255,255,255,0.88); }
-  
-    /* ── Review patch ────────────────────────────── */
-    h1, h2 { font-style: italic; letter-spacing: 0.02em; } h3, h4 { letter-spacing: 0.02em; } .hero { background: linear-gradient(160deg, #2c1810 0%, #7b3a2a 45%, #c0392b 100%); } .section-heading { font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 700; font-style: italic; } .hero-tagline, .hero-eyebrow { color: rgba(255,255,255,0.88); } .hero-headline { color: #ffffff; }
   </style>
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Cafe Lekker | Ballarat Central">
-  <meta property="og:description" content="Award-winning cafe and restaurant with 4.7★ rating from 870 locals">
+  <meta property="og:description" content="Award-winning coffee, fresh brunch & European-inspired lunch in the heart of Ballarat">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://biz-cafe-lekker-ebfg791s9-presencly-3833s-projects.vercel.app">
+  <meta property="og:url" content="https://biz-cafe-lekker-h5l8gsgeg-presencly-3833s-projects.vercel.app">
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Cafe Lekker | Ballarat Central">
-  <meta name="twitter:description" content="Award-winning cafe and restaurant with 4.7★ rating from 870 locals">
+  <meta name="twitter:description" content="Award-winning coffee, fresh brunch & European-inspired lunch in the heart of Ballarat">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1648,8 +1646,8 @@ h2 { line-height: 1.2; }
               <i class="fa-solid fa-location-dot"></i>
               Ballarat Central &mdash; Trusted Local Experts
             </span>
-            <h1 class="hero-headline">Ballarat Central's Premier Destination for Exceptional Dining</h1>
-            <p class="hero-tagline">Award-winning cafe and restaurant with 4.7★ rating from 870 locals</p>
+            <h1 class="hero-headline">Ballarat Central's Favourite Neighbourhood Cafe</h1>
+            <p class="hero-tagline">Award-winning coffee, fresh brunch & European-inspired lunch in the heart of Ballarat</p>
 
             <div class="hero-actions hero-btns">
               <a href="tel:+61353328141" class="btn-hero-primary">
@@ -1676,7 +1674,7 @@ h2 { line-height: 1.2; }
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">12+</span>
+              <span class="stat-value">10+</span>
               <span class="stat-label">Years in Ballarat</span>
             </div>
             
@@ -1754,31 +1752,31 @@ h2 { line-height: 1.2; }
         
             <div class="service-card">
               <div class="service-icon">
+                <i class="fa-solid fa-mug-hot"></i>
+              </div>
+              <h3 class="service-title">Specialty Coffee</h3>
+              <p class="service-desc">We source premium single-origin beans and train our baristas to perfection for every espresso-based drink. From flat whites to cortados, each cup is crafted with care and expertise.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
                 <i class="fa-solid fa-utensils"></i>
               </div>
-              <h3 class="service-title">All-Day Dining</h3>
-              <p class="service-desc">From early-morning espresso to evening dinner service, we serve fresh, seasonal dishes throughout the day. Our versatile menu caters to breakfast lovers, lunch professionals, and dinner guests seeking quality hospitality.</p>
+              <h3 class="service-title">Brunch & Lunch</h3>
+              <p class="service-desc">Our seasonal menu features fresh, locally-sourced ingredients prepared daily by our experienced kitchen team. Try our smashed avocado on sourdough, shakshuka, or daily specials.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-wine-glass"></i>
+                <i class="fa-solid fa-cake-slice"></i>
               </div>
-              <h3 class="service-title">Beverage Selection</h3>
-              <p class="service-desc">Enjoy expertly made coffee, specialty teas, craft beers, wines, and signature cocktails prepared by our skilled team. We pride ourselves on matching the perfect drink to every meal.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-people-group"></i>
-              </div>
-              <h3 class="service-title">Private & Group Bookings</h3>
-              <p class="service-desc">Host your celebration, business meeting, or gathering in our welcoming venue with tailored menus available. Our team ensures every event is memorable and impeccably catered.</p>
+              <h3 class="service-title">Cakes & Pastries</h3>
+              <p class="service-desc">Homemade desserts and pastries baked fresh each morning, including gluten-free and vegan options. Perfect with a coffee or as a sweet treat to take away.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-leaf"></i>
               </div>
-              <h3 class="service-title">Dietary Flexibility</h3>
-              <p class="service-desc">We accommodate vegetarian, vegan, gluten-free, and other dietary requirements with creativity and care. Our chefs work with you to ensure everyone at your table enjoys their meal.</p>
+              <h3 class="service-title">Dietary Options</h3>
+              <p class="service-desc">We cater for all dietary requirements including vegan, vegetarian, gluten-free and dairy-free choices. Ask our staff about modifications to any dish on the menu.</p>
             </div>
       </div>
     </div>
@@ -1798,7 +1796,7 @@ h2 { line-height: 1.2; }
               <div class="strip-label">Customer Reviews</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">12+</div>
+              <div class="strip-value">10+</div>
               <div class="strip-label">Years in Ballarat</div>
             </div>
       </div>
@@ -1813,7 +1811,7 @@ h2 { line-height: 1.2; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Story</span>
           <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.8vw,2.8rem);font-weight:800;color:var(--dark);margin-bottom:20px;letter-spacing:-0.02em;">About Cafe Lekker</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Cafe Lekker has been a beloved fixture in Ballarat Central for over a decade, earning its stellar 4.7★ reputation through consistently exceptional food, welcoming service, and a vibrant atmosphere. We specialise in modern brunch, lunch, and dinner offerings crafted from quality ingredients, with a carefully curated menu that celebrates both local and international flavours.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Cafe Lekker has been a beloved fixture in Ballarat Central since 2015, serving expertly crafted coffee and seasonal brunch dishes to locals and visitors alike. With a 4.7★ rating from over 870 reviews, we're proud to be recognised for our warm hospitality, quality ingredients, and vibrant community atmosphere.</p>
 
           <div class="about-features">
             <div class="af-item">
@@ -1868,30 +1866,30 @@ h2 { line-height: 1.2; }
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
                   <span class="cat-menu-name">Smashed Avocado on Sourdough</span>
-                  <span class="cat-menu-desc">Creamy avocado, poached eggs, heirloom tomato, and dukkah on toasted sourdough.</span>
+                  <span class="cat-menu-desc">Creamy avo, feta, tomato, microgreens & dukkah on toasted sourdough.</span>
                 </div>
-                <span class="cat-menu-price">$18</span>
+                <span class="cat-menu-price">$16</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Cafe Lekker's Signature Bowl</span>
-                  <span class="cat-menu-desc">Quinoa, roasted vegetables, grilled chicken, tahini dressing, and crispy chickpeas.</span>
+                  <span class="cat-menu-name">Shakshuka</span>
+                  <span class="cat-menu-desc">Baked eggs in spiced tomato sauce with Turkish bread & labne.</span>
                 </div>
-                <span class="cat-menu-price">$22</span>
+                <span class="cat-menu-price">$15</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Slow-Cooked Beef Brisket</span>
-                  <span class="cat-menu-desc">Tender brisket, house-made BBQ sauce, slaw, and hand-cut chips.</span>
+                  <span class="cat-menu-name">Lekker Flat White</span>
+                  <span class="cat-menu-desc">Single-origin espresso with velvety steamed milk — our signature brew.</span>
                 </div>
-                <span class="cat-menu-price">$28</span>
+                <span class="cat-menu-price">$5</span>
               </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended on weekends and for groups—call +61 3 5332 8141 or walk in anytime</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings welcome for groups of 4+ — call us on +61 3 5332 8141 or walk in anytime</p>
         </div>
         
             <div class="cat-hours-box">
               <div class="cat-hours-label"><i class="fa-solid fa-clock"></i>&nbsp; Kitchen Hours</div>
-              <div class="cat-hours-text">Mon–Fri 11am–10pm  |  Sat–Sun 10am–11pm</div>
+              <div class="cat-hours-text">Mon–Fri 7:30am–5pm  |  Sat–Sun 10am–5pm</div>
             </div>
       </div>
     </div>
@@ -1925,31 +1923,31 @@ h2 { line-height: 1.2; }
         
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Do you take bookings?
+          Do you offer takeaway coffee and food?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we recommend bookings for weekends and larger groups, but walk-ins are always welcome. Call +61 3 5332 8141 to secure your table.</div>
+        <div class="faq-a">Absolutely! We offer full takeaway service for coffee, brunch, lunch and pastries. Perfect for busy professionals and families on the go.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Do you offer takeaway?
+          Are you open on weekends?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely—we offer convenient takeaway for most menu items. Simply call ahead or order at the counter for quick collection.</div>
+        <div class="faq-a">Yes, we're open 10am–11pm on weekends. We do get busy Saturday and Sunday mornings, so arriving early ensures a spot without too much wait.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Are you open for breakfast?
+          Can you accommodate large group bookings?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we open at 11am weekdays and 10am weekends, serving brunch and all-day dining throughout our opening hours.</div>
+        <div class="faq-a">We love groups! For parties of 8 or more, we recommend calling ahead to ensure we have enough space and can prepare properly for your visit.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Can you cater for dietary requirements?
+          Do you have WiFi and are you suitable for working?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We happily accommodate vegan, vegetarian, gluten-free, and other dietary needs—just let us know when you book or order.</div>
+        <div class="faq-a">Yes, free WiFi is available throughout the cafe. We're a popular spot for laptop workers and remote meetings, with comfortable seating and good natural light.</div>
       </div>
       </div>
     </div>
@@ -1962,8 +1960,8 @@ h2 { line-height: 1.2; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Ready to visit us?</h2>
-          <p class="contact-cta-line">Join hundreds of satisfied locals who trust Cafe Lekker for their favourite meals — we'd love to see you soon.</p>
+          <h2 class="contact-title">Visit us in Ballarat Central</h2>
+          <p class="contact-cta-line">Experience Ballarat Central's best brunch spot — pop in today or call ahead to reserve your table for an unforgettable meal.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -2047,7 +2045,7 @@ h2 { line-height: 1.2; }
             <span class="footer-brand-dot"></span>
             Cafe Lekker
           </div>
-          <p class="footer-tagline">Award-winning cafe and restaurant with 4.7★ rating from 870 locals</p>
+          <p class="footer-tagline">Award-winning coffee, fresh brunch & European-inspired lunch in the heart of Ballarat</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
