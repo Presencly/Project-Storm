@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cat-themed Japanese cafe | neko Geelong | Geelong</title>
-  <meta name="description" content="Authentic Flavours, Unforgettable Meals">
+  <meta name="description" content="Meet adorable cats whilst enjoying authentic Japanese cuisine">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1330,14 +1366,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Cat-themed Japanese cafe | neko Geelong | Geelong">
-  <meta property="og:description" content="Authentic Flavours, Unforgettable Meals">
+  <meta property="og:description" content="Meet adorable cats whilst enjoying authentic Japanese cuisine">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/cat-themed-japanese-cafe-neko-geelong/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Cat-themed Japanese cafe | neko Geelong | Geelong">
-  <meta name="twitter:description" content="Authentic Flavours, Unforgettable Meals">
+  <meta name="twitter:description" content="Meet adorable cats whilst enjoying authentic Japanese cuisine">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1419,8 +1455,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <i class="fa-solid fa-location-dot"></i>
               Geelong &mdash; Your Local Favourite
             </span>
-            <h1 class="hero-headline">Geelong's Trusted Restaurant Experts</h1>
-            <p class="hero-tagline">Authentic Flavours, Unforgettable Meals</p>
+            <h1 class="hero-headline">Geelong's Purrfect Japanese Cafe Experience</h1>
+            <p class="hero-tagline">Meet adorable cats whilst enjoying authentic Japanese cuisine</p>
 
             <div class="hero-actions hero-btns">
               <a href="https://www.google.com/maps/search/LEVEL+1%2F237+Ryrie+St%2C+Geelong+VIC+3220" class="btn-hero-primary">
@@ -1437,18 +1473,18 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             <div class="hero-stats-card">
               
             <div class="stat-item">
-              <span class="stat-value">10+</span>
-              <span class="stat-label">Years Experience</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
               <span class="stat-value">4.8★</span>
               <span class="stat-label">Google Rating</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">204+</span>
-              <span class="stat-label">Happy Customers</span>
+              <span class="stat-value">204</span>
+              <span class="stat-label">Customer Reviews</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-value">10+</span>
+              <span class="stat-label">Resident Cats</span>
             </div>
             
             </div>
@@ -1510,31 +1546,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-cat"></i>
               </div>
-              <h3 class="service-title">Dine In</h3>
-              <p class="service-desc">We offer professional dine in services tailored to your needs. Our experienced team delivers results you can rely on.</p>
+              <h3 class="service-title">Cat Interaction & Cuddles</h3>
+              <p class="service-desc">Spend quality time with our friendly resident cats whilst enjoying your meal in a safe, comfortable environment. Our cats are well-socialised and love meeting café guests throughout the day.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-check-circle"></i>
+                <i class="fa-solid fa-utensils"></i>
               </div>
-              <h3 class="service-title">Takeaway</h3>
-              <p class="service-desc">We offer professional takeaway services tailored to your needs. Our experienced team delivers results you can rely on.</p>
+              <h3 class="service-title">Authentic Japanese Cuisine</h3>
+              <p class="service-desc">Savour traditional Japanese dishes prepared with quality ingredients, from ramen and sushi to donburi bowls and appetisers. Our menu celebrates Japanese culinary traditions with modern flair.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-thumbs-up"></i>
+                <i class="fa-solid fa-heart"></i>
               </div>
-              <h3 class="service-title">Catering</h3>
-              <p class="service-desc">We offer professional catering services tailored to your needs. Our experienced team delivers results you can rely on.</p>
+              <h3 class="service-title">Relaxed Cafe Atmosphere</h3>
+              <p class="service-desc">Unwind in our cosy, thoughtfully decorated space designed for both cat lovers and food enthusiasts. Perfect for dates, catch-ups with friends, or solo visits seeking peaceful company.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-shield-halved"></i>
+                <i class="fa-solid fa-birthday-cake"></i>
               </div>
-              <h3 class="service-title">Private Events</h3>
-              <p class="service-desc">We offer professional private events services tailored to your needs. Our experienced team delivers results you can rely on.</p>
+              <h3 class="service-title">Events & Private Bookings</h3>
+              <p class="service-desc">Host your birthday, celebration, or special event at neko Geelong with custom packages available. Our team can arrange themed experiences that blend feline charm with Japanese hospitality.</p>
             </div>
       </div>
     </div>
@@ -1549,9 +1585,72 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     </div>
   </div>
 
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Food Safety Certified</span></div><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-brands fa-tripadvisor"></i></div><span class="accred-label">TripAdvisor Listed</span></div><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-solid fa-wine-glass"></i></div><span class="accred-label">Licensed Premises</span></div></div>
+    </div>
+  </div>
+  
+
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
   
+  <!-- ═══ MENU / HOURS ══════════════════════════════════════════════════════ -->
+  <section class="section-cat" id="menu" style="background:#1a1a1a;padding:90px 0;">
+    <div class="container">
+      <h2 class="section-title">Menu Highlights</h2>
+      <div class="cat-food-grid">
+        <div class="cat-menu-list">
+              <div class="cat-menu-item">
+                <div class="cat-menu-info">
+                  <span class="cat-menu-name">Tonkotsu Ramen</span>
+                  <span class="cat-menu-desc">Rich pork bone broth with tender chashu pork and soft egg.</span>
+                </div>
+                <span class="cat-menu-price">$16.50</span>
+              </div>
+              <div class="cat-menu-item">
+                <div class="cat-menu-info">
+                  <span class="cat-menu-name">California Roll Platter</span>
+                  <span class="cat-menu-desc">Assorted fresh sushi rolls with avocado, cucumber, and crab.</span>
+                </div>
+                <span class="cat-menu-price">$18.00</span>
+              </div>
+              <div class="cat-menu-item">
+                <div class="cat-menu-info">
+                  <span class="cat-menu-name">Katsu Chicken Donburi</span>
+                  <span class="cat-menu-desc">Crispy breaded chicken over fluffy rice with special sauce.</span>
+                </div>
+                <span class="cat-menu-price">$14.80</span>
+              </div>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended on weekends — call +61 3 5221 3028 or walk in welcome</p>
+        </div>
+        
+            <div class="cat-hours-box">
+              <div class="cat-hours-label"><i class="fa-solid fa-clock"></i>&nbsp; Kitchen Hours</div>
+              <div class="cat-hours-text">Mon–Fri 11am–10pm | Sat–Sun 10am–11pm</div>
+            </div>
+      </div>
+    </div>
+  </section>
+  <style>
+    .cat-food-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+    @media(max-width:700px){.cat-food-grid{grid-template-columns:1fr;}}
+    .cat-menu-item{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+      padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.08);}
+    .cat-menu-item:last-child{border-bottom:none;}
+    .cat-menu-info{display:flex;flex-direction:column;gap:4px;}
+    .cat-menu-name{font-family:var(--font-display);font-weight:700;font-size:1.05rem;color:#c0392b;}
+    .cat-menu-desc{font-size:0.9rem;color:#666;}
+    .cat-menu-price{font-family:var(--font-display);font-weight:700;font-size:1.05rem;
+      color:#f39c12;white-space:nowrap;}
+    .cat-hours-box{background:#c0392b;color:#fff;border-radius:14px;padding:32px 28px;}
+    .cat-hours-label{font-weight:700;font-size:0.9rem;letter-spacing:1px;text-transform:uppercase;
+      margin-bottom:14px;opacity:0.85;}
+    .cat-hours-text{font-size:1.05rem;line-height:1.9;white-space:pre-line;}
+    .cat-note{margin-top:20px;font-size:0.9rem;color:#777;}
+  </style>
   
 
   <!-- ══ ABOUT ═════════════════════════════════════════════════════════════ -->
@@ -1561,8 +1660,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Us</span>
-          <h2 class="about-heading">About Cat-themed Japanese cafe | neko Geelong</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Cat-themed Japanese cafe | neko Geelong has been proudly serving the Geelong community with expert restaurant services. We're committed to quality workmanship and outstanding customer care every time.</p>
+          <h2 class="about-heading">About neko Geelong</h2>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">neko Geelong is Geelong's premier cat-themed Japanese cafe, where feline companions roam freely whilst guests enjoy traditional Japanese dishes in a relaxed, welcoming atmosphere. With a 4.8-star rating from over 200 Google reviews, we've become the go-to destination for cat lovers and Japanese food enthusiasts seeking a unique dining experience.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-leaf"></i></span><span class="af-text">Locally sourced ingredients, made fresh in-house every day</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-heart"></i></span><span class="af-text">A beloved local institution — family recipes, community warmth</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-clock"></i></span><span class="af-text">Open seven days — breakfast, lunch, and everything in between</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Consistently 5-star rated by our loyal regulars on Google</span></div>
@@ -1608,6 +1707,34 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
       <h2 class="section-title fade-in">Common Questions</h2>
       <div class="faq-list fade-in">
         
+      <div class="faq-item">
+        <button class="faq-q">
+          Are the cats safe and well-cared for?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Absolutely. Our cats are regularly health-checked, well-socialised, and live in a clean, enriching environment. Guest interaction is supervised to ensure comfort for both cats and visitors.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Do I need to book in advance?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">Bookings are recommended, especially on weekends, but walk-ins are always welcome. Call us on +61 3 5221 3028 to secure your spot.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Is there a cover charge for cat interaction?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">No cover charge applies. Cat interaction is complimentary with your food or beverage purchase.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          What if I'm allergic to cats?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">We recommend contacting us beforehand to discuss seating options away from cats. We're happy to accommodate guests with allergies where possible.</div>
+      </div>
       </div>
     </div>
   </section>
@@ -1619,8 +1746,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Let’s work together</h2>
-          <p class="contact-cta-line">Ready to get started? Contact Cat-themed Japanese cafe | neko Geelong today — we're here to help.</p>
+          <h2 class="contact-title">Ready to Visit neko Geelong?</h2>
+          <p class="contact-cta-line">Join us for an unforgettable blend of Japanese flavours and feline friendship—your next favourite Geelong experience awaits.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1646,7 +1773,9 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Cat-themed+Japanese+cafe+%7C+neko+Geelong+LEVEL+1%2F237+Ryrie+St%2C+Geelong+VIC+3220+Geelong+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Cat-themed Japanese cafe | neko Geelong on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1706,7 +1835,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </span>
             Cat-themed Japanese cafe | neko Geelong
           </div>
-          <p class="footer-tagline">Authentic Flavours, Unforgettable Meals</p>
+          <p class="footer-tagline">Meet adorable cats whilst enjoying authentic Japanese cuisine</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1909,6 +2038,47 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61352213028?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61352213028" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61352213028?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>
