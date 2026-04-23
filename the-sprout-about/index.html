@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Sprout About | East Geelong</title>
-  <meta name="description" content="Farm-to-table restaurant celebrating seasonal produce daily">
+  <meta name="description" content="Farm-to-table restaurant celebrating local produce and flavour">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1330,14 +1366,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="The Sprout About | East Geelong">
-  <meta property="og:description" content="Farm-to-table restaurant celebrating seasonal produce daily">
+  <meta property="og:description" content="Farm-to-table restaurant celebrating local produce and flavour">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/the-sprout-about/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="The Sprout About | East Geelong">
-  <meta name="twitter:description" content="Farm-to-table restaurant celebrating seasonal produce daily">
+  <meta name="twitter:description" content="Farm-to-table restaurant celebrating local produce and flavour">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1420,7 +1456,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               East Geelong &mdash; Your Local Favourite
             </span>
             <h1 class="hero-headline">Fresh, vibrant dining in East Geelong</h1>
-            <p class="hero-tagline">Farm-to-table restaurant celebrating seasonal produce daily</p>
+            <p class="hero-tagline">Farm-to-table restaurant celebrating local produce and flavour</p>
 
             <div class="hero-actions hero-btns">
               <a href="https://www.google.com/maps/search/1+Martin+St%2C+East+Geelong+VIC+3219" class="btn-hero-primary">
@@ -1443,12 +1479,12 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-value">108</span>
-              <span class="stat-label">Customer Reviews</span>
+              <span class="stat-label">Reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">East Geelong</span>
-              <span class="stat-label">Local Favourite</span>
+              <span class="stat-value">Local</span>
+              <span class="stat-label">Favourite</span>
             </div>
             
             </div>
@@ -1513,28 +1549,28 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
                 <i class="fa-solid fa-utensils"></i>
               </div>
               <h3 class="service-title">Dine In</h3>
-              <p class="service-desc">Experience our carefully curated seasonal menu in a welcoming, relaxed atmosphere. Our team ensures every visit is memorable with attentive service and quality fare.</p>
+              <p class="service-desc">Enjoy a welcoming atmosphere in our thoughtfully designed dining space. Perfect for everything from casual meals to special occasions with friends and family.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-bag-shopping"></i>
               </div>
               <h3 class="service-title">Takeaway</h3>
-              <p class="service-desc">Enjoy The Sprout About's delicious dishes at home with our convenient takeaway service. Simply call ahead to place your order and collect fresh, flavourful meals.</p>
+              <p class="service-desc">Fresh, flavour-packed meals ready to enjoy at home. Call ahead to minimise wait times and ensure your order is prepared to perfection.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-calendar-days"></i>
+                <i class="fa-solid fa-calendar-check"></i>
               </div>
-              <h3 class="service-title">Private Events</h3>
-              <p class="service-desc">Host your celebration or gathering at The Sprout About with customised menus and dedicated service. Our intimate space is perfect for special occasions and group bookings.</p>
+              <h3 class="service-title">Private Bookings</h3>
+              <p class="service-desc">Host intimate gatherings or celebrations in our flexible space. Our team can tailor menus and arrangements to suit your event.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-leaf"></i>
               </div>
               <h3 class="service-title">Seasonal Menu</h3>
-              <p class="service-desc">We rotate our offerings throughout the year to feature the best local produce in peak season. Every dish reflects our commitment to freshness and sustainability.</p>
+              <p class="service-desc">We celebrate local produce with a menu that changes with the seasons. Expect fresh, innovative dishes that showcase the best of regional ingredients.</p>
             </div>
       </div>
     </div>
@@ -1549,6 +1585,15 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     </div>
   </div>
 
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Food Safety Certified</span></div><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-brands fa-tripadvisor"></i></div><span class="accred-label">TripAdvisor Listed</span></div><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-solid fa-wine-glass"></i></div><span class="accred-label">Licensed Premises</span></div></div>
+    </div>
+  </div>
+  
+
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
   
@@ -1560,24 +1605,24 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Seasonal Market Salad</span>
-                  <span class="cat-menu-desc">Fresh local greens with today's finest produce and house dressing.</span>
+                  <span class="cat-menu-name">Seasonal Greens Salad</span>
+                  <span class="cat-menu-desc">Local produce with house dressing and crispy elements.</span>
                 </div>
                 <span class="cat-menu-price">$18</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Grilled Fish of the Day</span>
-                  <span class="cat-menu-desc">Locally-caught fish with roasted vegetables and citrus beurre blanc.</span>
+                  <span class="cat-menu-name">Pan-Seared Fish</span>
+                  <span class="cat-menu-desc">Fresh daily catch with seasonal vegetables and citrus.</span>
                 </div>
                 <span class="cat-menu-price">$28</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Garden Vegetable Tart</span>
-                  <span class="cat-menu-desc">Flaky pastry with seasonal vegetables and creamy cheese.</span>
+                  <span class="cat-menu-name">Roasted Root Vegetable Stack</span>
+                  <span class="cat-menu-desc">Vibrant seasonal vegetables with creamy sauce and herbs.</span>
                 </div>
-                <span class="cat-menu-price">$16</span>
+                <span class="cat-menu-price">$22</span>
               </div>
           <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; Bookings recommended on weekends — call +61 3 5229 6131 or walk in welcome</p>
         </div>
@@ -1616,7 +1661,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Us</span>
           <h2 class="about-heading">About The Sprout About</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">The Sprout About is an award-winning restaurant in East Geelong dedicated to showcasing locally-sourced ingredients and innovative seasonal menus. With a 4.8-star rating from over 100 reviews, we've earned a reputation for exceptional food and warm hospitality.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">The Sprout About is East Geelong's trusted neighbourhood restaurant, celebrated for its fresh, innovative cuisine and commitment to seasonal ingredients. With a 4.8-star rating from 108 Google reviews, it's become a beloved destination for locals seeking quality dining and warm hospitality.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-leaf"></i></span><span class="af-text">Locally sourced ingredients, made fresh in-house every day</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-heart"></i></span><span class="af-text">A beloved local institution — family recipes, community warmth</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-clock"></i></span><span class="af-text">Open seven days — breakfast, lunch, and everything in between</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Consistently 5-star rated by our loyal regulars on Google</span></div>
@@ -1667,28 +1712,28 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           Do you take reservations?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, bookings are recommended especially on weekends. You're also welcome to walk in anytime during our opening hours.</div>
+        <div class="faq-a">Yes, we recommend booking ahead especially on weekends. You can call us on +61 3 5229 6131 or walk in if space permits.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What's your menu like?
+          What's your dining style?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Our menu changes seasonally to feature the freshest local ingredients available. Check our latest offerings when you visit or call ahead.</div>
+        <div class="faq-a">We specialise in fresh, seasonal farm-to-table cuisine that celebrates local produce. Our menu changes regularly to reflect what's in season.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Do you cater for dietary requirements?
+          Do you cater to dietary requirements?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely. We're happy to accommodate vegetarian, vegan, gluten-free and other dietary needs. Please mention any requirements when booking or ordering.</div>
+        <div class="faq-a">Absolutely. We're happy to accommodate vegetarian, vegan, and other dietary needs. Just let us know when you book or order.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Is there parking available?
+          Is takeaway available?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, convenient parking is available near our East Geelong location. We're easy to find and accessible for all guests.</div>
+        <div class="faq-a">Yes, we offer takeaway service. Call ahead to place your order and we'll have it ready for you.</div>
       </div>
       </div>
     </div>
@@ -1701,8 +1746,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Get in touch with us today</h2>
-          <p class="contact-cta-line">Ready to taste something special? Call us today or pop in to discover why locals love The Sprout About.</p>
+          <h2 class="contact-title">Get in Touch</h2>
+          <p class="contact-cta-line">Ready to taste something special? Call us today to book your table or grab takeaway.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1728,7 +1773,9 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=The+Sprout+About+1+Martin+St%2C+East+Geelong+VIC+3219+East+Geelong+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find The Sprout About on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1788,7 +1835,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </span>
             The Sprout About
           </div>
-          <p class="footer-tagline">Farm-to-table restaurant celebrating seasonal produce daily</p>
+          <p class="footer-tagline">Farm-to-table restaurant celebrating local produce and flavour</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1991,6 +2038,47 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61352296131?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61352296131" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61352296131?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>
