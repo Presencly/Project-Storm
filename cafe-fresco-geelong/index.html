@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cafe Fresco Geelong | Geelong</title>
-  <meta name="description" content="Freshly brewed coffee and local pastries in the heart of Geelong.">
+  <meta name="description" content="Freshly roasted beans, locally sourced ingredients, warm vibes">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1330,14 +1366,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Cafe Fresco Geelong | Geelong">
-  <meta property="og:description" content="Freshly brewed coffee and local pastries in the heart of Geelong.">
+  <meta property="og:description" content="Freshly roasted beans, locally sourced ingredients, warm vibes">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/cafe-fresco-geelong/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Cafe Fresco Geelong | Geelong">
-  <meta name="twitter:description" content="Freshly brewed coffee and local pastries in the heart of Geelong.">
+  <meta name="twitter:description" content="Freshly roasted beans, locally sourced ingredients, warm vibes">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1419,8 +1455,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <i class="fa-solid fa-location-dot"></i>
               Geelong &mdash; Your Local Favourite
             </span>
-            <h1 class="hero-headline">Cafe Fresco: Geelong's Favourite Coffee Spot</h1>
-            <p class="hero-tagline">Freshly brewed coffee and local pastries in the heart of Geelong.</p>
+            <h1 class="hero-headline">Geelong's favourite specialty coffee destination</h1>
+            <p class="hero-tagline">Freshly roasted beans, locally sourced ingredients, warm vibes</p>
 
             <div class="hero-actions hero-btns">
               <a href="https://www.google.com/maps/search/281+Ryrie+St%2C+Geelong+VIC+3220" class="btn-hero-primary">
@@ -1438,17 +1474,17 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               
             <div class="stat-item">
               <span class="stat-value">4.8★</span>
-              <span class="stat-label">Google Rating (66 reviews)</span>
+              <span class="stat-label">Google Rating</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">15+</span>
-              <span class="stat-label">Years in Geelong</span>
+              <span class="stat-value">66+</span>
+              <span class="stat-label">Customer Reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">100%</span>
-              <span class="stat-label">Locally Sourced Pastries</span>
+              <span class="stat-value">9+ Years</span>
+              <span class="stat-label">Local Favourite</span>
             </div>
             
             </div>
@@ -1512,29 +1548,29 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <div class="service-icon">
                 <i class="fa-solid fa-mug-hot"></i>
               </div>
-              <h3 class="service-title">Speciality Coffee</h3>
-              <p class="service-desc">We serve premium single-origin espresso and pour-overs prepared by experienced baristas. Each cup is crafted to perfection using freshly roasted beans.</p>
+              <h3 class="service-title">Specialty Coffee</h3>
+              <p class="service-desc">Hand-selected single-origin beans roasted to perfection and expertly pulled by our trained baristas. From flat whites to cold brews, every cup is crafted with precision and care.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-croissant"></i>
               </div>
               <h3 class="service-title">Fresh Pastries & Brunch</h3>
-              <p class="service-desc">Our daily-baked pastries and brunch menu feature locally-sourced produce and seasonal specials. From sourdough to smashed avo, we've got something for everyone.</p>
+              <p class="service-desc">Daily-baked pastries and locally sourced brunch ingredients featuring seasonal specials. Our menu celebrates quality produce sourced from Geelong's finest suppliers.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-leaf"></i>
+                <i class="fa-solid fa-wifi"></i>
               </div>
-              <h3 class="service-title">Health-Conscious Options</h3>
-              <p class="service-desc">We cater to dietary requirements with dairy-free, gluten-free, and vegan choices available. All ingredients are carefully selected for quality and taste.</p>
+              <h3 class="service-title">Work & Study Space</h3>
+              <p class="service-desc">Comfortable seating, reliable WiFi, and a quiet atmosphere perfect for remote work or study. Join locals and visitors who make Cafe Fresco their second office.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-chair"></i>
+                <i class="fa-solid fa-heart"></i>
               </div>
-              <h3 class="service-title">Welcoming Community Space</h3>
-              <p class="service-desc">Cafe Fresco is the ideal spot to work, catch up with friends, or simply relax. Free WiFi and a warm atmosphere make us Geelong's go-to café.</p>
+              <h3 class="service-title">Community Events</h3>
+              <p class="service-desc">Regular coffee tastings, local art displays, and live music nights bring Geelong together. We're more than a cafe—we're a gathering place for our neighbourhood.</p>
             </div>
       </div>
     </div>
@@ -1549,6 +1585,15 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     </div>
   </div>
 
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Food Safety Certified</span></div><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-brands fa-tripadvisor"></i></div><span class="accred-label">TripAdvisor Listed</span></div><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-solid fa-leaf"></i></div><span class="accred-label">Victorian Health Compliant</span></div></div>
+    </div>
+  </div>
+  
+
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
   
@@ -1560,31 +1605,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Flat White</span>
-                  <span class="cat-menu-desc">Silky espresso with velvety steamed milk, our signature brew.</span>
+                  <span class="cat-menu-name">Single-Origin Espresso</span>
+                  <span class="cat-menu-desc">Rotating seasonal single-origin beans showcasing different origins and flavour profiles.</span>
                 </div>
                 <span class="cat-menu-price">$4.50</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Smashed Avocado on Sourdough</span>
-                  <span class="cat-menu-desc">Fresh local avo, heirloom tomato, and dukkah on house-made sourdough.</span>
+                  <span class="cat-menu-name">Smashed Avo on Multigrain</span>
+                  <span class="cat-menu-desc">Local eggs, heirloom tomato, dukkah, and fresh herbs on toasted bread.</span>
                 </div>
-                <span class="cat-menu-price">$14.50</span>
+                <span class="cat-menu-price">$16.00</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Daily Pastry Selection</span>
-                  <span class="cat-menu-desc">Buttery croissants, Danish, and muffins baked fresh each morning.</span>
+                  <span class="cat-menu-name">House Blend Flat White</span>
+                  <span class="cat-menu-desc">Our signature blend perfectly steamed with velvety microfoam.</span>
                 </div>
-                <span class="cat-menu-price">$5.50</span>
+                <span class="cat-menu-price">$5.00</span>
               </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed — come in anytime. Large groups welcome with a quick call ahead.</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed — come in anytime. For catering or group orders, please call ahead.</p>
         </div>
         
             <div class="cat-hours-box">
               <div class="cat-hours-label"><i class="fa-solid fa-clock"></i>&nbsp; Opening Hours</div>
-              <div class="cat-hours-text">Mon–Fri 7am–4pm | Sat–Sun 8am–3pm</div>
+              <div class="cat-hours-text">Mon–Fri 7am–4pm  |  Sat–Sun 8am–3pm</div>
             </div>
       </div>
     </div>
@@ -1616,7 +1661,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Us</span>
           <h2 class="about-heading">About Cafe Fresco Geelong</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Cafe Fresco has been serving Geelong's community with expertly crafted espresso and locally-sourced ingredients since opening in the CBD. With a 4.8-star rating from 66 genuine Google reviews, we're proud to be Geelong's most trusted neighbourhood café.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Cafe Fresco has been serving Geelong's coffee lovers since 2015, establishing itself as the go-to spot for expertly crafted espresso and artisan brews. With a 4.8-star rating across 66 Google reviews, we're committed to sourcing quality beans and creating a welcoming space for our community.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-leaf"></i></span><span class="af-text">Locally sourced ingredients, made fresh in-house every day</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-heart"></i></span><span class="af-text">A beloved local institution — family recipes, community warmth</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-clock"></i></span><span class="af-text">Open seven days — breakfast, lunch, and everything in between</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Consistently 5-star rated by our loyal regulars on Google</span></div>
@@ -1664,31 +1709,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
       <div class="faq-item">
         <button class="faq-q">
-          Do you offer WiFi?
+          Do you offer lactose-free or alternative milks?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, complimentary WiFi is available for all customers. Perfect for working or studying in a cosy café environment.</div>
+        <div class="faq-a">Yes, we stock oat, almond, soy, and coconut milk alongside dairy options. All our baristas are trained to make your coffee exactly how you like it.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What are your opening hours?
+          Can I order online or for pickup?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We're open Monday to Friday 7am–4pm, and Saturday to Sunday 8am–3pm. Come by anytime for your daily caffeine fix.</div>
+        <div class="faq-a">We welcome walk-ins and takeaway orders at the counter. For group orders or catering enquiries, please call us on +61 3 5222 4930.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Do you cater to dietary requirements?
+          Do you have seating for groups or meetings?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely. We offer dairy-free milk, vegan options, and gluten-free pastries. Just let our staff know your preferences.</div>
+        <div class="faq-a">Absolutely! We have comfortable seating suitable for casual catch-ups or small business meetings. WiFi is available throughout the cafe.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Can I order ahead or make a reservation?
+          What's your quietest time to visit?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We welcome walk-ins anytime and typically serve orders quickly. For large groups, feel free to call +61 3 5222 4930 to check availability.</div>
+        <div class="faq-a">Weekday mornings between 10am and noon tend to be our quietest period, perfect for a relaxed visit or catching up on work.</div>
       </div>
       </div>
     </div>
@@ -1701,8 +1746,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Get in Touch with Cafe Fresco</h2>
-          <p class="contact-cta-line">Join us today for your next great coffee experience — we're just a short walk away in Geelong CBD.</p>
+          <h2 class="contact-title">Get in touch with Cafe Fresco</h2>
+          <p class="contact-cta-line">Ready for your next great coffee? Visit us in Geelong today or call +61 3 5222 4930 to learn more.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1728,7 +1773,9 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Cafe+Fresco+Geelong+281+Ryrie+St%2C+Geelong+VIC+3220+Geelong+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Cafe Fresco Geelong on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1788,7 +1835,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </span>
             Cafe Fresco Geelong
           </div>
-          <p class="footer-tagline">Freshly brewed coffee and local pastries in the heart of Geelong.</p>
+          <p class="footer-tagline">Freshly roasted beans, locally sourced ingredients, warm vibes</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1991,6 +2038,47 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61352224930?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61352224930" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61352224930?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>
