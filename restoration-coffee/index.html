@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restoration Coffee | Geelong</title>
-  <meta name="description" content="Expertly crafted coffee and fresh brews in the heart of Geelong">
+  <meta name="description" content="Expertly crafted coffee and fresh food in the heart of Geelong">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1330,14 +1366,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Restoration Coffee | Geelong">
-  <meta property="og:description" content="Expertly crafted coffee and fresh brews in the heart of Geelong">
+  <meta property="og:description" content="Expertly crafted coffee and fresh food in the heart of Geelong">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/restoration-coffee/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Restoration Coffee | Geelong">
-  <meta name="twitter:description" content="Expertly crafted coffee and fresh brews in the heart of Geelong">
+  <meta name="twitter:description" content="Expertly crafted coffee and fresh food in the heart of Geelong">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1419,8 +1455,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <i class="fa-solid fa-location-dot"></i>
               Geelong &mdash; Your Local Favourite
             </span>
-            <h1 class="hero-headline">Geelong's finest specialty coffee awaits</h1>
-            <p class="hero-tagline">Expertly crafted coffee and fresh brews in the heart of Geelong</p>
+            <h1 class="hero-headline">Geelong's Premier Specialty Coffee Destination</h1>
+            <p class="hero-tagline">Expertly crafted coffee and fresh food in the heart of Geelong</p>
 
             <div class="hero-actions hero-btns">
               <a href="https://www.google.com/maps/search/164+Bellerine+St%2C+Geelong+VIC+3220" class="btn-hero-primary">
@@ -1438,17 +1474,17 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               
             <div class="stat-item">
               <span class="stat-value">5★</span>
-              <span class="stat-label">Google Rating (102 reviews)</span>
+              <span class="stat-label">Google Rating</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-value">102</span>
-              <span class="stat-label">Verified customer reviews</span>
+              <span class="stat-label">Customer Reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">Local</span>
-              <span class="stat-label">Geelong favourite</span>
+              <span class="stat-value">Geelong</span>
+              <span class="stat-label">Local Favourite</span>
             </div>
             
             </div>
@@ -1510,31 +1546,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-mug-hot"></i>
+                <i class="fa-solid fa-cup-hot"></i>
               </div>
               <h3 class="service-title">Specialty Coffee</h3>
-              <p class="service-desc">We serve premium single-origin and blend coffees, expertly roasted and prepared by our skilled baristas. From espresso to pour-over, each cup is crafted to perfection.</p>
+              <p class="service-desc">We craft expertly pulled espresso, velvety flat whites, and smooth long blacks using premium single-origin beans. Every cup is prepared by passionate baristas trained in the art of coffee excellence.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-croissant"></i>
               </div>
-              <h3 class="service-title">Fresh Pastries & Food</h3>
-              <p class="service-desc">Enjoy freshly baked pastries, light lunches, and locally sourced treats throughout the day. Our seasonal menu celebrates quality ingredients and genuine flavour.</p>
+              <h3 class="service-title">Fresh Food & Pastries</h3>
+              <p class="service-desc">Our menu features freshly baked pastries, artisan sandwiches, and wholesome brunch options made daily. Each item is thoughtfully prepared to pair perfectly with your coffee.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-wifi"></i>
               </div>
-              <h3 class="service-title">Welcoming Workspace</h3>
-              <p class="service-desc">Perfect for remote work with reliable WiFi and a relaxed atmosphere. Whether you're meeting a friend or working solo, you'll feel right at home.</p>
+              <h3 class="service-title">Comfortable Workspace</h3>
+              <p class="service-desc">High-speed WiFi and ample seating make Restoration the ideal spot for work or study. Enjoy reliable connectivity whilst sipping quality coffee in a welcoming atmosphere.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-utensils"></i>
               </div>
-              <h3 class="service-title">Community First</h3>
-              <p class="service-desc">We're invested in Geelong's local community and proud supporters of ethical sourcing. Your coffee choice makes a positive difference.</p>
+              <h3 class="service-title">Casual Dining</h3>
+              <p class="service-desc">Whether grabbing a quick coffee or settling in for brunch, our relaxed environment suits all occasions. Our friendly staff ensures a warm welcome every visit.</p>
             </div>
       </div>
     </div>
@@ -1549,6 +1585,15 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     </div>
   </div>
 
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Food Safety Certified</span></div><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-brands fa-tripadvisor"></i></div><span class="accred-label">TripAdvisor Listed</span></div><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-solid fa-leaf"></i></div><span class="accred-label">Victorian Health Compliant</span></div></div>
+    </div>
+  </div>
+  
+
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
   
@@ -1560,31 +1605,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Single-Origin Espresso</span>
-                  <span class="cat-menu-desc">Smooth, complex notes from carefully sourced beans.</span>
+                  <span class="cat-menu-name">Single-Origin Flat White</span>
+                  <span class="cat-menu-desc">Velvety espresso with perfectly steamed milk.</span>
                 </div>
-                <span class="cat-menu-price">$4.50</span>
+                <span class="cat-menu-price">$5.50</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Flat White</span>
-                  <span class="cat-menu-desc">Velvety microfoam and perfectly pulled espresso.</span>
+                  <span class="cat-menu-name">Smashed Avocado & Sourdough</span>
+                  <span class="cat-menu-desc">Fresh avo on toasted wholegrain sourdough.</span>
                 </div>
-                <span class="cat-menu-price">$5.00</span>
+                <span class="cat-menu-price">$14.00</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Smashed Avo on Sourdough</span>
-                  <span class="cat-menu-desc">Fresh local avocado with seasonal additions on artisan bread.</span>
+                  <span class="cat-menu-name">Almond Croissant</span>
+                  <span class="cat-menu-desc">Buttery pastry with roasted almond filling.</span>
                 </div>
-                <span class="cat-menu-price">$14.50</span>
+                <span class="cat-menu-price">$6.50</span>
               </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed—come in anytime and enjoy our welcoming café</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed — come in anytime. Large groups welcome with a quick call ahead.</p>
         </div>
         
             <div class="cat-hours-box">
               <div class="cat-hours-label"><i class="fa-solid fa-clock"></i>&nbsp; Opening Hours</div>
-              <div class="cat-hours-text">Mon–Fri 7am–4pm  |  Sat–Sun 8am–3pm</div>
+              <div class="cat-hours-text">Mon–Fri 7am–4pm | Sat–Sun 8am–3pm</div>
             </div>
       </div>
     </div>
@@ -1616,7 +1661,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Us</span>
           <h2 class="about-heading">About Restoration Coffee</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Restoration Coffee is a beloved local café in Geelong, proudly serving meticulously sourced specialty beans and expertly crafted beverages to the community. With a 5-star rating across 102 Google reviews, we're committed to delivering exceptional coffee experiences and warm hospitality every single visit.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Restoration Coffee has earned a stellar 5-star rating across 102 Google reviews, cementing its reputation as Geelong's most trusted specialty coffee café. We source premium beans and prepare each cup with meticulous care, offering locals and visitors an exceptional coffee experience.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-leaf"></i></span><span class="af-text">Locally sourced ingredients, made fresh in-house every day</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-heart"></i></span><span class="af-text">A beloved local institution — family recipes, community warmth</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-clock"></i></span><span class="af-text">Open seven days — breakfast, lunch, and everything in between</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Consistently 5-star rated by our loyal regulars on Google</span></div>
@@ -1664,31 +1709,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
       <div class="faq-item">
         <button class="faq-q">
-          What are your opening hours?
+          Do you offer dairy-free milk options?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We're open Monday–Friday 7am–4pm and Saturday–Sunday 8am–3pm. Pop in anytime for your coffee fix.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          Do you offer takeaway coffee?
-          <i class="fa-solid fa-chevron-down faq-icon"></i>
-        </button>
-        <div class="faq-a">Absolutely! We serve hot and cold takeaway options in sustainable cups. Perfect for on-the-go Geelong locals.</div>
+        <div class="faq-a">Yes, we stock oat, almond, and soy milk alternatives for all our coffee drinks. Just let our baristas know your preference when ordering.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
           Can I book a table for a group?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">No bookings needed—come in anytime! We welcome groups and do our best to accommodate everyone with our relaxed, welcoming vibe.</div>
+        <div class="faq-a">We welcome groups and operate on a first-come, first-served basis during peak times. For large gatherings, we recommend calling ahead to ensure comfortable seating.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What coffee beans do you use?
+          Do you have vegan food options?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We source premium specialty beans from ethical roasters, carefully selected for flavour and quality. Ask our baristas about today's featured origin.</div>
+        <div class="faq-a">Absolutely—our menu includes vegan pastries, salads, and brunch dishes prepared fresh daily. Speak with our staff about current vegan-friendly selections.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          What are your opening hours?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">We're open Monday to Friday from 7am to 4pm, and Saturday to Sunday from 8am to 3pm. Closed public holidays—check our socials for updates.</div>
       </div>
       </div>
     </div>
@@ -1701,8 +1746,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Visit us in Geelong today</h2>
-          <p class="contact-cta-line">Visit Restoration Coffee today and discover why Geelong's community loves us. We're here to brew something special for you.</p>
+          <h2 class="contact-title">Get in Touch with Restoration Coffee</h2>
+          <p class="contact-cta-line">Experience outstanding coffee and warm hospitality — visit Restoration Coffee today or call us to learn more.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1728,7 +1773,9 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Restoration+Coffee+164+Bellerine+St%2C+Geelong+VIC+3220+Geelong+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Restoration Coffee on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1791,7 +1838,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </span>
             Restoration Coffee
           </div>
-          <p class="footer-tagline">Expertly crafted coffee and fresh brews in the heart of Geelong</p>
+          <p class="footer-tagline">Expertly crafted coffee and fresh food in the heart of Geelong</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1994,6 +2041,47 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61493031059?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61493031059" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61493031059?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>
