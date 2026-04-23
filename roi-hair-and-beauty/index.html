@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Roi Hair And Beauty | Melbourne</title>
-  <meta name="description" content="Expert styling and beauty treatments in the heart of Melbourne">
+  <meta name="description" content="Expert styling and beauty treatments for every occasion">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1352,14 +1388,14 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Roi Hair And Beauty | Melbourne">
-  <meta property="og:description" content="Expert styling and beauty treatments in the heart of Melbourne">
+  <meta property="og:description" content="Expert styling and beauty treatments for every occasion">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/roi-hair-and-beauty/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Roi Hair And Beauty | Melbourne">
-  <meta name="twitter:description" content="Expert styling and beauty treatments in the heart of Melbourne">
+  <meta name="twitter:description" content="Expert styling and beauty treatments for every occasion">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1441,8 +1477,8 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
               <i class="fa-solid fa-location-dot"></i>
               Melbourne &mdash; Your Wellness Destination
             </span>
-            <h1 class="hero-headline">Melbourne's Premier Hair and Beauty Destination</h1>
-            <p class="hero-tagline">Expert styling and beauty treatments in the heart of Melbourne</p>
+            <h1 class="hero-headline">Melbourne's Premier Hair and Beauty Salon</h1>
+            <p class="hero-tagline">Expert styling and beauty treatments for every occasion</p>
 
             <div class="hero-actions hero-btns">
               <a href="tel:+61396500500" class="btn-hero-primary">
@@ -1532,31 +1568,31 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-cut"></i>
+                <i class="fa-solid fa-scissors"></i>
               </div>
-              <h3 class="service-title">Hair Cutting & Styling</h3>
-              <p class="service-desc">Precision cuts and modern styling techniques for all hair types and lengths. Our skilled stylists stay current with the latest trends to ensure you leave looking your absolute best.</p>
+              <h3 class="service-title">Hair Cutting and Styling</h3>
+              <p class="service-desc">Expert cuts and styles tailored to your hair type and face shape. From classic bobs to modern undercuts, our stylists deliver precision results every time.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-palette"></i>
               </div>
-              <h3 class="service-title">Hair Colour & Treatments</h3>
-              <p class="service-desc">Professional colour services using premium products to achieve vibrant, lasting results. We offer balayage, highlights, full colour, and restorative treatments for healthy, beautiful hair.</p>
+              <h3 class="service-title">Hair Colouring</h3>
+              <p class="service-desc">Professional colour treatments using quality products to achieve your desired look. Whether you want highlights, balayage, or a complete colour transformation, we've got you covered.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-spa"></i>
               </div>
-              <h3 class="service-title">Beauty & Skincare</h3>
-              <p class="service-desc">Comprehensive beauty treatments including facials, waxing, and skincare consultations. We use quality products and techniques designed to enhance your natural beauty.</p>
+              <h3 class="service-title">Beauty Treatments</h3>
+              <p class="service-desc">Relaxing and rejuvenating beauty services including facials, waxing, and skincare treatments. Our trained therapists use premium products to enhance your natural beauty.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-person-dress"></i>
+                <i class="fa-solid fa-hand-sparkles"></i>
               </div>
-              <h3 class="service-title">Special Occasion Services</h3>
-              <p class="service-desc">Bridal hair, formal event styling, and makeup services for your most important moments. Our team creates stunning looks that make you feel confident and radiant.</p>
+              <h3 class="service-title">Nail Services</h3>
+              <p class="service-desc">Manicures and pedicures with attention to detail and hygiene standards. Choose from classic polish or long-lasting gel treatments for salon-quality nails at home.</p>
             </div>
       </div>
     </div>
@@ -1583,6 +1619,15 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
     </div>
   </div>
 
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-award"></i></div><span class="accred-label">ABIH Accredited</span></div><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-spray-can-sparkles"></i></div><span class="accred-label">Allergen-Safe Products</span></div><div class="accred-item"><div class="accred-icon" style="color:#ad1457;"><i class="fa-solid fa-heart"></i></div><span class="accred-label">Partner Salon</span></div></div>
+    </div>
+  </div>
+  
+
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
 
@@ -1594,7 +1639,7 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Philosophy</span>
           <h2 class="about-heading">About Roi Hair And Beauty</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Roi Hair And Beauty is a trusted Melbourne salon with a 4.4★ rating from 115 Google reviews, reflecting our commitment to quality service and customer satisfaction. Our experienced team specialises in contemporary hair styling, colour treatments, and comprehensive beauty services tailored to each client's unique needs.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Roi Hair And Beauty has been a trusted destination for Melbourne locals seeking professional hair and beauty services since establishing itself in the heart of the city. With a 4.4-star rating from over 115 satisfied customers, the salon is known for exceptional service, skilled stylists, and a welcoming atmosphere.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-certificate"></i></span><span class="af-text">Fully qualified and certified therapists &amp; practitioners</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-spa"></i></span><span class="af-text">Premium product range — only the best for your wellbeing</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-door-open"></i></span><span class="af-text">Private, serene environment — your sanctuary away from the rush</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Loved by our clients — hundreds of 5-star reviews</span></div>
@@ -1638,29 +1683,29 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
       <div class="pl-wrap">
         <div class="pl-list">
             <div class="pl-row">
-              <span class="pl-service">Women's Cut & Style</span>
+              <span class="pl-service">Women's Haircut</span>
               
-              <span class="pl-price">from $65</span>
+              <span class="pl-price">from $55</span>
             </div>
             <div class="pl-row">
-              <span class="pl-service">Men's Cut & Style</span>
+              <span class="pl-service">Men's Haircut</span>
               
-              <span class="pl-price">from $50</span>
+              <span class="pl-price">from $45</span>
             </div>
             <div class="pl-row">
-              <span class="pl-service">Colour Treatment</span>
+              <span class="pl-service">Full Head Colour</span>
               
               <span class="pl-price">from $85</span>
             </div>
             <div class="pl-row">
-              <span class="pl-service">Facial Treatment</span>
+              <span class="pl-service">Highlight/Balayage</span>
               
-              <span class="pl-price">from $75</span>
+              <span class="pl-price">from $120</span>
             </div>
         </div>
         <div class="pl-cta-block">
-          <p class="pl-cta-text">Ready to refresh your look? Contact Roi Hair And Beauty today and discover why Melbourne trusts us with their style.</p>
-          <p class="pl-note"><i class="fa-solid fa-calendar-check"></i>&nbsp; Call us on +61 3 9650 0500 to book your appointment or visit us in Melbourne. Walk-ins welcome subject to availability.</p>
+          <p class="pl-cta-text">Ready to transform your look? Call us today or book your appointment online with Roi Hair And Beauty.</p>
+          <p class="pl-note"><i class="fa-solid fa-calendar-check"></i>&nbsp; Call us on +61 3 9650 0500 to book your appointment or visit us in Melbourne today</p>
           <a class="btn-pl-book" href="#contact">Book Your Appointment &rarr;</a>
         </div>
       </div>
@@ -1699,31 +1744,31 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         
       <div class="faq-item">
         <button class="faq-q">
-          Do you accept walk-in clients or is booking required?
+          Do you offer online booking?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We welcome both walk-ins and bookings, though we recommend calling ahead to ensure availability and minimal wait times. Phone us on +61 3 9650 0500 to schedule your appointment.</div>
+        <div class="faq-a">Yes, you can book your appointment online through our website or call us directly at +61 3 9650 0500 for same-day availability.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What are your opening hours?
+          Are you accepting new clients?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">For our full opening hours and any public holiday variations, please contact us directly at +61 3 9650 0500 or visit our salon in Melbourne.</div>
+        <div class="faq-a">Absolutely! We welcome all new clients and look forward to helping you find your perfect style with our experienced team.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Do you offer colour correction and hair repair treatments?
+          What products do you use?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we specialise in colour correction and restorative treatments for damaged hair. Our experienced stylists can assess your hair and recommend the best course of action.</div>
+        <div class="faq-a">We use only professional-grade, quality products from reputable brands to ensure the best results for your hair and skin.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Can I get a consultation before booking a major service?
+          Can I book a consultation before my appointment?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely! We encourage consultations to discuss your goals and ensure we deliver exactly what you're looking for. Call us to arrange a time that suits you.</div>
+        <div class="faq-a">Yes, we offer consultations to discuss your desired look and ensure we deliver exactly what you're hoping for.</div>
       </div>
       </div>
     </div>
@@ -1737,7 +1782,7 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
           <h2 class="contact-title">Book Your Appointment Today</h2>
-          <p class="contact-cta-line">Ready to refresh your look? Contact Roi Hair And Beauty today and discover why Melbourne trusts us with their style.</p>
+          <p class="contact-cta-line">Ready to transform your look? Call us today or book your appointment online with Roi Hair And Beauty.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1763,7 +1808,9 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Roi+Hair+And+Beauty+300+Lonsdale+St%2C+Melbourne+VIC+3000+Melbourne+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Roi Hair And Beauty on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1826,7 +1873,7 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
             </span>
             Roi Hair And Beauty
           </div>
-          <p class="footer-tagline">Expert styling and beauty treatments in the heart of Melbourne</p>
+          <p class="footer-tagline">Expert styling and beauty treatments for every occasion</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -2029,6 +2076,47 @@ body { font-family: 'Nunito', system-ui, sans-serif; font-weight: 400; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61396500500?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61396500500" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61396500500?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>
