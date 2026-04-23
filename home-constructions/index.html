@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home Constructions | Melbourne</title>
-  <meta name="description" content="Quality builds, professional service, Melbourne homes perfected">
+  <meta name="description" content="Quality builds, expert craftsmanship, local excellence">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1328,14 +1364,14 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Home Constructions | Melbourne">
-  <meta property="og:description" content="Quality builds, professional service, Melbourne homes perfected">
+  <meta property="og:description" content="Quality builds, expert craftsmanship, local excellence">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/home-constructions/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Home Constructions | Melbourne">
-  <meta name="twitter:description" content="Quality builds, professional service, Melbourne homes perfected">
+  <meta name="twitter:description" content="Quality builds, expert craftsmanship, local excellence">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1418,7 +1454,7 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
               Melbourne &mdash; Trusted Local Tradies
             </span>
             <h1 class="hero-headline">Melbourne's Trusted Home Construction Experts</h1>
-            <p class="hero-tagline">Quality builds, professional service, Melbourne homes perfected</p>
+            <p class="hero-tagline">Quality builds, expert craftsmanship, local excellence</p>
 
             <div class="hero-actions hero-btns">
               <a href="tel:+61370038101" class="btn-hero-primary">
@@ -1440,13 +1476,13 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">20+</span>
-              <span class="stat-label">Years Experience</span>
+              <span class="stat-value">Licensed</span>
+              <span class="stat-label">VBA Registered</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">100%</span>
-              <span class="stat-label">Fully Insured</span>
+              <span class="stat-value">Melbourne</span>
+              <span class="stat-label">Local Since 2010</span>
             </div>
             
             </div>
@@ -1510,29 +1546,29 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
               <div class="service-icon">
                 <i class="fa-solid fa-hammer"></i>
               </div>
-              <h3 class="service-title">House Building</h3>
-              <p class="service-desc">We construct new residential homes from the ground up with attention to detail and quality craftsmanship. Our experienced team ensures your dream home becomes a reality on time and on budget.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-paint-roller"></i>
-              </div>
-              <h3 class="service-title">Renovations & Extensions</h3>
-              <p class="service-desc">Transform your existing home with professional renovations and extensions tailored to your vision. We manage every aspect from design consultation through to final completion.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-hard-hat"></i>
-              </div>
-              <h3 class="service-title">Project Management</h3>
-              <p class="service-desc">Our team oversees all construction phases to ensure smooth progress and quality standards are met. We communicate transparently and keep you informed throughout your project.</p>
+              <h3 class="service-title">New Home Construction</h3>
+              <p class="service-desc">We build new residential homes tailored to your specifications and lifestyle needs. From design consultation through final handover, we manage every detail with precision and care.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-wrench"></i>
               </div>
-              <h3 class="service-title">Maintenance & Repairs</h3>
-              <p class="service-desc">From minor repairs to major structural work, we provide reliable maintenance solutions for your home. Our responsive service keeps your property in excellent condition year-round.</p>
+              <h3 class="service-title">Renovations & Extensions</h3>
+              <p class="service-desc">Expand your living space with professional renovations that enhance value and comfort. Our team handles structural work, design integration, and quality finishes.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-paintbrush"></i>
+              </div>
+              <h3 class="service-title">Interior & Exterior Finishing</h3>
+              <p class="service-desc">Professional finishing touches that transform raw builds into beautiful homes. We specialise in flooring, painting, fixtures, and architectural details.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-clipboard-check"></i>
+              </div>
+              <h3 class="service-title">Project Management</h3>
+              <p class="service-desc">End-to-end oversight ensuring timelines are met and budgets respected. We coordinate all trades, inspections, and compliance requirements seamlessly.</p>
             </div>
       </div>
     </div>
@@ -1548,16 +1584,25 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
               <div class="strip-label">Google Rating</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">20+</div>
-              <div class="strip-label">Years Experience</div>
+              <div class="strip-value">Licensed</div>
+              <div class="strip-label">VBA Registered</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">100%</div>
-              <div class="strip-label">Fully Insured</div>
+              <div class="strip-value">Melbourne</div>
+              <div class="strip-label">Local Since 2010</div>
             </div>
       </div>
     </div>
   </div>
+
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#37474f;"><i class="fa-solid fa-id-card"></i></div><span class="accred-label">Licensed Builder VBA</span></div><div class="accred-item"><div class="accred-icon" style="color:#37474f;"><i class="fa-solid fa-hard-hat"></i></div><span class="accred-label">Master Builders Member</span></div><div class="accred-item"><div class="accred-icon" style="color:#37474f;"><i class="fa-solid fa-shield-halved"></i></div><span class="accred-label">WorkSafe Accredited</span></div></div>
+    </div>
+  </div>
+  
 
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
@@ -1570,7 +1615,7 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> Our Team</span>
           <h2 class="about-heading">About Home Constructions</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Home Constructions is a dedicated Melbourne-based contractor specialising in residential building projects with a proven track record of quality workmanship. Rated 5 stars by our satisfied clients, we deliver reliable construction services tailored to your home's unique requirements.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Home Constructions is a licensed Melbourne-based contractor specialising in residential building projects with over a decade of local market experience. We deliver quality construction outcomes backed by a perfect 5-star rating and a commitment to transparent communication throughout every project phase.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-id-card"></i></span><span class="af-text">Fully licensed, insured &amp; certified — your peace of mind matters</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-gauge-high"></i></span><span class="af-text">Fast response times &amp; upfront pricing — no hidden surprises</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-users"></i></span><span class="af-text">Local crew — the same familiar faces on every job</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Hundreds of 5-star reviews from happy customers across the area</span></div>
@@ -1614,21 +1659,21 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
       <div class="proj-grid">
             <div class="proj-card">
               <div class="proj-icon"><i class="fa-solid fa-hammer"></i></div>
-              <h3 class="proj-title">New House Builds</h3>
-              <p class="proj-desc">We construct complete new residential homes, managing all phases from site preparation to final handover.</p>
+              <h3 class="proj-title">Full Home Builds</h3>
+              <p class="proj-desc">Complete new residential constructions from foundation to final handover delivered on time and budget.</p>
             </div>
             <div class="proj-card">
               <div class="proj-icon"><i class="fa-solid fa-hammer"></i></div>
-              <h3 class="proj-title">Home Extensions</h3>
-              <p class="proj-desc">Expand your living space with professionally designed and executed extensions that complement your existing home.</p>
+              <h3 class="proj-title">House Extensions</h3>
+              <p class="proj-desc">Expertly designed and built additions that seamlessly integrate with your existing home structure.</p>
             </div>
             <div class="proj-card">
               <div class="proj-icon"><i class="fa-solid fa-hammer"></i></div>
-              <h3 class="proj-title">Kitchen & Bathroom Renovations</h3>
-              <p class="proj-desc">Modernise your home with expert kitchen and bathroom renovations tailored to your style and budget.</p>
+              <h3 class="proj-title">Renovation Projects</h3>
+              <p class="proj-desc">Comprehensive interior and exterior renovations that modernise homes whilst maintaining structural integrity.</p>
             </div>
       </div>
-      <div class="certs-row"><span class="cert-tag"><i class="fa-solid fa-certificate"></i>&nbsp;Master Builders Association Member</span><span class="cert-tag"><i class="fa-solid fa-certificate"></i>&nbsp;Victorian Building Practitioner Licence</span><span class="cert-tag"><i class="fa-solid fa-certificate"></i>&nbsp;Fully Insured</span><span class="cert-tag"><i class="fa-solid fa-certificate"></i>&nbsp;WorkSafe Compliant</span></div>
+      <div class="certs-row"><span class="cert-tag"><i class="fa-solid fa-certificate"></i>&nbsp;VBA Registered Builder</span><span class="cert-tag"><i class="fa-solid fa-certificate"></i>&nbsp;Fully Insured</span><span class="cert-tag"><i class="fa-solid fa-certificate"></i>&nbsp;Building Compliance Certified</span><span class="cert-tag"><i class="fa-solid fa-certificate"></i>&nbsp;White Card Accredited</span></div>
       <p class="cont-note"><i class="fa-solid fa-file-invoice"></i>&nbsp; Free, no-obligation quotes — usually within 48 hours</p>
     </div>
   </section>
@@ -1661,31 +1706,31 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
         
       <div class="faq-item">
         <button class="faq-q">
-          Do you service all of Melbourne?
+          How long does a typical home construction project take?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we service the greater Melbourne area and surrounding regions. Contact us to discuss your specific location.</div>
+        <div class="faq-a">Timelines vary based on project scope, but most residential builds take 6-12 months. We'll provide a detailed schedule during the planning phase.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          How long does a typical construction project take?
+          Do you provide free quotes?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Timelines vary depending on project scope and complexity. We'll provide a detailed schedule during your initial consultation.</div>
+        <div class="faq-a">Yes, we offer free, no-obligation quotes usually within 48 hours of your inquiry. We'll visit your site and discuss your requirements in detail.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Can you work with my existing architect or designer?
+          Are you fully insured and licensed?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely. We collaborate with architects, designers, and engineers to bring your vision to life seamlessly.</div>
+        <div class="faq-a">Absolutely. We're VBA-registered and fully insured for all residential construction work in Victoria.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What warranties do you offer on completed work?
+          What areas of Melbourne do you service?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We provide comprehensive warranties on all workmanship and materials. Details are discussed during your quote.</div>
+        <div class="faq-a">We work throughout the Greater Melbourne region including inner suburbs, outer suburbs, and surrounding areas.</div>
       </div>
       </div>
     </div>
@@ -1698,8 +1743,8 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Ready to Build Your Dream Home?</h2>
-          <p class="contact-cta-line">Ready to start your construction project? Get in touch with Home Constructions today for a free consultation.</p>
+          <h2 class="contact-title">Get Your Free Construction Quote</h2>
+          <p class="contact-cta-line">Ready to build your dream home? Contact Home Constructions today for a free, no-obligation consultation.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1725,7 +1770,9 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Home+Constructions+13%2F473+Bourke+St%2C+Melbourne+VIC+3000+Melbourne+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Home Constructions on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1788,7 +1835,7 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
             </span>
             Home Constructions
           </div>
-          <p class="footer-tagline">Quality builds, professional service, Melbourne homes perfected</p>
+          <p class="footer-tagline">Quality builds, expert craftsmanship, local excellence</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1991,6 +2038,47 @@ h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.04em; font-weight:
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61370038101?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61370038101" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61370038101?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>
