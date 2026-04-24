@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Café In Time | Sydney</title>
-  <meta name="description" content="Artisan café serving exceptional espresso and fresh pastries daily">
+  <meta name="description" content="Exceptional coffee and community in the heart of Sydney">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1330,14 +1366,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Café In Time | Sydney">
-  <meta property="og:description" content="Artisan café serving exceptional espresso and fresh pastries daily">
+  <meta property="og:description" content="Exceptional coffee and community in the heart of Sydney">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/caf-in-time/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Café In Time | Sydney">
-  <meta name="twitter:description" content="Artisan café serving exceptional espresso and fresh pastries daily">
+  <meta name="twitter:description" content="Exceptional coffee and community in the heart of Sydney">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1419,8 +1455,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <i class="fa-solid fa-location-dot"></i>
               Sydney &mdash; Your Local Favourite
             </span>
-            <h1 class="hero-headline">Quality Coffee Culture in Sydney's Heart</h1>
-            <p class="hero-tagline">Artisan café serving exceptional espresso and fresh pastries daily</p>
+            <h1 class="hero-headline">Sydney's Timeless Café Experience Awaits</h1>
+            <p class="hero-tagline">Exceptional coffee and community in the heart of Sydney</p>
 
             <div class="hero-actions hero-btns">
               <a href="https://www.google.com/maps/search/154+Sussex+St%2C+Sydney+NSW+2000" class="btn-hero-primary">
@@ -1438,17 +1474,17 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               
             <div class="stat-item">
               <span class="stat-value">4.4★</span>
-              <span class="stat-label">Google Rating from 70 Reviews</span>
+              <span class="stat-label">Google Rating</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-value">70+</span>
-              <span class="stat-label">Happy Customer Reviews</span>
+              <span class="stat-label">Customer Reviews</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">Since 2015</span>
-              <span class="stat-label">Trusted Neighbourhood Favourite</span>
+              <span class="stat-value">Est. Local Favourite</span>
+              <span class="stat-label">Sydney Community</span>
             </div>
             
             </div>
@@ -1510,31 +1546,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-mug-hot"></i>
+                <i class="fa-solid fa-coffee"></i>
               </div>
               <h3 class="service-title">Specialty Coffee</h3>
-              <p class="service-desc">We craft premium espresso-based drinks using carefully selected single-origin beans. Our baristas are trained to bring out the unique flavour profiles in every cup.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-croissant"></i>
-              </div>
-              <h3 class="service-title">Fresh Pastries & Bakes</h3>
-              <p class="service-desc">Daily-baked croissants, sourdough, and sweet treats prepared fresh each morning. All items are sourced from quality local suppliers.</p>
+              <p class="service-desc">We serve expertly crafted espresso drinks made with carefully sourced, premium beans. Our baristas take pride in every cup, delivering rich flavour and consistency.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-utensils"></i>
               </div>
-              <h3 class="service-title">Light Breakfast & Lunch</h3>
-              <p class="service-desc">Wholesome breakfast bowls, salads, and sandwiches made to order. Perfect for a quick bite or leisurely meal with friends.</p>
+              <h3 class="service-title">Fresh Brunch</h3>
+              <p class="service-desc">Enjoy delicious breakfast and lunch options prepared fresh daily. From pastries to savoury dishes, we cater to every taste and dietary preference.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <h3 class="service-title">Community Space</h3>
+              <p class="service-desc">Café In Time is more than coffee—it's a gathering place for locals and visitors. We foster a warm, inclusive atmosphere perfect for catching up or working.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-leaf"></i>
               </div>
-              <h3 class="service-title">Dietary Options</h3>
-              <p class="service-desc">We cater to vegan, gluten-free, and other dietary requirements. Ask our friendly staff about today's available alternatives.</p>
+              <h3 class="service-title">Quality Ingredients</h3>
+              <p class="service-desc">We source premium, locally-sourced ingredients wherever possible. Our commitment to quality ensures every item on our menu tastes exceptional.</p>
             </div>
       </div>
     </div>
@@ -1549,6 +1585,15 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     </div>
   </div>
 
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Food Safety Certified</span></div><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-brands fa-tripadvisor"></i></div><span class="accred-label">TripAdvisor Listed</span></div><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-solid fa-leaf"></i></div><span class="accred-label">Victorian Health Compliant</span></div></div>
+    </div>
+  </div>
+  
+
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
   
@@ -1561,25 +1606,25 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
                   <span class="cat-menu-name">Flat White</span>
-                  <span class="cat-menu-desc">Silky microfoam espresso with premium milk.</span>
+                  <span class="cat-menu-desc">Velvety espresso and silky steamed milk, perfectly balanced.</span>
                 </div>
-                <span class="cat-menu-price">$5.50</span>
+                <span class="cat-menu-price">$5</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Avocado Smash on Sourdough</span>
-                  <span class="cat-menu-desc">Fresh ripe avocado with cherry tomato and poached egg.</span>
+                  <span class="cat-menu-name">Smashed Avo Toast</span>
+                  <span class="cat-menu-desc">Creamy avocado on sourdough with fresh herbs and poached egg.</span>
                 </div>
-                <span class="cat-menu-price">$16.50</span>
+                <span class="cat-menu-price">$14</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Butter Croissant</span>
-                  <span class="cat-menu-desc">Flaky, warm pastry baked fresh daily.</span>
+                  <span class="cat-menu-name">Almond Croissant</span>
+                  <span class="cat-menu-desc">Buttery pastry filled with almond cream and sliced almonds.</span>
                 </div>
-                <span class="cat-menu-price">$6.00</span>
+                <span class="cat-menu-price">$6</span>
               </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed — come in anytime and grab a seat</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed—come in anytime</p>
         </div>
         
             <div class="cat-hours-box">
@@ -1616,7 +1661,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Us</span>
           <h2 class="about-heading">About Café In Time</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Café In Time has established itself as a beloved neighbourhood café in Sydney, consistently delivering expertly crafted coffee and warm hospitality to our community. With a 4.4-star rating across 70 Google reviews, we're committed to sourcing premium beans and creating memorable café experiences for every visitor.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Café In Time is a beloved neighbourhood café in Sydney, highly rated by locals with a 4.4★ rating from 70 Google reviews. We specialise in quality espresso-based beverages and freshly made brunch items, creating a welcoming space for coffee enthusiasts and community members alike.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-leaf"></i></span><span class="af-text">Locally sourced ingredients, made fresh in-house every day</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-heart"></i></span><span class="af-text">A beloved local institution — family recipes, community warmth</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-clock"></i></span><span class="af-text">Open seven days — breakfast, lunch, and everything in between</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Consistently 5-star rated by our loyal regulars on Google</span></div>
@@ -1664,31 +1709,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
       <div class="faq-item">
         <button class="faq-q">
-          Do you offer wifi and seating for remote workers?
+          What are your opening hours?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we provide complimentary wifi and comfortable seating ideal for studying or working. We ask that you purchase refreshments regularly.</div>
+        <div class="faq-a">We're open Monday to Friday 7am–4pm, and Saturday to Sunday 8am–3pm. Visit us during these hours for the freshest coffee and food.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Can I order custom or dairy-free coffee drinks?
+          Do you offer takeaway coffee?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely. We stock oat, almond, and soy milk options and can customise any drink to your preference. Just let our baristas know.</div>
+        <div class="faq-a">Yes, absolutely! We're happy to prepare your order to go. Just let our baristas know when ordering.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Do you have parking nearby?
+          Can I make a reservation?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Street parking is available in the surrounding area. We're easily accessible by public transport and encourage walking or cycling when possible.</div>
+        <div class="faq-a">No bookings needed—come in anytime! We welcome walk-ins and love seeing familiar faces throughout the day.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What are your opening hours on weekends?
+          Are there vegetarian or vegan options?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We're open Saturday and Sunday from 8am to 3pm. Come in for a relaxed weekend brunch or afternoon coffee.</div>
+        <div class="faq-a">We offer a range of vegetarian and vegan brunch items and can accommodate most dietary requirements. Ask our team about today's specials.</div>
       </div>
       </div>
     </div>
@@ -1701,8 +1746,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Get In Touch With Us</h2>
-          <p class="contact-cta-line">Stop by Café In Time today and discover why Sydney locals love us. We're here to brew your perfect cup.</p>
+          <h2 class="contact-title">Get in Touch with Café In Time</h2>
+          <p class="contact-cta-line">Join us at Café In Time and discover why Sydney locals keep coming back. Call +61 433 417 318 or visit us today.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1728,7 +1773,9 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Caf%C3%A9+In+Time+154+Sussex+St%2C+Sydney+NSW+2000+Sydney+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Café In Time on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1791,7 +1838,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </span>
             Café In Time
           </div>
-          <p class="footer-tagline">Artisan café serving exceptional espresso and fresh pastries daily</p>
+          <p class="footer-tagline">Exceptional coffee and community in the heart of Sydney</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1994,6 +2041,47 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61433417318?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61433417318" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61433417318?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>
