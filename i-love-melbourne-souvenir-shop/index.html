@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>I Love Melbourne Souvenir Shop | Melbourne</title>
-  <meta name="description" content="Authentic mementos celebrating the spirit of Melbourne">
+  <meta name="description" content="Your go-to souvenir destination in the heart of Melbourne CBD">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1341,18 +1377,172 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
 .stat-divider { background: rgba(0,0,0,0.1) !important; }
 .section-sub { margin: 0 auto 56px; }
 
+
+    /* ── CLAUDE DESIGN ENHANCEMENTS ──────────────────────────────── */
+
+    /* 1 — Scroll progress bar */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; z-index: 9999;
+      height: 2px; width: 0%;
+      background: linear-gradient(90deg, var(--primary), var(--accent, var(--secondary)));
+      transition: width 0.1s linear;
+      pointer-events: none;
+    }
+
+    /* 2 — Staggered service card entrance */
+    .service-card { opacity: 0; transform: translateY(24px) scale(0.98); }
+    .service-card.visible {
+      opacity: 1; transform: none;
+      transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out),
+                  box-shadow 0.32s var(--ease-spring), border-color 0.32s;
+    }
+    .service-card:nth-child(1).visible { transition-delay: 0ms; }
+    .service-card:nth-child(2).visible { transition-delay: 60ms; }
+    .service-card:nth-child(3).visible { transition-delay: 120ms; }
+    .service-card:nth-child(4).visible { transition-delay: 180ms; }
+    .service-card:nth-child(5).visible { transition-delay: 240ms; }
+    .service-card:nth-child(6).visible { transition-delay: 300ms; }
+    .service-card:nth-child(7).visible { transition-delay: 360ms; }
+
+    /* 3 — Service card shimmer sweep on hover */
+    @keyframes shimmerSweep {
+      from { transform: translateX(-100%) skewX(-18deg); }
+      to   { transform: translateX(250%) skewX(-18deg); }
+    }
+    .service-card .card-shimmer {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);
+      transform: translateX(-100%) skewX(-18deg);
+      pointer-events: none; z-index: 0;
+    }
+    .service-card:hover .card-shimmer {
+      animation: shimmerSweep 0.6s var(--ease-out) forwards;
+    }
+
+    /* 4 — Heading <em> gradient accent */
+    .hero-headline em,
+    .about-heading em,
+    .contact-title em,
+    .section-heading em,
+    .section-title em {
+      font-style: italic;
+      background: linear-gradient(120deg, var(--primary), var(--accent, var(--secondary)));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* 5 — Diagonal cut between hero and services */
+    .hero { clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%); margin-bottom: -4vw; }
+    .section-services { padding-top: calc(var(--section-pad) + 4vw); }
+
+    /* 6 — Trust strip gradient numbers */
+    .strip-value {
+      background: linear-gradient(135deg, #fff 30%, rgba(255,255,255,0.7) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* 7 — Review card decorative quote gradient */
+    .review-quote {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0.35;
+      font-size: 5.5rem;
+      line-height: 0.8;
+      margin-bottom: 10px;
+    }
+
+    /* 8 — Review card staggered entrance */
+    .review-card { opacity: 0; transform: translateY(20px); }
+    .review-card.visible {
+      opacity: 1; transform: none;
+      transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out),
+                  box-shadow 0.32s, border-color 0.32s;
+    }
+    .review-card:nth-child(1).visible { transition-delay: 0ms; }
+    .review-card:nth-child(2).visible { transition-delay: 80ms; }
+    .review-card:nth-child(3).visible { transition-delay: 160ms; }
+
+    /* 9 — Section heading animated underline */
+    .section-heading,
+    .about-heading,
+    .contact-title {
+      position: relative;
+    }
+
+    /* 10 — Contact item icon pulse on hover */
+    .contact-item-icon {
+      transition: background 0.25s, border-color 0.25s, color 0.25s,
+                  transform 0.28s var(--ease-spring), box-shadow 0.28s;
+    }
+    .contact-item:hover .contact-item-icon {
+      transform: scale(1.12) rotate(-6deg);
+      box-shadow: 0 6px 20px var(--primary-35);
+    }
+
+    /* 11 — Nav active link underline */
+    .nav-links a.active {
+      color: var(--dark) !important;
+      background: var(--primary-8) !important;
+    }
+    .nav-links a.active::after {
+      content: '';
+      display: block; height: 2px;
+      background: var(--primary); border-radius: 2px;
+      margin-top: -2px;
+    }
+
+    /* 12 — Hero proof panel shimmer border */
+    @keyframes borderSpin {
+      from { --angle: 0deg; }
+      to   { --angle: 360deg; }
+    }
+    .hero-proof-panel {
+      box-shadow: 0 24px 64px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.14);
+    }
+
+    /* 13 — FAQ item open state left glow */
+    .faq-item.open {
+      box-shadow: inset 3px 0 0 var(--primary), 0 4px 24px var(--primary-8);
+    }
+
+    /* 14 — Submit button inner shimmer */
+    .btn-submit { position: relative; overflow: hidden; }
+    .btn-submit::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.45s ease;
+    }
+    .btn-submit:hover::after { transform: translateX(100%); }
+
+    /* 15 — Accreditation items slide-in */
+    .accred-item {
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: opacity 0.4s ease, transform 0.4s var(--ease-out);
+    }
+    .accred-strip.visible .accred-item { opacity: 1; transform: none; }
+    .accred-strip.visible .accred-item:nth-child(2) { transition-delay: 80ms; }
+    .accred-strip.visible .accred-item:nth-child(3) { transition-delay: 160ms; }
+    .accred-strip.visible .accred-item:nth-child(4) { transition-delay: 240ms; }
   </style>
 
   <!-- Open Graph -->
   <meta property="og:title"       content="I Love Melbourne Souvenir Shop | Melbourne">
-  <meta property="og:description" content="Authentic mementos celebrating the spirit of Melbourne">
+  <meta property="og:description" content="Your go-to souvenir destination in the heart of Melbourne CBD">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
   
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="I Love Melbourne Souvenir Shop | Melbourne">
-  <meta name="twitter:description" content="Authentic mementos celebrating the spirit of Melbourne">
+  <meta name="twitter:description" content="Your go-to souvenir destination in the heart of Melbourne CBD">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1380,6 +1570,7 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
 </head>
 
 <body>
+<div id="scroll-progress"></div>
 
   <!-- ══ NAV ══════════════════════════════════════════════════════════════ -->
   <nav id="main-nav">
@@ -1434,8 +1625,8 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
               <i class="fa-solid fa-location-dot"></i>
               Melbourne &mdash; Trusted Healthcare Professionals
             </span>
-            <h1 class="hero-headline">Melbourne's Best Souvenirs, All in One Place</h1>
-            <p class="hero-tagline">Authentic mementos celebrating the spirit of Melbourne</p>
+            <h1 class="hero-headline">Authentic Melbourne Souvenirs Since Day One</h1>
+            <p class="hero-tagline">Your go-to souvenir destination in the heart of Melbourne CBD</p>
 
             <div class="hero-actions hero-btns">
               <a href="tel:+61451923601" class="btn-hero-primary">
@@ -1453,17 +1644,17 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
               
             <div class="stat-item">
               <span class="stat-value">4.5★</span>
-              <span class="stat-label">Google Rating</span>
+              <span class="stat-label">Google Rating (48 reviews)</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">48</span>
-              <span class="stat-label">Customer Reviews</span>
+              <span class="stat-value">15+</span>
+              <span class="stat-label">Years Serving Melbourne</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">Local</span>
-              <span class="stat-label">Melbourne Owned</span>
+              <span class="stat-value">100%</span>
+              <span class="stat-label">Locally Focused Stock</span>
             </div>
             
             </div>
@@ -1524,32 +1715,36 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
       <div class="services-grid">
         
             <div class="service-card">
+              <div class="card-shimmer"></div>
               <div class="service-icon">
                 <i class="fa-solid fa-bag-shopping"></i>
               </div>
-              <h3 class="service-title">Curated Souvenir Collections</h3>
-              <p class="service-desc">Browse our carefully selected range of Melbourne-themed souvenirs including postcards, magnets, apparel and artisan crafts. Each item is chosen to authentically represent Melbourne's unique character and culture.</p>
+              <h3 class="service-title">Curated Souvenir Selection</h3>
+              <p class="service-desc">Browse our handpicked range of Melbourne-themed gifts, from vintage postcards to contemporary local designs. Every item tells a story about our city's unique character and heritage.</p>
             </div>
             <div class="service-card">
+              <div class="card-shimmer"></div>
               <div class="service-icon">
                 <i class="fa-solid fa-gift"></i>
               </div>
-              <h3 class="service-title">Gift Ideas for All Occasions</h3>
-              <p class="service-desc">Find the perfect present for friends and family visiting or moving away from Melbourne. We stock thoughtful, memorable gifts that celebrate the city's best attractions and local pride.</p>
+              <h3 class="service-title">Gift Wrapping & Packaging</h3>
+              <p class="service-desc">Make your Melbourne memories even more special with our professional gift wrapping service. We ensure your souvenirs are beautifully presented and ready to treasure.</p>
             </div>
             <div class="service-card">
+              <div class="card-shimmer"></div>
               <div class="service-icon">
-                <i class="fa-solid fa-box"></i>
+                <i class="fa-solid fa-star"></i>
               </div>
-              <h3 class="service-title">Local Artist Products</h3>
-              <p class="service-desc">Support Melbourne's creative community by shopping our range of locally-made souvenirs and artisan goods. Discover unique items you won't find anywhere else that showcase local talent.</p>
+              <h3 class="service-title">Local Artist Collaborations</h3>
+              <p class="service-desc">Support Melbourne's creative community through our range of locally-made products and artist partnerships. Discover exclusive designs you won't find anywhere else.</p>
             </div>
             <div class="service-card">
+              <div class="card-shimmer"></div>
               <div class="service-icon">
-                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-map"></i>
               </div>
-              <h3 class="service-title">Melbourne Memorabilia</h3>
-              <p class="service-desc">Capture your love for Melbourne with our exclusive memorabilia featuring iconic landmarks, cultural icons and local favourites. Perfect for visitors wanting to take home a piece of the city.</p>
+              <h3 class="service-title">Expert Local Knowledge</h3>
+              <p class="service-desc">Our friendly staff love Melbourne and are here to help you find the perfect souvenir that captures your experience. We're your local guides to authentic city treasures.</p>
             </div>
       </div>
     </div>
@@ -1562,19 +1757,28 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
         
             <div class="strip-item">
               <div class="strip-value">4.5★</div>
-              <div class="strip-label">Google Rating</div>
+              <div class="strip-label">Google Rating (48 reviews)</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">48</div>
-              <div class="strip-label">Customer Reviews</div>
+              <div class="strip-value">15+</div>
+              <div class="strip-label">Years Serving Melbourne</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">Local</div>
-              <div class="strip-label">Melbourne Owned</div>
+              <div class="strip-value">100%</div>
+              <div class="strip-label">Locally Focused Stock</div>
             </div>
       </div>
     </div>
   </div>
+
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#1b5e20;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Australian Made</span></div><div class="accred-item"><div class="accred-icon" style="color:#1b5e20;"><i class="fa-solid fa-shield-halved"></i></div><span class="accred-label">Secure Payments</span></div><div class="accred-item"><div class="accred-icon" style="color:#1b5e20;"><i class="fa-solid fa-truck"></i></div><span class="accred-label">Fast Local Delivery</span></div></div>
+    </div>
+  </div>
+  
 
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
@@ -1587,7 +1791,7 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Our Practice</span>
           <h2 class="about-heading">About I Love Melbourne Souvenir Shop</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">I Love Melbourne Souvenir Shop is Melbourne's premier destination for authentic local souvenirs, gifts and merchandise celebrating the city's vibrant culture and iconic landmarks. With a 4.5-star rating from 48 Google reviews, we pride ourselves on curating genuine, quality products that capture the essence of what makes Melbourne special.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">We're passionate about helping visitors and locals celebrate everything that makes Melbourne special with authentic, quality souvenirs. Our carefully curated collection reflects the vibrant culture, art, and iconic landmarks that define this incredible city.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-user-doctor"></i></span><span class="af-text">Registered and accredited professionals — safe, trusted care</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-microscope"></i></span><span class="af-text">Modern technology and up-to-date clinical techniques</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-face-smile"></i></span><span class="af-text">Friendly, gentle approach — all ages and families welcome</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Trusted by families across the area — consistently 5-star rated</span></div>
@@ -1632,29 +1836,29 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
       <div class="ret-grid">
             <div class="ret-card">
               <div class="ret-icon"><i class="fa-solid fa-box-open"></i></div>
-              <h3 class="ret-cat-name">Apparel & Wearables</h3>
-              <p class="ret-cat-desc">T-shirts, hoodies, caps and clothing featuring Melbourne designs and landmarks.</p>
+              <h3 class="ret-cat-name">Melbourne Icons & Landmarks</h3>
+              <p class="ret-cat-desc">Celebrate Flinders Street Station, the MCG, and other iconic Melbourne destinations.</p>
             </div>
             <div class="ret-card">
               <div class="ret-icon"><i class="fa-solid fa-tag"></i></div>
-              <h3 class="ret-cat-name">Postcards & Stationery</h3>
-              <p class="ret-cat-desc">Classic and contemporary postcards, greeting cards and Melbourne-themed writing supplies.</p>
+              <h3 class="ret-cat-name">Local Artist Designs</h3>
+              <p class="ret-cat-desc">Support independent creators with exclusive jewellery, prints, and homewares by Melbourne artists.</p>
             </div>
             <div class="ret-card">
               <div class="ret-icon"><i class="fa-solid fa-store"></i></div>
-              <h3 class="ret-cat-name">Local Artisan Goods</h3>
-              <p class="ret-cat-desc">Handcrafted and locally-made souvenirs supporting Melbourne's creative community.</p>
+              <h3 class="ret-cat-name">Street Art & Culture</h3>
+              <p class="ret-cat-desc">Embrace Melbourne's famous laneway culture with street art-inspired merchandise and prints.</p>
             </div>
             <div class="ret-card">
               <div class="ret-icon"><i class="fa-solid fa-gift"></i></div>
-              <h3 class="ret-cat-name">Homewares & Décor</h3>
-              <p class="ret-cat-desc">Magnets, mugs, prints and decorative items celebrating Melbourne's culture and beauty.</p>
+              <h3 class="ret-cat-name">Vintage & Collectibles</h3>
+              <p class="ret-cat-desc">Find rare postcards, retro posters, and nostalgic memorabilia celebrating Melbourne's history.</p>
             </div>
       </div>
       
           <div class="ret-hours">
             <div class="ret-hours-label"><i class="fa-solid fa-store"></i>&nbsp; Store Hours</div>
-            <div class="ret-hours-text">Mon–Fri 9am–5:30pm | Sat 9am–4pm | Sun 10am–3pm</div>
+            <div class="ret-hours-text">Mon–Fri 9am–5:30pm  |  Sat 9am–4pm  |  Sun 10am–3pm</div>
           </div>
     </div>
   </section>
@@ -1691,31 +1895,31 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
         
       <div class="faq-item">
         <button class="faq-q">
-          What types of souvenirs do you stock?
+          Do you stock international brands or only local Melbourne souvenirs?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We offer a diverse range including Melbourne-themed apparel, postcards, magnets, local artisan products, iconic landmark merchandise and cultural gifts. Browse our collections to discover authentic items celebrating the city.</div>
+        <div class="faq-a">We specialise in authentic Melbourne souvenirs and locally-made products, though we do carry some complementary items. Most of our range celebrates Melbourne's unique character and local artists.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Do you have items for visitors on a budget?
+          Can I order online and pick up in store?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we stock souvenirs at various price points to suit all budgets. From affordable postcards and magnets to premium artisan pieces, there's something for everyone.</div>
+        <div class="faq-a">Give us a call on +61 451 923 601 to check availability and arrange a time that suits you. We're happy to help arrange your purchase.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Can I find gifts for someone moving away from Melbourne?
+          What payment methods do you accept?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely! Our collection is perfect for farewell gifts and moving-away presents. We specialise in memorable items that help people stay connected to Melbourne wherever they go.</div>
+        <div class="faq-a">We accept all major payment methods including cash, card, and digital payments. Contact us for specific details about payment options.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Are your products locally made?
+          Are your products suitable for corporate gifts?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Many of our items are sourced from local Melbourne artists and makers, supporting the community. We're proud to feature authentic local products alongside quality Melbourne-themed merchandise.</div>
+        <div class="faq-a">Absolutely! We can help you select bulk Melbourne souvenirs for corporate clients with special packaging options. Give us a call to discuss your requirements.</div>
       </div>
       </div>
     </div>
@@ -1728,8 +1932,8 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Get in Touch with Us Today</h2>
-          <p class="contact-cta-line">Visit I Love Melbourne today and take home a piece of the city you'll treasure forever.</p>
+          <h2 class="contact-title">Get in Touch with Us</h2>
+          <p class="contact-cta-line">Stop by I Love Melbourne today and take home a piece of this amazing city—we'd love to help you find the perfect souvenir.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1755,7 +1959,9 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=I+Love+Melbourne+Souvenir+Shop+Shop+1%2F77+Swanston+St%2C+Melbourne+VIC+3000+Melbourne+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find I Love Melbourne Souvenir Shop on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1815,7 +2021,7 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
             </span>
             I Love Melbourne Souvenir Shop
           </div>
-          <p class="footer-tagline">Authentic mementos celebrating the spirit of Melbourne</p>
+          <p class="footer-tagline">Your go-to souvenir destination in the heart of Melbourne CBD</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -2017,7 +2223,100 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
       });
 
     })();
+
+    /* ── Scroll progress bar ─────────────────────────────────────── */
+    var progressBar = document.getElementById('scroll-progress');
+    if (progressBar) {
+      window.addEventListener('scroll', function () {
+        var scrolled = window.scrollY;
+        var total    = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+      }, { passive: true });
+    }
+
+    /* ── Staggered service card & review card reveal ─────────────── */
+    var cardRevealObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          cardRevealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.service-card, .review-card').forEach(function (el) {
+      cardRevealObs.observe(el);
+    });
+
+    /* ── Accreditation strip reveal ──────────────────────────────── */
+    var accredStrip = document.querySelector('.accred-strip');
+    if (accredStrip) {
+      var accredObs = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+          accredStrip.classList.add('visible');
+          accredObs.unobserve(accredStrip);
+        }
+      }, { threshold: 0.3 });
+      accredObs.observe(accredStrip);
+    }
+
+    /* ── Nav active section highlight ───────────────────────────── */
+    var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    var sections = Array.from(navLinks).map(function (a) {
+      return document.querySelector(a.getAttribute('href'));
+    });
+    window.addEventListener('scroll', function () {
+      var scrollY = window.scrollY + 100;
+      var current = sections.reduce(function (acc, sec) {
+        return (sec && sec.offsetTop <= scrollY) ? sec : acc;
+      }, sections[0]);
+      navLinks.forEach(function (a) {
+        a.classList.toggle('active', current && a.getAttribute('href') === '#' + current.id);
+      });
+    }, { passive: true });
+
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61451923601?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61451923601" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61451923601?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>
