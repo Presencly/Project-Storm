@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>cafe al nord | Ballarat North</title>
-  <meta name="description" content="Contemporary café and restaurant celebrating Northern Italian cuisine">
+  <meta name="description" content="Handcrafted pasta and seasonal classics await">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1330,14 +1366,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="cafe al nord | Ballarat North">
-  <meta property="og:description" content="Contemporary café and restaurant celebrating Northern Italian cuisine">
+  <meta property="og:description" content="Handcrafted pasta and seasonal classics await">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/cafe-al-nord/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="cafe al nord | Ballarat North">
-  <meta name="twitter:description" content="Contemporary café and restaurant celebrating Northern Italian cuisine">
+  <meta name="twitter:description" content="Handcrafted pasta and seasonal classics await">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1419,8 +1455,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <i class="fa-solid fa-location-dot"></i>
               Ballarat North &mdash; Your Local Favourite
             </span>
-            <h1 class="hero-headline">Authentic Italian Dining in Ballarat North</h1>
-            <p class="hero-tagline">Contemporary café and restaurant celebrating Northern Italian cuisine</p>
+            <h1 class="hero-headline">Authentic Italian dining in Ballarat North</h1>
+            <p class="hero-tagline">Handcrafted pasta and seasonal classics await</p>
 
             <div class="hero-actions hero-btns">
               <a href="https://www.google.com/maps/search/Shop+4%2F100+Simpson+St%2C+Ballarat+North+VIC+3350" class="btn-hero-primary">
@@ -1448,7 +1484,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-value">15+</span>
-              <span class="stat-label">Years Local Favourite</span>
+              <span class="stat-label">Years Experience</span>
             </div>
             
             </div>
@@ -1512,29 +1548,29 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <div class="service-icon">
                 <i class="fa-solid fa-utensils"></i>
               </div>
-              <h3 class="service-title">Dine-In Restaurant</h3>
-              <p class="service-desc">Enjoy carefully prepared Northern Italian dishes in our comfortable dining room. Our menu celebrates authentic flavours with fresh, quality ingredients.</p>
+              <h3 class="service-title">Dine In</h3>
+              <p class="service-desc">Experience cosy Italian ambiance in our welcoming restaurant. Perfect for families, dates, or gathering with friends over shared plates.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-phone"></i>
+                <i class="fa-solid fa-box"></i>
               </div>
-              <h3 class="service-title">Friendly Service</h3>
-              <p class="service-desc">Our experienced team provides warm, attentive hospitality to every guest. We're dedicated to making your visit memorable and enjoyable.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-calendar-check"></i>
-              </div>
-              <h3 class="service-title">Reservations Available</h3>
-              <p class="service-desc">Book your table to ensure a spot at our popular venue. Weekend bookings are especially recommended for groups and special occasions.</p>
+              <h3 class="service-title">Takeaway</h3>
+              <p class="service-desc">Enjoy our signature dishes at home with quick, reliable takeaway service. Call ahead to minimise your wait time.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-wine-glass"></i>
               </div>
-              <h3 class="service-title">Beverage Selection</h3>
-              <p class="service-desc">Pair your meal with carefully chosen wines and beverages. Our selection complements our Italian menu beautifully.</p>
+              <h3 class="service-title">Wine & Beverages</h3>
+              <p class="service-desc">Curated Italian wines and local selections complement our menu perfectly. Espresso and coffee served throughout the day.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-cake-candles"></i>
+              </div>
+              <h3 class="service-title">Special Occasions</h3>
+              <p class="service-desc">Host your celebration with us—we accommodate group bookings and custom menus. Contact us to arrange your perfect event.</p>
             </div>
       </div>
     </div>
@@ -1549,6 +1585,15 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     </div>
   </div>
 
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Food Safety Certified</span></div><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-brands fa-tripadvisor"></i></div><span class="accred-label">TripAdvisor Listed</span></div><div class="accred-item"><div class="accred-icon" style="color:#c0392b;"><i class="fa-solid fa-wine-glass"></i></div><span class="accred-label">Licensed Premises</span></div></div>
+    </div>
+  </div>
+  
+
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
   
@@ -1560,22 +1605,22 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">House Pasta Special</span>
-                  <span class="cat-menu-desc">Seasonal Northern Italian pasta made fresh daily.</span>
-                </div>
-                <span class="cat-menu-price">$18</span>
-              </div>
-              <div class="cat-menu-item">
-                <div class="cat-menu-info">
-                  <span class="cat-menu-name">Risotto Al Tartufo</span>
-                  <span class="cat-menu-desc">Creamy Arborio rice with truffle and parmesan.</span>
+                  <span class="cat-menu-name">Tagliatelle al Ragù</span>
+                  <span class="cat-menu-desc">House-made ribbon pasta with slow-cooked meat sauce.</span>
                 </div>
                 <span class="cat-menu-price">$22</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Osso Buco</span>
-                  <span class="cat-menu-desc">Traditional braised veal shanks with rich sauce.</span>
+                  <span class="cat-menu-name">Risotto ai Funghi</span>
+                  <span class="cat-menu-desc">Creamy arborio rice with seasonal mushrooms and truffle.</span>
+                </div>
+                <span class="cat-menu-price">$24</span>
+              </div>
+              <div class="cat-menu-item">
+                <div class="cat-menu-info">
+                  <span class="cat-menu-name">Branzino al Forno</span>
+                  <span class="cat-menu-desc">Whole baked seabass with lemon, olive oil and herbs.</span>
                 </div>
                 <span class="cat-menu-price">$28</span>
               </div>
@@ -1616,7 +1661,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Us</span>
           <h2 class="about-heading">About Cafe Al Nord</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Cafe Al Nord is a beloved restaurant in Ballarat North, offering authentic Northern Italian cuisine in a warm, welcoming atmosphere. With a 4.4-star rating from 124 Google reviews, the venue has established itself as a trusted destination for quality Italian dining in the region.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Cafe Al Nord brings genuine Italian hospitality to Ballarat North with house-made pasta and traditional recipes passed down through generations. With a 4.4★ rating across 124 Google reviews, locals trust us for authentic flavour and warm service.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-leaf"></i></span><span class="af-text">Locally sourced ingredients, made fresh in-house every day</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-heart"></i></span><span class="af-text">A beloved local institution — family recipes, community warmth</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-clock"></i></span><span class="af-text">Open seven days — breakfast, lunch, and everything in between</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Consistently 5-star rated by our loyal regulars on Google</span></div>
@@ -1667,28 +1712,28 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           Do you take reservations?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Yes, we welcome bookings and recommend calling ahead, especially for weekends. Walk-ins are also welcome when space is available.</div>
+        <div class="faq-a">Yes, we recommend booking ahead especially on weekends. Call +61 466 658 220 or walk in anytime we're open.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What type of cuisine do you serve?
+          Is everything made fresh?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We specialise in authentic Northern Italian cooking, featuring fresh seasonal ingredients and traditional recipes.</div>
+        <div class="faq-a">Absolutely—our pasta is handmade daily and we use fresh, quality ingredients in every dish.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Are you suitable for groups?
+          Do you cater to dietary requirements?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely. We accommodate groups and special occasions — please call +61 466 658 220 to discuss your requirements.</div>
+        <div class="faq-a">We can accommodate vegetarian, vegan, and gluten-free requests. Please mention any dietary needs when ordering.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What are your operating hours?
+          What are your opening hours?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We're open throughout the week with extended hours on weekends. Call us to confirm current trading times.</div>
+        <div class="faq-a">We're open Mon–Fri 11am–10pm and Sat–Sun 10am–11pm. Check ahead for public holiday variations.</div>
       </div>
       </div>
     </div>
@@ -1701,8 +1746,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Ready to Dine with Us?</h2>
-          <p class="contact-cta-line">Experience authentic Northern Italian cuisine — call us today to book your table or visit us in Ballarat North.</p>
+          <h2 class="contact-title">Ready to book your table?</h2>
+          <p class="contact-cta-line">Taste the difference authentic Italian cooking makes. Call us today or visit Cafe Al Nord in Ballarat North.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1728,7 +1773,9 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=cafe+al+nord+Shop+4%2F100+Simpson+St%2C+Ballarat+North+VIC+3350+Ballarat+North+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find cafe al nord on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1791,7 +1838,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </span>
             cafe al nord
           </div>
-          <p class="footer-tagline">Contemporary café and restaurant celebrating Northern Italian cuisine</p>
+          <p class="footer-tagline">Handcrafted pasta and seasonal classics await</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1994,6 +2041,47 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61466658220?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61466658220" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61466658220?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>
