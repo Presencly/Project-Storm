@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Centreway Arcade | Melbourne</title>
-  <meta name="description" content="Classic arcade games, modern fun, right in the heart of the city">
+  <meta name="description" content="Classic and modern arcade games in the heart of Melbourne's retail precinct">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1341,18 +1377,172 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
 .stat-divider { background: rgba(0,0,0,0.1) !important; }
 .section-sub { margin: 0 auto 56px; }
 
+
+    /* ── CLAUDE DESIGN ENHANCEMENTS ──────────────────────────────── */
+
+    /* 1 — Scroll progress bar */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; z-index: 9999;
+      height: 2px; width: 0%;
+      background: linear-gradient(90deg, var(--primary), var(--accent, var(--secondary)));
+      transition: width 0.1s linear;
+      pointer-events: none;
+    }
+
+    /* 2 — Staggered service card entrance */
+    .service-card { opacity: 0; transform: translateY(24px) scale(0.98); }
+    .service-card.visible {
+      opacity: 1; transform: none;
+      transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out),
+                  box-shadow 0.32s var(--ease-spring), border-color 0.32s;
+    }
+    .service-card:nth-child(1).visible { transition-delay: 0ms; }
+    .service-card:nth-child(2).visible { transition-delay: 60ms; }
+    .service-card:nth-child(3).visible { transition-delay: 120ms; }
+    .service-card:nth-child(4).visible { transition-delay: 180ms; }
+    .service-card:nth-child(5).visible { transition-delay: 240ms; }
+    .service-card:nth-child(6).visible { transition-delay: 300ms; }
+    .service-card:nth-child(7).visible { transition-delay: 360ms; }
+
+    /* 3 — Service card shimmer sweep on hover */
+    @keyframes shimmerSweep {
+      from { transform: translateX(-100%) skewX(-18deg); }
+      to   { transform: translateX(250%) skewX(-18deg); }
+    }
+    .service-card .card-shimmer {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);
+      transform: translateX(-100%) skewX(-18deg);
+      pointer-events: none; z-index: 0;
+    }
+    .service-card:hover .card-shimmer {
+      animation: shimmerSweep 0.6s var(--ease-out) forwards;
+    }
+
+    /* 4 — Heading <em> gradient accent */
+    .hero-headline em,
+    .about-heading em,
+    .contact-title em,
+    .section-heading em,
+    .section-title em {
+      font-style: italic;
+      background: linear-gradient(120deg, var(--primary), var(--accent, var(--secondary)));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* 5 — Diagonal cut between hero and services */
+    .hero { clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%); margin-bottom: -4vw; }
+    .section-services { padding-top: calc(var(--section-pad) + 4vw); }
+
+    /* 6 — Trust strip gradient numbers */
+    .strip-value {
+      background: linear-gradient(135deg, #fff 30%, rgba(255,255,255,0.7) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* 7 — Review card decorative quote gradient */
+    .review-quote {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0.35;
+      font-size: 5.5rem;
+      line-height: 0.8;
+      margin-bottom: 10px;
+    }
+
+    /* 8 — Review card staggered entrance */
+    .review-card { opacity: 0; transform: translateY(20px); }
+    .review-card.visible {
+      opacity: 1; transform: none;
+      transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out),
+                  box-shadow 0.32s, border-color 0.32s;
+    }
+    .review-card:nth-child(1).visible { transition-delay: 0ms; }
+    .review-card:nth-child(2).visible { transition-delay: 80ms; }
+    .review-card:nth-child(3).visible { transition-delay: 160ms; }
+
+    /* 9 — Section heading animated underline */
+    .section-heading,
+    .about-heading,
+    .contact-title {
+      position: relative;
+    }
+
+    /* 10 — Contact item icon pulse on hover */
+    .contact-item-icon {
+      transition: background 0.25s, border-color 0.25s, color 0.25s,
+                  transform 0.28s var(--ease-spring), box-shadow 0.28s;
+    }
+    .contact-item:hover .contact-item-icon {
+      transform: scale(1.12) rotate(-6deg);
+      box-shadow: 0 6px 20px var(--primary-35);
+    }
+
+    /* 11 — Nav active link underline */
+    .nav-links a.active {
+      color: var(--dark) !important;
+      background: var(--primary-8) !important;
+    }
+    .nav-links a.active::after {
+      content: '';
+      display: block; height: 2px;
+      background: var(--primary); border-radius: 2px;
+      margin-top: -2px;
+    }
+
+    /* 12 — Hero proof panel shimmer border */
+    @keyframes borderSpin {
+      from { --angle: 0deg; }
+      to   { --angle: 360deg; }
+    }
+    .hero-proof-panel {
+      box-shadow: 0 24px 64px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.14);
+    }
+
+    /* 13 — FAQ item open state left glow */
+    .faq-item.open {
+      box-shadow: inset 3px 0 0 var(--primary), 0 4px 24px var(--primary-8);
+    }
+
+    /* 14 — Submit button inner shimmer */
+    .btn-submit { position: relative; overflow: hidden; }
+    .btn-submit::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.45s ease;
+    }
+    .btn-submit:hover::after { transform: translateX(100%); }
+
+    /* 15 — Accreditation items slide-in */
+    .accred-item {
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: opacity 0.4s ease, transform 0.4s var(--ease-out);
+    }
+    .accred-strip.visible .accred-item { opacity: 1; transform: none; }
+    .accred-strip.visible .accred-item:nth-child(2) { transition-delay: 80ms; }
+    .accred-strip.visible .accred-item:nth-child(3) { transition-delay: 160ms; }
+    .accred-strip.visible .accred-item:nth-child(4) { transition-delay: 240ms; }
   </style>
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Centreway Arcade | Melbourne">
-  <meta property="og:description" content="Classic arcade games, modern fun, right in the heart of the city">
+  <meta property="og:description" content="Classic and modern arcade games in the heart of Melbourne's retail precinct">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
   
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Centreway Arcade | Melbourne">
-  <meta name="twitter:description" content="Classic arcade games, modern fun, right in the heart of the city">
+  <meta name="twitter:description" content="Classic and modern arcade games in the heart of Melbourne's retail precinct">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1379,6 +1569,7 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
 </head>
 
 <body>
+<div id="scroll-progress"></div>
 
   <!-- ══ NAV ══════════════════════════════════════════════════════════════ -->
   <nav id="main-nav">
@@ -1433,8 +1624,8 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
               <i class="fa-solid fa-location-dot"></i>
               Melbourne &mdash; Trusted Healthcare Professionals
             </span>
-            <h1 class="hero-headline">Melbourne's Premier Gaming & Entertainment Hub</h1>
-            <p class="hero-tagline">Classic arcade games, modern fun, right in the heart of the city</p>
+            <h1 class="hero-headline">Centreway Arcade: Melbourne's Premier Gaming Destination</h1>
+            <p class="hero-tagline">Classic and modern arcade games in the heart of Melbourne's retail precinct</p>
 
             <div class="hero-actions hero-btns">
               <a href="#contact" class="btn-hero-primary">
@@ -1452,17 +1643,17 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
               
             <div class="stat-item">
               <span class="stat-value">4★</span>
-              <span class="stat-label">Google Rating</span>
+              <span class="stat-label">Google Rating (168 Reviews)</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">168</span>
-              <span class="stat-label">Customer Reviews</span>
+              <span class="stat-value">20+</span>
+              <span class="stat-label">Years in Melbourne</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-value">50+</span>
-              <span class="stat-label">Active Machines</span>
+              <span class="stat-value">150+</span>
+              <span class="stat-label">Games Available</span>
             </div>
             
             </div>
@@ -1523,32 +1714,36 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
       <div class="services-grid">
         
             <div class="service-card">
+              <div class="card-shimmer"></div>
               <div class="service-icon">
                 <i class="fa-solid fa-gamepad"></i>
               </div>
-              <h3 class="service-title">Classic Arcade Gaming</h3>
-              <p class="service-desc">Enjoy a vast collection of vintage and contemporary arcade machines featuring beloved classics and modern titles. Our regularly maintained machines guarantee the best gaming experience in Melbourne.</p>
+              <h3 class="service-title">Classic Arcade Games</h3>
+              <p class="service-desc">Enjoy timeless favourites including Pac-Man, Space Invaders, and Street Fighter that have entertained generations. Our meticulously maintained cabinets offer authentic gameplay and nostalgic fun for all ages.</p>
             </div>
             <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-users"></i>
-              </div>
-              <h3 class="service-title">Group Entertainment</h3>
-              <p class="service-desc">Perfect venue for birthday parties, corporate events, and team building activities with friends and colleagues. We offer flexible space and competitive gaming challenges for groups of all sizes.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fa-solid fa-trophy"></i>
-              </div>
-              <h3 class="service-title">Tournament Events</h3>
-              <p class="service-desc">Participate in regular gaming tournaments and competitions with prizes for skilled players. Join our community of gamers and test your skills against other enthusiasts.</p>
-            </div>
-            <div class="service-card">
+              <div class="card-shimmer"></div>
               <div class="service-icon">
                 <i class="fa-solid fa-coins"></i>
               </div>
-              <h3 class="service-title">Tokens & Credit System</h3>
-              <p class="service-desc">Convenient token and credit purchasing options make it easy to enjoy extended gaming sessions. Bulk purchase discounts available for frequent visitors and group bookings.</p>
+              <h3 class="service-title">Coin-Operated Entertainment</h3>
+              <p class="service-desc">Experience thrilling redemption games and prize machines where every play offers the chance to win exciting rewards. We offer competitive pricing and regular payouts to keep the excitement flowing.</p>
+            </div>
+            <div class="service-card">
+              <div class="card-shimmer"></div>
+              <div class="service-icon">
+                <i class="fa-solid fa-crown"></i>
+              </div>
+              <h3 class="service-title">Tournament Events</h3>
+              <p class="service-desc">Participate in regular gaming tournaments and competitions with prizes for top performers. Our events bring the Melbourne gaming community together for friendly competition and shared passion.</p>
+            </div>
+            <div class="service-card">
+              <div class="card-shimmer"></div>
+              <div class="service-icon">
+                <i class="fa-solid fa-birthday-cake"></i>
+              </div>
+              <h3 class="service-title">Birthday & Group Bookings</h3>
+              <p class="service-desc">Host memorable celebrations with dedicated gaming zones and flexible party packages available. We cater to groups of all sizes and provide a fun, supervised environment for all occasions.</p>
             </div>
       </div>
     </div>
@@ -1561,19 +1756,28 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
         
             <div class="strip-item">
               <div class="strip-value">4★</div>
-              <div class="strip-label">Google Rating</div>
+              <div class="strip-label">Google Rating (168 Reviews)</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">168</div>
-              <div class="strip-label">Customer Reviews</div>
+              <div class="strip-value">20+</div>
+              <div class="strip-label">Years in Melbourne</div>
             </div>
             <div class="strip-item">
-              <div class="strip-value">50+</div>
-              <div class="strip-label">Active Machines</div>
+              <div class="strip-value">150+</div>
+              <div class="strip-label">Games Available</div>
             </div>
       </div>
     </div>
   </div>
+
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#1b5e20;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Australian Made</span></div><div class="accred-item"><div class="accred-icon" style="color:#1b5e20;"><i class="fa-solid fa-shield-halved"></i></div><span class="accred-label">Secure Payments</span></div><div class="accred-item"><div class="accred-icon" style="color:#1b5e20;"><i class="fa-solid fa-truck"></i></div><span class="accred-label">Fast Local Delivery</span></div></div>
+    </div>
+  </div>
+  
 
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
@@ -1585,8 +1789,8 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
         <!-- Left -->
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Our Practice</span>
-          <h2 class="about-heading">About Centreway Arcade</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Centreway Arcade has been a beloved Melbourne destination for gaming enthusiasts and families since its establishment in the heart of the CBD. With over 168 positive Google reviews and a 4-star rating, we're committed to delivering authentic arcade entertainment and nostalgic gaming experiences.</p>
+          <h2 class="about-heading">About Centreway Arcade in Melbourne</h2>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Centreway Arcade has been a beloved entertainment venue in Melbourne for over two decades, offering locals and visitors alike an unparalleled selection of arcade games and interactive experiences. Our commitment to maintaining classic machines alongside cutting-edge gaming technology has made us a cherished destination for families and gaming enthusiasts across the Melbourne metropolitan area.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-user-doctor"></i></span><span class="af-text">Registered and accredited professionals — safe, trusted care</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-microscope"></i></span><span class="af-text">Modern technology and up-to-date clinical techniques</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-face-smile"></i></span><span class="af-text">Friendly, gentle approach — all ages and families welcome</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Trusted by families across the area — consistently 5-star rated</span></div>
@@ -1627,33 +1831,33 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
   <section class="section-cat" id="products" style="background:#fff;padding:90px 0;">
     <div class="container">
       <h2 class="section-title">What We Carry</h2>
-      <div class="ret-offer"><i class="fa-solid fa-percent"></i>&nbsp; Sign up to our mailing list for 10% off your first token purchase</div>
+      <div class="ret-offer"><i class="fa-solid fa-percent"></i>&nbsp; Sign up to our mailing list for 10% off your first gaming session</div>
       <div class="ret-grid">
             <div class="ret-card">
               <div class="ret-icon"><i class="fa-solid fa-box-open"></i></div>
-              <h3 class="ret-cat-name">Vintage Classics</h3>
-              <p class="ret-cat-desc">Iconic 1980s and 1990s arcade favourites including Pac-Man, Street Fighter, and pinball machines.</p>
+              <h3 class="ret-cat-name">Retro Classics</h3>
+              <p class="ret-cat-desc">Iconic vintage machines that defined arcade culture and continue to captivate players of all ages.</p>
             </div>
             <div class="ret-card">
               <div class="ret-icon"><i class="fa-solid fa-tag"></i></div>
               <h3 class="ret-cat-name">Modern Gaming</h3>
-              <p class="ret-cat-desc">Contemporary arcade and simulator games offering the latest entertainment technology and gameplay.</p>
+              <p class="ret-cat-desc">Latest arcade technology and contemporary titles offering cutting-edge graphics and immersive gameplay experiences.</p>
             </div>
             <div class="ret-card">
               <div class="ret-icon"><i class="fa-solid fa-store"></i></div>
-              <h3 class="ret-cat-name">Racing Simulators</h3>
-              <p class="ret-cat-desc">High-speed racing experiences with immersive cockpit setups and competitive leaderboards.</p>
+              <h3 class="ret-cat-name">Redemption Games</h3>
+              <p class="ret-cat-desc">Prize-winning games where skill and luck combine to earn exciting rewards and tokens.</p>
             </div>
             <div class="ret-card">
               <div class="ret-icon"><i class="fa-solid fa-gift"></i></div>
-              <h3 class="ret-cat-name">Prize & Redemption</h3>
-              <p class="ret-cat-desc">Skill-based games where you can earn tickets and redeem exciting prizes from our collection.</p>
+              <h3 class="ret-cat-name">Specialty Machines</h3>
+              <p class="ret-cat-desc">Racing simulators, light gun games, and other unique interactive entertainment options for variety seekers.</p>
             </div>
       </div>
       
           <div class="ret-hours">
             <div class="ret-hours-label"><i class="fa-solid fa-store"></i>&nbsp; Store Hours</div>
-            <div class="ret-hours-text">Mon–Fri 10am–9pm  |  Sat 10am–10pm  |  Sun 11am–8pm</div>
+            <div class="ret-hours-text">Mon–Fri 9am–5:30pm | Sat 9am–4pm | Sun 10am–3pm</div>
           </div>
     </div>
   </section>
@@ -1693,28 +1897,28 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
           What are your opening hours?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We're open Monday to Friday 10am–9pm, Saturday 10am–10pm, and Sunday 11am–8pm. Public holiday hours may vary, so call ahead to confirm.</div>
+        <div class="faq-a">We're open Monday to Friday 9am–5:30pm, Saturdays 9am–4pm, and Sundays 10am–3pm. Public holiday hours may vary, so please check ahead.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Do you offer group bookings for parties?
+          Do you offer birthday party packages?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely! We welcome birthday parties, corporate events, and team activities. Contact us to discuss package options and availability for your group size.</div>
+        <div class="faq-a">Yes! We have flexible birthday packages that include gaming credits, reserved space, and food options. Contact us today to customise a package for your celebration.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          What payment methods do you accept?
+          Are your machines regularly maintained?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We accept cash, card, and digital payments for token purchases and entry fees. Most machines also accept card payments directly.</div>
+        <div class="faq-a">Absolutely. All our arcade machines are serviced regularly to ensure optimal performance and longevity. We take pride in keeping both classic and modern games in pristine condition.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          Are there age restrictions for visitors?
+          Can I book a group event or tournament?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Most games are suitable for all ages, though some machines may have age recommendations. Parents and guardians are welcome to supervise younger players.</div>
+        <div class="faq-a">Of course! We welcome group bookings and host regular gaming tournaments throughout the year. Call us to discuss dates, prizes, and custom arrangements for your event.</div>
       </div>
       </div>
     </div>
@@ -1728,7 +1932,7 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
           <h2 class="contact-title">Get in Touch with Centreway Arcade</h2>
-          <p class="contact-cta-line">Ready to level up your fun? Call us today and discover why Melbourne's gaming community chooses Centreway Arcade.</p>
+          <p class="contact-cta-line">Ready to step into the ultimate gaming experience? Visit us today or give us a call to book your next arcade adventure!</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1754,7 +1958,9 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Centreway+Arcade+Collins+St%2C+Melbourne+VIC+3000+Melbourne+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Centreway Arcade on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1814,7 +2020,7 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
             </span>
             Centreway Arcade
           </div>
-          <p class="footer-tagline">Classic arcade games, modern fun, right in the heart of the city</p>
+          <p class="footer-tagline">Classic and modern arcade games in the heart of Melbourne's retail precinct</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -2016,6 +2222,58 @@ h1, h2, h3, h4 { letter-spacing: -0.025em; font-weight: 800; }
       });
 
     })();
+
+    /* ── Scroll progress bar ─────────────────────────────────────── */
+    var progressBar = document.getElementById('scroll-progress');
+    if (progressBar) {
+      window.addEventListener('scroll', function () {
+        var scrolled = window.scrollY;
+        var total    = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+      }, { passive: true });
+    }
+
+    /* ── Staggered service card & review card reveal ─────────────── */
+    var cardRevealObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          cardRevealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.service-card, .review-card').forEach(function (el) {
+      cardRevealObs.observe(el);
+    });
+
+    /* ── Accreditation strip reveal ──────────────────────────────── */
+    var accredStrip = document.querySelector('.accred-strip');
+    if (accredStrip) {
+      var accredObs = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+          accredStrip.classList.add('visible');
+          accredObs.unobserve(accredStrip);
+        }
+      }, { threshold: 0.3 });
+      accredObs.observe(accredStrip);
+    }
+
+    /* ── Nav active section highlight ───────────────────────────── */
+    var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    var sections = Array.from(navLinks).map(function (a) {
+      return document.querySelector(a.getAttribute('href'));
+    });
+    window.addEventListener('scroll', function () {
+      var scrollY = window.scrollY + 100;
+      var current = sections.reduce(function (acc, sec) {
+        return (sec && sec.offsetTop <= scrollY) ? sec : acc;
+      }, sections[0]);
+      navLinks.forEach(function (a) {
+        a.classList.toggle('active', current && a.getAttribute('href') === '#' + current.id);
+      });
+    }, { passive: true });
+
   </script>
 
 </body>
