@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marlowe's Way | Sydney</title>
-  <meta name="description" content="Expertly crafted coffee and all-day brunch, daily.">
+  <meta name="description" content="Exceptional coffee and brunch in the heart of Sydney">
 
   <!-- Google Fonts — persona-specific -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -857,6 +857,42 @@
       text-transform: uppercase;
     }
 
+    /* ─── Accreditation strip ────────────────────────────────────── */
+    .accred-wrap {
+      background: var(--surface, #fff);
+      border-top: 1px solid var(--border, rgba(0,0,0,0.08));
+      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+      padding: 32px 0;
+    }
+    .accred-strip {
+      display: flex;
+      align-items: center;
+      gap: 0 32px;
+      flex-wrap: wrap;
+    }
+    .accred-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid, #888);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .accred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .accred-icon { font-size: 1rem; flex-shrink: 0; }
+    .accred-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark, #222);
+      white-space: nowrap;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        TESTIMONIALS
     ═══════════════════════════════════════════════════════════════ */
@@ -1330,14 +1366,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Marlowe's Way | Sydney">
-  <meta property="og:description" content="Expertly crafted coffee and all-day brunch, daily.">
+  <meta property="og:description" content="Exceptional coffee and brunch in the heart of Sydney">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
   <meta property="og:type"        content="website">
-  <meta property="og:url" content="https://Presencly.github.io/Project-Storm/marlowes-way/">
+  
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Marlowe's Way | Sydney">
-  <meta name="twitter:description" content="Expertly crafted coffee and all-day brunch, daily.">
+  <meta name="twitter:description" content="Exceptional coffee and brunch in the heart of Sydney">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop">
 
   <script type="application/ld+json">
@@ -1419,8 +1455,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <i class="fa-solid fa-location-dot"></i>
               Sydney &mdash; Your Local Favourite
             </span>
-            <h1 class="hero-headline">Sydney's favourite neighbourhood cafe</h1>
-            <p class="hero-tagline">Expertly crafted coffee and all-day brunch, daily.</p>
+            <h1 class="hero-headline">Sydney's favourite neighbourhood café</h1>
+            <p class="hero-tagline">Exceptional coffee and brunch in the heart of Sydney</p>
 
             <div class="hero-actions hero-btns">
               <a href="https://www.google.com/maps/search/Tankstream+Way%2C+Sydney+NSW+2000" class="btn-hero-primary">
@@ -1438,17 +1474,17 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               
             <div class="stat-item">
               <span class="stat-value">4.6★</span>
-              <span class="stat-label">Google rating (392 reviews)</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-              <span class="stat-value">392+</span>
-              <span class="stat-label">Happy customers</span>
+              <span class="stat-label">Google Rating (392 reviews)</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-value">7am</span>
               <span class="stat-label">Early opening weekdays</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-value">392+</span>
+              <span class="stat-label">Happy customers</span>
             </div>
             
             </div>
@@ -1513,28 +1549,28 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
                 <i class="fa-solid fa-mug-hot"></i>
               </div>
               <h3 class="service-title">Specialty Coffee</h3>
-              <p class="service-desc">We source premium, single-origin beans roasted to perfection for every cup. Whether you prefer a smooth flat white or rich espresso, our baristas craft each drink with care.</p>
+              <p class="service-desc">We serve premium single-origin espresso and perfectly pulled shots prepared by experienced baristas. Each cup is crafted to highlight the unique character of carefully selected beans.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-utensils"></i>
+                <i class="fa-solid fa-plate-wheat"></i>
               </div>
-              <h3 class="service-title">All-Day Brunch</h3>
-              <p class="service-desc">From smashed avo on sourdough to protein-packed grain bowls, our menu celebrates fresh, seasonal ingredients. We cater to dietary preferences including vegan and gluten-free options.</p>
+              <h3 class="service-title">Brunch & Light Bites</h3>
+              <p class="service-desc">Our menu features seasonal brunch specials, fresh pastries, and wholesome lunch options made daily. We cater to dietary preferences including vegan and gluten-free choices.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-wifi"></i>
               </div>
               <h3 class="service-title">Work-Friendly Space</h3>
-              <p class="service-desc">Fast WiFi, plenty of seating, and quality coffee make Marlowe's Way ideal for remote workers and students. Spend the afternoon with us—we're always happy to see you.</p>
+              <p class="service-desc">Marlowe's Way provides reliable WiFi and plenty of seating for laptop users and remote workers. We're the perfect spot to settle in with your coffee and get things done.</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
                 <i class="fa-solid fa-heart"></i>
               </div>
               <h3 class="service-title">Community Hub</h3>
-              <p class="service-desc">We're more than a cafe; we're where Sydney locals meet, chat, and connect. Our warm atmosphere and genuine hospitality make everyone feel at home.</p>
+              <p class="service-desc">We're more than just a café—we're a gathering place for Sydney locals and visitors alike. Our warm atmosphere and friendly staff make everyone feel welcome.</p>
             </div>
       </div>
     </div>
@@ -1549,6 +1585,15 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
     </div>
   </div>
 
+  <!-- ══ ACCREDITATION STRIP ══════════════════════════════════════════════ -->
+  
+  <div class="accred-wrap">
+    <div class="container">
+      <div class="accred-strip fade-in"><span class="accred-title">Verified &amp; Accredited</span><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-solid fa-award"></i></div><span class="accred-label">Food Safety Certified</span></div><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-brands fa-tripadvisor"></i></div><span class="accred-label">TripAdvisor Listed</span></div><div class="accred-item"><div class="accred-icon" style="color:#6f4e37;"><i class="fa-solid fa-leaf"></i></div><span class="accred-label">Victorian Health Compliant</span></div></div>
+    </div>
+  </div>
+  
+
   <!-- ══ CATEGORY SECTION (food — before about) ═══════════════════════════ -->
   
   
@@ -1560,26 +1605,26 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="cat-menu-list">
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
+                  <span class="cat-menu-name">Single-Origin Espresso</span>
+                  <span class="cat-menu-desc">Expertly pulled shot showcasing origin-specific flavour notes.</span>
+                </div>
+                <span class="cat-menu-price">$4.50</span>
+              </div>
+              <div class="cat-menu-item">
+                <div class="cat-menu-info">
                   <span class="cat-menu-name">Smashed Avo on Sourdough</span>
-                  <span class="cat-menu-desc">Creamy avocado, poached eggs, and dukkah on toasted sourdough.</span>
+                  <span class="cat-menu-desc">House-made sourdough with fresh avocado, lime and dukkah.</span>
                 </div>
                 <span class="cat-menu-price">$16</span>
               </div>
               <div class="cat-menu-item">
                 <div class="cat-menu-info">
-                  <span class="cat-menu-name">Espresso Martini</span>
-                  <span class="cat-menu-desc">Bold shot of our house espresso blended with premium vodka and Kahlúa.</span>
+                  <span class="cat-menu-name">Seasonal Brunch Bowl</span>
+                  <span class="cat-menu-desc">Locally sourced produce with poached eggs and house granola.</span>
                 </div>
-                <span class="cat-menu-price">$14</span>
+                <span class="cat-menu-price">$18</span>
               </div>
-              <div class="cat-menu-item">
-                <div class="cat-menu-info">
-                  <span class="cat-menu-name">Grain Bowl</span>
-                  <span class="cat-menu-desc">Quinoa, roasted vegetables, feta, and tahini dressing.</span>
-                </div>
-                <span class="cat-menu-price">$17</span>
-              </div>
-          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed — come in anytime during opening hours</p>
+          <p class="cat-note"><i class="fa-solid fa-circle-info"></i>&nbsp; No bookings needed — come in anytime</p>
         </div>
         
             <div class="cat-hours-box">
@@ -1616,7 +1661,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <div class="fade-in">
           <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> About Us</span>
           <h2 class="about-heading">About Marlowe's Way</h2>
-          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Marlowe's Way is a beloved Sydney cafe known for its exceptional single-origin espresso and creative brunch menu that draws locals and visitors alike. With a 4.6-star rating from nearly 400 Google reviews, we've earned a reputation for quality coffee, friendly service, and a welcoming atmosphere.</p>
+          <p style="font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:8px;">Marlowe's Way is a beloved Sydney café known for its expertly crafted espresso drinks and thoughtfully sourced ingredients. With a 4.6-star rating from nearly 400 Google reviews, we've earned a reputation as a destination for quality coffee and conversation.</p>
 
           <div class="about-features">
             <div class="af-item"><span class="af-icon"><i class="fa-solid fa-leaf"></i></span><span class="af-text">Locally sourced ingredients, made fresh in-house every day</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-heart"></i></span><span class="af-text">A beloved local institution — family recipes, community warmth</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-clock"></i></span><span class="af-text">Open seven days — breakfast, lunch, and everything in between</span></div><div class="af-item"><span class="af-icon"><i class="fa-solid fa-star"></i></span><span class="af-text">Consistently 5-star rated by our loyal regulars on Google</span></div>
@@ -1664,31 +1709,31 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         
       <div class="faq-item">
         <button class="faq-q">
-          Do you take reservations?
+          Do you offer takeaway coffee?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">No bookings needed—just walk in anytime during our opening hours. We're happy to squeeze you in whenever you're ready for great coffee.</div>
+        <div class="faq-a">Yes, we have takeaway cups available for all our coffee drinks. We're happy to prepare your order quickly whether you're staying or heading out.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Can we book a table in advance?
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-a">We operate on a walk-in basis, so no bookings are needed. Just come in whenever it suits you and find a seat at our communal or individual tables.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
           What are your opening hours?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">We're open Monday to Friday 7am–4pm, and Saturday to Sunday 8am–3pm. Perfect timing for breakfast, lunch, or an afternoon catch-up.</div>
+        <div class="faq-a">We're open Monday to Friday from 7am to 4pm, and Saturday to Sunday from 8am to 3pm. Come visit us during these times for your coffee fix.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
           Do you cater to dietary requirements?
           <i class="fa-solid fa-chevron-down faq-icon"></i>
         </button>
-        <div class="faq-a">Absolutely. We offer vegan milk alternatives, gluten-free options, and can adapt many dishes to suit your needs. Just ask our friendly staff.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          Is your coffee ethically sourced?
-          <i class="fa-solid fa-chevron-down faq-icon"></i>
-        </button>
-        <div class="faq-a">Yes, we're committed to quality and sustainability. Our single-origin beans come from trusted roasters who prioritise fair-trade and environmental practices.</div>
+        <div class="faq-a">Absolutely. We offer vegan milk alternatives, gluten-free options, and can accommodate most dietary preferences. Let our staff know what you need when ordering.</div>
       </div>
       </div>
     </div>
@@ -1701,8 +1746,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
         <!-- Left -->
         <div class="fade-in">
           <span class="contact-left-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="contact-title">Get in touch or visit us</h2>
-          <p class="contact-cta-line">Stop by Marlowe's Way today—we'd love to serve you a perfect cup and a delicious bite.</p>
+          <h2 class="contact-title">Visit us in Sydney</h2>
+          <p class="contact-cta-line">Stop by Marlowe's Way today and discover why Sydney locals keep coming back.</p>
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
@@ -1728,7 +1773,9 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
           </div>
         </div>
 
-        <!-- Right — form -->
+        
+<div class="maps-embed-wrap" style="margin-top:28px;border-radius:14px;overflow:hidden;height:220px;border:1px solid rgba(0,0,0,0.08);"><iframe src="https://maps.google.com/maps?q=Marlowe%27s+Way+Tankstream+Way%2C+Sydney+NSW+2000+Sydney+Australia&output=embed&z=15" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Find Marlowe's Way on Google Maps"></iframe></div>
+<!-- Right — form -->
         <div class="fade-in" style="transition-delay:0.12s;">
           <div class="contact-form-card">
             <div class="form-title">Send Us a Message</div>
@@ -1791,7 +1838,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
             </span>
             Marlowe's Way
           </div>
-          <p class="footer-tagline">Expertly crafted coffee and all-day brunch, daily.</p>
+          <p class="footer-tagline">Exceptional coffee and brunch in the heart of Sydney</p>
           <div class="footer-socials">
             <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1994,6 +2041,47 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 
     })();
   </script>
+
+  <style>
+    .wa-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .wa-fab:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-fab i { color: #fff; font-size: 1.5rem; }
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 768px) {
+      .wa-fab { display: none; }
+      body { padding-bottom: 76px; }
+      .mobile-cta-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #111); border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px max(10px, env(safe-area-inset-bottom)); gap: 10px;
+      }
+      .mobile-cta-bar a {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 13px 0; border-radius: 10px;
+        font-size: 0.9rem; font-weight: 700; text-decoration: none; letter-spacing: 0.01em;
+      }
+      .mobile-cta-call { background: var(--primary); color: #fff; }
+      .mobile-cta-wa   { background: #25D366; color: #fff; }
+    }
+  </style>
+  <a href="https://wa.me/61432487598?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-fab" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+    <a href="tel:+61432487598" class="mobile-cta-call">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <a href="https://wa.me/61432487598?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="mobile-cta-wa">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
 
 </body>
 </html>
