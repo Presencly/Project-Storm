@@ -1362,6 +1362,160 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
   margin-bottom: 8px;
 }
 
+
+    /* ── CLAUDE DESIGN ENHANCEMENTS ──────────────────────────────── */
+
+    /* 1 — Scroll progress bar */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; z-index: 9999;
+      height: 2px; width: 0%;
+      background: linear-gradient(90deg, var(--primary), var(--accent, var(--secondary)));
+      transition: width 0.1s linear;
+      pointer-events: none;
+    }
+
+    /* 2 — Staggered service card entrance */
+    .service-card { opacity: 0; transform: translateY(24px) scale(0.98); }
+    .service-card.visible {
+      opacity: 1; transform: none;
+      transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out),
+                  box-shadow 0.32s var(--ease-spring), border-color 0.32s;
+    }
+    .service-card:nth-child(1).visible { transition-delay: 0ms; }
+    .service-card:nth-child(2).visible { transition-delay: 60ms; }
+    .service-card:nth-child(3).visible { transition-delay: 120ms; }
+    .service-card:nth-child(4).visible { transition-delay: 180ms; }
+    .service-card:nth-child(5).visible { transition-delay: 240ms; }
+    .service-card:nth-child(6).visible { transition-delay: 300ms; }
+    .service-card:nth-child(7).visible { transition-delay: 360ms; }
+
+    /* 3 — Service card shimmer sweep on hover */
+    @keyframes shimmerSweep {
+      from { transform: translateX(-100%) skewX(-18deg); }
+      to   { transform: translateX(250%) skewX(-18deg); }
+    }
+    .service-card .card-shimmer {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);
+      transform: translateX(-100%) skewX(-18deg);
+      pointer-events: none; z-index: 0;
+    }
+    .service-card:hover .card-shimmer {
+      animation: shimmerSweep 0.6s var(--ease-out) forwards;
+    }
+
+    /* 4 — Heading <em> gradient accent */
+    .hero-headline em,
+    .about-heading em,
+    .contact-title em,
+    .section-heading em,
+    .section-title em {
+      font-style: italic;
+      background: linear-gradient(120deg, var(--primary), var(--accent, var(--secondary)));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* 5 — Diagonal cut between hero and services */
+    .hero { clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%); margin-bottom: -4vw; }
+    .section-services { padding-top: calc(var(--section-pad) + 4vw); }
+
+    /* 6 — Trust strip gradient numbers */
+    .strip-value {
+      background: linear-gradient(135deg, #fff 30%, rgba(255,255,255,0.7) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* 7 — Review card decorative quote gradient */
+    .review-quote {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0.35;
+      font-size: 5.5rem;
+      line-height: 0.8;
+      margin-bottom: 10px;
+    }
+
+    /* 8 — Review card staggered entrance */
+    .review-card { opacity: 0; transform: translateY(20px); }
+    .review-card.visible {
+      opacity: 1; transform: none;
+      transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out),
+                  box-shadow 0.32s, border-color 0.32s;
+    }
+    .review-card:nth-child(1).visible { transition-delay: 0ms; }
+    .review-card:nth-child(2).visible { transition-delay: 80ms; }
+    .review-card:nth-child(3).visible { transition-delay: 160ms; }
+
+    /* 9 — Section heading animated underline */
+    .section-heading,
+    .about-heading,
+    .contact-title {
+      position: relative;
+    }
+
+    /* 10 — Contact item icon pulse on hover */
+    .contact-item-icon {
+      transition: background 0.25s, border-color 0.25s, color 0.25s,
+                  transform 0.28s var(--ease-spring), box-shadow 0.28s;
+    }
+    .contact-item:hover .contact-item-icon {
+      transform: scale(1.12) rotate(-6deg);
+      box-shadow: 0 6px 20px var(--primary-35);
+    }
+
+    /* 11 — Nav active link underline */
+    .nav-links a.active {
+      color: var(--dark) !important;
+      background: var(--primary-8) !important;
+    }
+    .nav-links a.active::after {
+      content: '';
+      display: block; height: 2px;
+      background: var(--primary); border-radius: 2px;
+      margin-top: -2px;
+    }
+
+    /* 12 — Hero proof panel shimmer border */
+    @keyframes borderSpin {
+      from { --angle: 0deg; }
+      to   { --angle: 360deg; }
+    }
+    .hero-proof-panel {
+      box-shadow: 0 24px 64px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.14);
+    }
+
+    /* 13 — FAQ item open state left glow */
+    .faq-item.open {
+      box-shadow: inset 3px 0 0 var(--primary), 0 4px 24px var(--primary-8);
+    }
+
+    /* 14 — Submit button inner shimmer */
+    .btn-submit { position: relative; overflow: hidden; }
+    .btn-submit::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.45s ease;
+    }
+    .btn-submit:hover::after { transform: translateX(100%); }
+
+    /* 15 — Accreditation items slide-in */
+    .accred-item {
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: opacity 0.4s ease, transform 0.4s var(--ease-out);
+    }
+    .accred-strip.visible .accred-item { opacity: 1; transform: none; }
+    .accred-strip.visible .accred-item:nth-child(2) { transition-delay: 80ms; }
+    .accred-strip.visible .accred-item:nth-child(3) { transition-delay: 160ms; }
+    .accred-strip.visible .accred-item:nth-child(4) { transition-delay: 240ms; }
   </style>
 
   <!-- Open Graph -->
@@ -1400,6 +1554,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
 </head>
 
 <body>
+<div id="scroll-progress"></div>
 
   <!-- ══ NAV ══════════════════════════════════════════════════════════════ -->
   <nav id="main-nav">
@@ -1544,6 +1699,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
       <div class="services-grid">
         
             <div class="service-card">
+              <div class="card-shimmer"></div>
               <div class="service-icon">
                 <i class="fa-solid fa-mug-hot"></i>
               </div>
@@ -1551,6 +1707,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <p class="service-desc">We brew pour-overs, espresso, and cold brew using premium single-origin beans selected monthly. Each cup is prepared by experienced baristas trained in latte art and extraction techniques.</p>
             </div>
             <div class="service-card">
+              <div class="card-shimmer"></div>
               <div class="service-icon">
                 <i class="fa-solid fa-croissant"></i>
               </div>
@@ -1558,6 +1715,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <p class="service-desc">Our cabinet features daily-baked croissants, banana bread, and savoury options from local Melbourne bakeries. We also offer gluten-free and vegan options to suit all dietary preferences.</p>
             </div>
             <div class="service-card">
+              <div class="card-shimmer"></div>
               <div class="service-icon">
                 <i class="fa-solid fa-wifi"></i>
               </div>
@@ -1565,6 +1723,7 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
               <p class="service-desc">Reliable WiFi and plenty of seating make us the perfect spot for remote workers and students. We welcome laptops and offer extended stays without pressure to constantly reorder.</p>
             </div>
             <div class="service-card">
+              <div class="card-shimmer"></div>
               <div class="service-icon">
                 <i class="fa-solid fa-heart"></i>
               </div>
@@ -2039,6 +2198,58 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
       });
 
     })();
+
+    /* ── Scroll progress bar ─────────────────────────────────────── */
+    var progressBar = document.getElementById('scroll-progress');
+    if (progressBar) {
+      window.addEventListener('scroll', function () {
+        var scrolled = window.scrollY;
+        var total    = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+      }, { passive: true });
+    }
+
+    /* ── Staggered service card & review card reveal ─────────────── */
+    var cardRevealObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          cardRevealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.service-card, .review-card').forEach(function (el) {
+      cardRevealObs.observe(el);
+    });
+
+    /* ── Accreditation strip reveal ──────────────────────────────── */
+    var accredStrip = document.querySelector('.accred-strip');
+    if (accredStrip) {
+      var accredObs = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+          accredStrip.classList.add('visible');
+          accredObs.unobserve(accredStrip);
+        }
+      }, { threshold: 0.3 });
+      accredObs.observe(accredStrip);
+    }
+
+    /* ── Nav active section highlight ───────────────────────────── */
+    var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    var sections = Array.from(navLinks).map(function (a) {
+      return document.querySelector(a.getAttribute('href'));
+    });
+    window.addEventListener('scroll', function () {
+      var scrollY = window.scrollY + 100;
+      var current = sections.reduce(function (acc, sec) {
+        return (sec && sec.offsetTop <= scrollY) ? sec : acc;
+      }, sections[0]);
+      navLinks.forEach(function (a) {
+        a.classList.toggle('active', current && a.getAttribute('href') === '#' + current.id);
+      });
+    }, { passive: true });
+
   </script>
 
 </body>
